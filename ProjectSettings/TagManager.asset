@@ -5,7 +5,6 @@ TagManager:
   serializedVersion: 3
   tags:
   - Enemy
-  - HitBox
   layers:
   - Default
   - TransparentFX
@@ -40,6 +39,9 @@ TagManager:
   - 
   - 
   m_SortingLayers:
+  - name: BackGround
+    uniqueID: 3823146219
+    locked: 0
   - name: Ground
     uniqueID: 2457644253
     locked: 0
