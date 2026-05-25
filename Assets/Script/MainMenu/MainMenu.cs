@@ -3,6 +3,7 @@ using UnityEngine.SceneManagement;
 
 public class MainMenu : MonoBehaviour
 {
+    public GameObject settingGame;
     public void StartGame()
     {
         Debug.Log("GamePlay");
@@ -18,9 +19,14 @@ public class MainMenu : MonoBehaviour
         Application.Quit();
         Debug.Log("GameQuit");
     }
-    public void SettingGame()
+    public void OpenSetting()
     {
-        SceneManager.LoadScene("SettingScene");
-        Debug.Log("SettingScene");
+        settingGame.SetActive(true);
+        Debug.Log("SettingOpen");
+    }
+    public void CloseSetting()
+    {
+        settingGame.SetActive(false);
+        Debug.Log("SettingClose");
     }
 }

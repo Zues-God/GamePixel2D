@@ -29,6 +29,7 @@ public class Player : MonoBehaviour
         currentHpPlayer = maxHpPlayer;
         hitBox.SetActive(false);
         UpdateHP(); 
+
     }
 
     void Update()

@@ -11,9 +11,6 @@ public abstract class Enemy : MonoBehaviour
     [SerializeField] private Image hpBar;
     [SerializeField] protected float enterDamage = 1f;
     [SerializeField] protected float stayDamage = 1f;
-    [SerializeField] private GameObject dieEffect;
-    [SerializeField] GameObject bossHPBar;
-    [SerializeField] GameObject door;
     public float knockBackForce = 5f;
     protected Player player;
     protected float currenHP;
@@ -94,10 +91,7 @@ public abstract class Enemy : MonoBehaviour
 
     protected virtual void DestroyEnemy()
     {
-        if (dieEffect != null)
-        {
-            Instantiate(dieEffect, transform.position, Quaternion.identity);
-        }
+      
         Destroy(gameObject);
     }
 
