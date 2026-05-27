@@ -7,13 +7,13 @@ public class Player : MonoBehaviour
     [SerializeField] private float moveSpeed = 10f;
     [SerializeField] private float maxHpPlayer = 100f;
     [SerializeField] private Image hpBar;
+    [SerializeField] AudioSource stopAudio;
     private Rigidbody2D rb;
     private SpriteRenderer rbSprite;
     private Animator animator;
-    private float currentHpPlayer;
     public GameObject hitBox;
+    private float currentHpPlayer;
     private bool isAttacking = false;
-    [SerializeField] AudioSource stopAudio;
    
 
 
@@ -45,7 +45,6 @@ public class Player : MonoBehaviour
         if (playerInput.x < 0) {
 
             rbSprite.flipX = true;
-
 
         } else if (playerInput.x > 0) {
 
@@ -103,7 +102,6 @@ public class Player : MonoBehaviour
         if(currentHpPlayer <= 0) {
           Die();
         }
-      
 
     }
 
