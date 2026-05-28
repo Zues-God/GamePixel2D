@@ -1,4 +1,6 @@
 using System.Collections;
+using Unity.VisualScripting;
+using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -11,14 +13,20 @@ public abstract class Enemy : MonoBehaviour
     [SerializeField] private Image hpBar;
     [SerializeField] protected float enterDamage = 1f;
     [SerializeField] protected float stayDamage = 1f;
+    [SerializeField] protected float attackRange = 1f;
+    [SerializeField] protected float attackCooldown = 1f;
+    [SerializeField] protected GameObject door;
+    protected float lastAttackTime = 0f;
     public float knockBackForce = 5f;
     protected Player player;
     protected float currenHP;
-    private Rigidbody2D rb;
     protected bool isKnockBack = false;
     public float knockBackTime = 0.15f;
     public Animator animator;
+    public GameObject hitBox;
     protected bool isDead = false;
+    private Rigidbody2D rb;
+
 
     protected virtual void Start()
     {
@@ -29,10 +37,24 @@ public abstract class Enemy : MonoBehaviour
     }
     protected virtual void Update()
     {
+       
+        if (isDead || isKnockBack) 
+            return;
+        else if (player == null)
+        {
+            return;
+        }
+            float distance = Vector2.Distance(transform.position, player.transform.position);
+        if (distance < attackRange)
+        {
 
-        if (isDead || isKnockBack) return; 
-        MoveToPlayer();
-    
+            Attack();
+
+        }
+        else
+        {
+            MoveToPlayer();
+        }
     }
     protected void MoveToPlayer()
     {
@@ -70,10 +92,10 @@ public abstract class Enemy : MonoBehaviour
     IEnumerator KnockbackRoutine()
     {
         isKnockBack = true;
-
+        animator.SetBool("isHurt", true);
         yield return new WaitForSeconds(knockBackTime);
-
         isKnockBack = false;
+        animator.SetBool("isHurt", false);
     }
 
     protected virtual void AnimationDie()
@@ -102,5 +124,34 @@ public abstract class Enemy : MonoBehaviour
             hpBar.fillAmount = currenHP / maxHP;
         }
     }
+
+    protected void Attack()
+    {
+        Debug.Log("Enemy ðang attack");
+        if (Time.time - lastAttackTime < attackCooldown) return;
+        {
+            lastAttackTime = Time.time; 
+            rb.linearVelocity = Vector2.zero;  
+        }
+        if (animator != null)
+        {
+            animator.SetTrigger("isAttack");
+        }
+    }
+    public void EnableHixBox()
+    {
+        Debug.Log("On Hit Box");
+        hitBox.SetActive(true);
+
+    }
+
+    public void DisEnableHixBox()
+    {
+        Debug.Log("Off Hit Box");
+        hitBox.SetActive(false);
+
+    }
+
+
 }
 

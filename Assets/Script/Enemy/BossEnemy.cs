@@ -4,10 +4,10 @@ using UnityEngine.UI;
 
 public class BossEnemy : Enemy
 {
+
+     GameObject bossHPBar;
+     Rigidbody2D rb;
     [SerializeField] AudioSource bossSound;
-    [SerializeField] GameObject bossHPBar;
-    [SerializeField] GameObject door;
-    private Rigidbody2D rb;
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -46,9 +46,9 @@ public class BossEnemy : Enemy
         }
 
     }
-    protected virtual void DestroyEnemyBoss()
+    protected virtual void DestroyEnemyNBoss()
     {
-       
+        
         bossHPBar.SetActive(false);
         door.SetActive(false);
         bossSound.Stop();

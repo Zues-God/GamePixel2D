@@ -80,6 +80,9 @@ TagManager:
   - name: HpBar
     uniqueID: 1927735751
     locked: 0
+  - name: Minimap
+    uniqueID: 2995998959
+    locked: 0
   m_RenderingLayers:
   - Default
   m_MigratedRenderPipelines: []
