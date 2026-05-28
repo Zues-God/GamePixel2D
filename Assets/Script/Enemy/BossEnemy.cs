@@ -5,9 +5,9 @@ using UnityEngine.UI;
 public class BossEnemy : Enemy
 {
 
-    [SerializeField] private GameObject dieEffect;
-    [SerializeField] GameObject bossHPBar;
-    [SerializeField] GameObject door;
+    private GameObject dieEffect;
+    GameObject bossHPBar;
+    GameObject door;
     private Rigidbody2D rb;
     [SerializeField] AudioSource bossSound;
 

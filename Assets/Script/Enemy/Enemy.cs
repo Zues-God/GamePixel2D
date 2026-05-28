@@ -43,7 +43,7 @@ public abstract class Enemy : MonoBehaviour
         {
             Vector2 direction = (player.transform.position - transform.position).normalized;
             rb.linearVelocity = direction * enemyMoveSpeed;
-            FlipEnemy();
+            //FlipEnemy();
         }
     }
 
@@ -51,7 +51,7 @@ public abstract class Enemy : MonoBehaviour
     {
         if (player != null)
         {
-            transform.localScale = new Vector3(player.transform.position.x < transform.position.x ? -1 : 1, 1, 1); 
+            transform.localScale = new Vector3(player.transform.position.x < transform.position.x ? -1 : 1, 1, 1);
         }
     }
 
