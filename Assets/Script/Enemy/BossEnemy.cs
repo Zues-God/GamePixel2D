@@ -5,10 +5,8 @@ using UnityEngine.UI;
 public class BossEnemy : Enemy
 {
 
-    [SerializeField] private GameObject dieEffect;
-    [SerializeField] GameObject bossHPBar;
-    [SerializeField] GameObject door;
-    private Rigidbody2D rb;
+     GameObject bossHPBar;
+     Rigidbody2D rb;
     [SerializeField] AudioSource bossSound;
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -50,10 +48,7 @@ public class BossEnemy : Enemy
     }
     protected virtual void DestroyEnemyNBoss()
     {
-        if (dieEffect != null)
-        {
-            Instantiate(dieEffect, transform.position, Quaternion.identity);
-        }
+        
         bossHPBar.SetActive(false);
         door.SetActive(false);
         bossSound.Stop();
