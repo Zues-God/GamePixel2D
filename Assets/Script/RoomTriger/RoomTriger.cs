@@ -12,39 +12,45 @@ public class RoomTriger : MonoBehaviour
     public GameObject bossHPBar;
     public GameObject boss;
     public AudioSource bossSound;
-    public GameObject door;
     public GameObject introBoss;
     public GameObject player;
     public BoxCollider2D spawArena;
     public GameObject enemyPrefab;
     public int enemySpaw = 5;
     public float introDuration = 2.5f;
-    private List<GameObject> enemy = new List<GameObject> ();
+    private List<GameObject> enemy = new List<GameObject>();
     private bool spawed = false;
+    public GameObject door;
+    public GameObject doorBoss;
 
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("Player") && !spawed)
         {
+            spawed = true;
+            SpawEnemy();
 
-
-            if (boss != null && door != null)
+            if (boss != null)
             {
 
                 StartCoroutine(PlayIntro());
                 boss.SetActive(true);
                 bossHPBar.SetActive(true);
                 bossSound.Play();
-                door.SetActive(true);
-                SpawEnemy();
                 Debug.Log("HP Bar active: " + bossHPBar.activeSelf);
+                Debug.Log("Đã vào phòng Boss");
             }
 
-            Debug.Log("Đã vào phòng Boss! Nhạc nổi lên!");
+            if (door != null ||  doorBoss != null)
+            {
+                door.SetActive(true);
+                doorBoss.SetActive(true);   
+                Debug.Log("Player đã vào phòng");
+            } 
+
 
         }
-        
 
     }
 
@@ -52,7 +58,7 @@ public class RoomTriger : MonoBehaviour
 
     void SpawEnemy()
     {
-       Bounds bounds = spawArena.bounds;
+        Bounds bounds = spawArena.bounds;
         for (int i = 0; i < enemySpaw; i++)
         {
             float randomX = UnityEngine.Random.Range(bounds.min.x, bounds.max.x);
@@ -75,6 +81,10 @@ public class RoomTriger : MonoBehaviour
         introBoss.SetActive(false);
         Time.timeScale = 1f;
         gameObject.SetActive(false);
+
     }
+
+  
+
 
 }
