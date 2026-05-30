@@ -1,6 +1,5 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
-using Unity.Mathematics;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Rendering;
@@ -15,13 +14,17 @@ public class RoomTriger : MonoBehaviour
     public GameObject introBoss;
     public GameObject player;
     public BoxCollider2D spawArena;
-    public GameObject enemyPrefab;
+    [SerializeField] private GameObject enemyPrefab;
     public int enemySpaw = 5;
     public float introDuration = 2.5f;
     private List<GameObject> enemy = new List<GameObject>();
     private bool spawed = false;
-    public GameObject door;
-    public GameObject doorBoss;
+    public Animator [] door;
+   
+    private bool doorOpened = false ;
+
+   
+
 
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -42,29 +45,32 @@ public class RoomTriger : MonoBehaviour
                 Debug.Log("Đã vào phòng Boss");
             }
 
-            if (door != null ||  doorBoss != null)
+            foreach (Animator d in door)
             {
-                door.SetActive(true);
-                doorBoss.SetActive(true);   
-                Debug.Log("Player đã vào phòng");
-            } 
+                d.gameObject.SetActive(true);
+                d.SetBool("isOpen", false);
+
+            }
 
 
         }
 
-    }
 
+
+    }
+   
 
 
     void SpawEnemy()
     {
+        Debug.Log("Enemy Prefab = " + enemyPrefab);
         Bounds bounds = spawArena.bounds;
         for (int i = 0; i < enemySpaw; i++)
         {
             float randomX = UnityEngine.Random.Range(bounds.min.x, bounds.max.x);
             float randomY = UnityEngine.Random.Range(bounds.max.y, bounds.min.y);
             Vector2 spawnPos = new Vector2(randomX, randomY);
-            GameObject e = Instantiate(enemyPrefab, spawnPos, quaternion.identity);
+            GameObject e = Instantiate(enemyPrefab, spawnPos, Quaternion.identity);
             enemy.Add(e);
 
         }
@@ -83,8 +89,38 @@ public class RoomTriger : MonoBehaviour
         gameObject.SetActive(false);
 
     }
-
   
+   
+
+    void Update()
+    {
+        if (!spawed || doorOpened) return;
+
+        enemy.RemoveAll(e => e == null);
+
+        if (enemy.Count == 0)
+        {
+            OpenDoor();
+        }
+    }
+
+    void OpenDoor()
+    {
+        foreach (Animator d in door) 
+        {
+            if (d != null)
+            {
+                d.SetBool("isOpen", true);
+                d.gameObject.SetActive(false);
+                doorOpened = true;
+
+            }
+
+
+        }
+        Debug.Log("Door Open!");
+    }
+
 
 
 }

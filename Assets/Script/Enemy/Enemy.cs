@@ -15,7 +15,6 @@ public abstract class Enemy : MonoBehaviour
     [SerializeField] protected float stayDamage = 1f;
     [SerializeField] protected float attackRange = 1f;
     [SerializeField] protected float attackCooldown = 1f;
-    [SerializeField] protected GameObject door;
     protected float lastAttackTime = 0f;
     public float knockBackForce = 5f;
     protected Player player;
@@ -25,7 +24,10 @@ public abstract class Enemy : MonoBehaviour
     public Animator animator;
     public GameObject hitBox;
     protected bool isDead = false;
-    private Rigidbody2D rb;
+    protected Rigidbody2D rb;
+   
+    
+    
 
 
     protected virtual void Start()
@@ -113,7 +115,6 @@ public abstract class Enemy : MonoBehaviour
 
     protected virtual void DestroyEnemy()
     {
-      
         Destroy(gameObject);
     }
 

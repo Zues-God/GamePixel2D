@@ -4,11 +4,10 @@ using UnityEngine.UI;
 
 public class BossEnemy : Enemy
 {
+    [SerializeField] GameObject HPBarBoss;
+    [SerializeField] AudioSource BossSound;
 
-     GameObject bossHPBar;
-     Rigidbody2D rb;
-    [SerializeField] AudioSource bossSound;
-
+    
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("Player"))
@@ -33,8 +32,7 @@ public class BossEnemy : Enemy
         }
     }
 
-
-    protected virtual void AnimationDieBoss()
+    protected override void AnimationDie()
     {
         isDead = true;
         rb.linearVelocity = Vector2.zero;
@@ -46,12 +44,13 @@ public class BossEnemy : Enemy
         }
 
     }
-    protected virtual void DestroyEnemyNBoss()
+
+    protected override void DestroyEnemy()
     {
-        
-        bossHPBar.SetActive(false);
-        door.SetActive(false);
-        bossSound.Stop();
+        HPBarBoss.SetActive(false);
+        BossSound.Stop();
         Destroy(gameObject);
     }
+
+
 }
