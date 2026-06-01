@@ -4,7 +4,7 @@ using UnityEngine.UI;
 
 public class BossEnemy : Enemy
 {
-    [SerializeField] GameObject HPBarBoss;
+    [SerializeField] GameObject HPBarBoss, door;
     [SerializeField] AudioSource BossSound;
 
     
@@ -49,6 +49,7 @@ public class BossEnemy : Enemy
     {
         HPBarBoss.SetActive(false);
         BossSound.Stop();
+        door.SetActive(false);
         Destroy(gameObject);
     }
 

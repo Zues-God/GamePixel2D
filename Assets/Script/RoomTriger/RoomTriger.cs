@@ -8,20 +8,16 @@ using UnityEngine.UI;
 
 public class RoomTriger : MonoBehaviour
 {
-    public GameObject bossHPBar;
-    public GameObject boss;
-    public AudioSource bossSound;
-    public GameObject introBoss;
-    public GameObject player;
-    public BoxCollider2D spawArena;
     [SerializeField] private GameObject enemyPrefab;
+    public GameObject bossHPBar, boss, introBoss, player;
+    private List<GameObject> enemy = new List<GameObject>();
+    public AudioSource bossSound;
+    public BoxCollider2D spawArena;
     public int enemySpaw = 5;
     public float introDuration = 2.5f;
-    private List<GameObject> enemy = new List<GameObject>();
     private bool spawed = false;
     public Animator [] door;
-   
-    private bool doorOpened = false ;
+    public bool doorOpened = false;
 
    
 
@@ -95,13 +91,12 @@ public class RoomTriger : MonoBehaviour
     void Update()
     {
         if (!spawed || doorOpened) return;
-
         enemy.RemoveAll(e => e == null);
-
         if (enemy.Count == 0)
         {
             OpenDoor();
         }
+       
     }
 
     void OpenDoor()
@@ -112,15 +107,11 @@ public class RoomTriger : MonoBehaviour
             {
                 d.SetBool("isOpen", true);
                 d.gameObject.SetActive(false);
-                doorOpened = true;
-
+                doorOpened = true;  
             }
-
 
         }
         Debug.Log("Door Open!");
     }
-
-
 
 }
