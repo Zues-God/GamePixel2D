@@ -1,6 +1,5 @@
 using System.Collections;
 using Unity.VisualScripting;
-using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -23,11 +22,13 @@ public abstract class Enemy : MonoBehaviour
     public float knockBackTime = 0.15f;
     public Animator animator;
     public GameObject hitBox;
-    protected bool isDead = false;
+    public bool isDead = false;
     protected Rigidbody2D rb;
+    protected bool isActive = false;
    
-    
-    
+
+
+
 
 
     protected virtual void Start()
@@ -40,8 +41,7 @@ public abstract class Enemy : MonoBehaviour
     protected virtual void Update()
     {
        
-        if (isDead || isKnockBack) 
-            return;
+        if ( !isActive || isDead || isKnockBack) return;
         else if (player == null)
         {
             return;
@@ -82,6 +82,7 @@ public abstract class Enemy : MonoBehaviour
         currenHP = Mathf.Max(currenHP, 0);
         UpdateHP();
         Vector2 direction = (transform.position - attacker.position).normalized;
+        direction.y = 0.5f;
         rb.linearVelocity = Vector2.zero;
         rb.AddForce(direction * knockBackForce, ForceMode2D.Impulse);
         StartCoroutine(KnockbackRoutine());
@@ -115,6 +116,7 @@ public abstract class Enemy : MonoBehaviour
 
     protected virtual void DestroyEnemy()
     {
+        
         Destroy(gameObject);
     }
 
@@ -152,7 +154,15 @@ public abstract class Enemy : MonoBehaviour
         hitBox.SetActive(false);
 
     }
+    public void ActivateEnemy()
+    {
+        isActive = true;
 
+        if (animator != null)
+        {
+            animator.SetBool("isRun", true);
+        }
+    }
 
 }
 

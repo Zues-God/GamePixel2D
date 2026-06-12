@@ -14,8 +14,6 @@ public class Player : MonoBehaviour
     public GameObject hitBox;
     private float currentHpPlayer;
     private bool isAttacking = false;
-   
-
 
     private void Awake()
     {
@@ -34,6 +32,7 @@ public class Player : MonoBehaviour
 
     void Update()
     {
+      
         MovePlayer();
         PlayerAttack();
     }
@@ -92,6 +91,7 @@ public class Player : MonoBehaviour
         stopAudio.Stop();
         Destroy(gameObject);
     }
+ 
 
 
     public void TakeDamage(float damage)

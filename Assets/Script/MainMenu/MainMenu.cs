@@ -7,7 +7,7 @@ public class MainMenu : MonoBehaviour
     public void StartGame()
     {
         Debug.Log("GamePlay");
-        SceneManager.LoadScene("SandMap 1-1");
+        SceneManager.LoadScene("SandMap 1-3");
     }
     public void QuitGame()
     {

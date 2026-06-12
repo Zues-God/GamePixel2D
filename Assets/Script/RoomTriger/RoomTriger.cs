@@ -8,7 +8,8 @@ using UnityEngine.UI;
 
 public class RoomTriger : MonoBehaviour
 {
-    [SerializeField] private GameObject enemyPrefab;
+    [SerializeField] private GameObject [] enemyPrefab;
+    private Animator animator;
     public GameObject bossHPBar, boss, introBoss, player;
     private List<GameObject> enemy = new List<GameObject>();
     public AudioSource bossSound;
@@ -17,7 +18,7 @@ public class RoomTriger : MonoBehaviour
     public float introDuration = 2.5f;
     private bool spawed = false;
     public Animator [] door;
-    public bool doorOpened = false;
+    public Transform enemyParent;
 
    
 
@@ -29,6 +30,7 @@ public class RoomTriger : MonoBehaviour
         {
             spawed = true;
             SpawEnemy();
+            ActiveAllEnemy();
 
             if (boss != null)
             {
@@ -44,7 +46,6 @@ public class RoomTriger : MonoBehaviour
             foreach (Animator d in door)
             {
                 d.gameObject.SetActive(true);
-                d.SetBool("isOpen", false);
 
             }
 
@@ -64,9 +65,10 @@ public class RoomTriger : MonoBehaviour
         for (int i = 0; i < enemySpaw; i++)
         {
             float randomX = UnityEngine.Random.Range(bounds.min.x, bounds.max.x);
-            float randomY = UnityEngine.Random.Range(bounds.max.y, bounds.min.y);
+            float randomY = UnityEngine.Random.Range(bounds.min.y, bounds.max.y);
             Vector2 spawnPos = new Vector2(randomX, randomY);
-            GameObject e = Instantiate(enemyPrefab, spawnPos, Quaternion.identity);
+            GameObject randomEnemy = enemyPrefab[ Random.Range(0, enemyPrefab.Length)];
+            GameObject e = Instantiate(randomEnemy, spawnPos, Quaternion.identity, enemyParent);
             enemy.Add(e);
 
         }
@@ -90,28 +92,56 @@ public class RoomTriger : MonoBehaviour
 
     void Update()
     {
-        if (!spawed || doorOpened) return;
+        if (!spawed) return;
         enemy.RemoveAll(e => e == null);
-        if (enemy.Count == 0)
+        bool bossDead = true;
+        if (boss != null)
         {
-            OpenDoor();
+            Enemy bossEnemy = boss.GetComponent<Enemy>();
+            if (bossEnemy != null)
+            {
+                bossDead = bossEnemy.isDead;
+
+            }
+
+        }
+        if (enemy.Count == 0 && bossDead)
+        {
+            OpenDoor();                                                                                                                                                                                                                                
         }
        
     }
-
-    void OpenDoor()
+   void OpenDoor()
     {
         foreach (Animator d in door) 
         {
             if (d != null)
             {
                 d.SetBool("isOpen", true);
-                d.gameObject.SetActive(false);
-                doorOpened = true;  
+                StartCoroutine(DisableAfterAnim(d));
             }
 
         }
         Debug.Log("Door Open!");
     }
 
+    IEnumerator DisableAfterAnim(Animator d)
+    {
+        yield return new WaitForSeconds(0.3f); 
+
+        d.gameObject.SetActive(false);
+    }
+    void ActiveAllEnemy()
+    {
+        foreach (Transform child in enemyParent)
+        {
+           Enemy e  = child.GetComponent<Enemy>();
+
+            if (e != null)
+            {
+                e.ActivateEnemy();
+            }
+           
+        }
+    }
 }
