@@ -38,17 +38,7 @@ ExportedObj/
 sysinfo.txt
 
 *.il2cpp.workspace
-/Assets/Scenes/Ice_Map_1.0.unity
-/Assets/Scenes/Ice_Map_1.0.unity.meta
-/Assets/Scenes/SandMap 1-3.unity
-/Assets/Scenes/SandMap 1-3.unity.meta
-/Assets/Prefabs/MainGameView.prefab.meta
-/Assets/Scenes/BossRoomSand.unity.meta
-/Assets/_Recovery.meta
 /Assets/Scenes/BossRoomSand.unity
-/Assets/Scenes/Ice_Map_1.0.unity
-/Assets/Prefabs/MainGameView.prefab
-/.gitignore
-/.gitignore
-/.gitignore
-/Assets/_Recovery/0.unity
+/Assets/Scenes/BossRoomSand.unity.meta
+/GamePixel2D.slnx
+/GamePixel2D.slnx
