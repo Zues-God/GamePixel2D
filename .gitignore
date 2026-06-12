@@ -38,3 +38,7 @@ ExportedObj/
 sysinfo.txt
 
 *.il2cpp.workspace
+/Assets/Scenes/BossRoomSand.unity
+/Assets/Scenes/BossRoomSand.unity.meta
+/GamePixel2D.slnx
+/GamePixel2D.slnx
