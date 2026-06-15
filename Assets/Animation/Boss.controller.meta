@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:Assets/Animation/Boss.controller.meta
 guid: a51d23e7ac43d2647b74998d12ca384b
+========
+guid: 84c971adb8edc0f4ab8ff60d1c133c44
+>>>>>>>> origin/KhanhPN_IceMap_1:Assets/Animation/Enemy/IceEnemy/IceBasicEnemy/BasicEnemy.controller.meta
 NativeFormatImporter:
   externalObjects: {}
   mainObjectFileID: 9100000
