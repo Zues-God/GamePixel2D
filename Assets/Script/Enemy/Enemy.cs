@@ -64,7 +64,7 @@ public abstract class Enemy : MonoBehaviour
         {
             Vector2 direction = (player.transform.position - transform.position).normalized;
             rb.linearVelocity = direction * enemyMoveSpeed;
-            //FlipEnemy();
+            FlipEnemy();
         }
     }
 
