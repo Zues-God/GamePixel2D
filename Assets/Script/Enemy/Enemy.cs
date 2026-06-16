@@ -27,10 +27,6 @@ public abstract class Enemy : MonoBehaviour
     protected bool isActive = false;
    
 
-
-
-
-
     protected virtual void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -64,7 +60,7 @@ public abstract class Enemy : MonoBehaviour
         {
             Vector2 direction = (player.transform.position - transform.position).normalized;
             rb.linearVelocity = direction * enemyMoveSpeed;
-            //FlipEnemy();
+            FlipEnemy();
         }
     }
 
