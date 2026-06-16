@@ -1,9 +1,5 @@
 fileFormatVersion: 2
-<<<<<<<< HEAD:Assets/Animation/BossAttack.anim.meta
-guid: 803ca1780dacfa541afe442972feed17
-========
 guid: 6faf1eba9a7271b48b4d4febaec2d8cf
->>>>>>>> origin/KhanhPN_IceMap_1:Assets/Animation/Enemy/IceEnemy/IceBasicEnemy/IceBasicEnemy_Die.anim.meta
 NativeFormatImporter:
   externalObjects: {}
   mainObjectFileID: 7400000
