@@ -26,7 +26,7 @@ public abstract class Enemy : MonoBehaviour
     protected Rigidbody2D rb;
     protected bool isActive = false;
    
-
+    
     protected virtual void Start()
     {
         rb = GetComponent<Rigidbody2D>();
