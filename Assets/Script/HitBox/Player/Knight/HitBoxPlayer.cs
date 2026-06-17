@@ -21,6 +21,8 @@ public class HitBox : MonoBehaviour
             if (enemy != null)
             {
                 enemy.TakeDamage(damage, transform.root);
+                Debug.Log(damage);
+                
             }
         }
     }

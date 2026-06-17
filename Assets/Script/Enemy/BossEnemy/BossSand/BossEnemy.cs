@@ -50,7 +50,6 @@ public class BossEnemy : Enemy
     {
         HPBarBoss.SetActive(false);
         BossSound.Stop();
-        door.SetActive(false);
         Destroy(gameObject);
     }
 

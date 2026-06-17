@@ -322,6 +322,7 @@ MonoBehaviour:
   knockBackTime: 0.25
   animator: {fileID: 8724437502979014411}
   hitBox: {fileID: 273572422312594216}
+  isDead: 0
 --- !u!1839735485 &5550769317048034629
 Tilemap:
   m_ObjectHideFlags: 0
