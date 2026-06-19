@@ -118,7 +118,8 @@ public class Player : MonoBehaviour
     {
         if (hpBar != null) { 
             hpBar.fillAmount = currentHpPlayer / maxHpPlayer;
-        
+            Debug.Log("HP hiện tại: " + currentHpPlayer);
+
         }
     }
   
