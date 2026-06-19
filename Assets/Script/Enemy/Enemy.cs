@@ -22,7 +22,6 @@ public abstract class Enemy : MonoBehaviour
     public float knockBackTime = 0.15f;
     public Animator animator;
     public GameObject hitBox;
-    public bool isDead = false;
     protected Rigidbody2D rb;
     protected bool isActive = false;
    
@@ -37,7 +36,7 @@ public abstract class Enemy : MonoBehaviour
     protected virtual void Update()
     {
        
-        if ( !isActive || isDead || isKnockBack) return;
+        if ( !isActive  || isKnockBack) return;
         else if (player == null)
         {
             return;
@@ -99,7 +98,6 @@ public abstract class Enemy : MonoBehaviour
 
     protected virtual void AnimationDie()
     {
-        isDead = true;   
         rb.linearVelocity = Vector2.zero;
         GetComponent<Collider2D>().enabled = false;
         Animator animator = GetComponent<Animator>();

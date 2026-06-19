@@ -34,7 +34,6 @@ public class BossEnemy : Enemy
 
     protected virtual void AnimationDieBoss()
     {
-        isDead = true;
         rb.linearVelocity = Vector2.zero;
         GetComponent<Collider2D>().enabled = false;
         Animator animator = GetComponent<Animator>();

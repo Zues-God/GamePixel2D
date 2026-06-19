@@ -20,7 +20,7 @@ public class RoomTriger : MonoBehaviour
     public Animator [] door;
     public Transform enemyParent;
 
-   
+
 
 
 
@@ -92,24 +92,17 @@ public class RoomTriger : MonoBehaviour
 
     void Update()
     {
-        if (!spawed) return;
-        enemy.RemoveAll(e => e == null);
-        bool bossDead = true;
-        if (boss != null)
-        {
-            Enemy bossEnemy = boss.GetComponent<Enemy>();
-            if (bossEnemy != null)
-            {
-                bossDead = bossEnemy.isDead;
-
-            }
-
-        }
-        if (enemy.Count == 0 && bossDead)
-        {
-            OpenDoor();                                                                                                                                                                                                                                
-        }
        
+            if (!spawed) return;
+
+            GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
+
+            if (enemies.Length == 0)
+            {
+                OpenDoor();
+            }
+        
+
     }
    void OpenDoor()
     {
