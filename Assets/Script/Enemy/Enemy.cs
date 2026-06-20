@@ -14,6 +14,9 @@ public abstract class Enemy : MonoBehaviour
     [SerializeField] protected float stayDamage = 1f;
     [SerializeField] protected float attackRange = 1f;
     [SerializeField] protected float attackCooldown = 1f;
+    [SerializeField] float wanderRadius = 3f;
+    [SerializeField] float aggroRange = 5f;
+    [SerializeField] float wanderCooldown = 2f;
     protected float lastAttackTime = 0f;
     public float knockBackForce = 5f;
     protected Player player;
@@ -24,8 +27,10 @@ public abstract class Enemy : MonoBehaviour
     public GameObject hitBox;
     protected Rigidbody2D rb;
     protected bool isActive = false;
-   
-    
+    private Vector2 wanderTarget;
+    private float wanderTimer;
+
+
     protected virtual void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -37,21 +42,43 @@ public abstract class Enemy : MonoBehaviour
     {
        
         if ( !isActive  || isKnockBack) return;
-        else if (player == null)
-        {
-            return;
-        }
+        else if (player == null) return;
+       
             float distance = Vector2.Distance(transform.position, player.transform.position);
-        if (distance < attackRange)
+        if (distance < aggroRange)
         {
-
-            Attack();
-
+            if (distance < attackRange)
+            {
+                Attack();
+            }
+            else
+            {
+                MoveToPlayer();
+            }
         }
         else
         {
-            MoveToPlayer();
+            Wander();
         }
+    }
+
+
+    void Wander()
+    {
+        wanderTimer -= Time.deltaTime;
+
+        if (wanderTimer <= 0)
+        {
+            Vector2 randomPos = Random.insideUnitCircle * wanderRadius;
+            wanderTarget = (Vector2)transform.position + randomPos;
+
+            wanderTimer = wanderCooldown;
+        }
+
+        Vector2 direction = (wanderTarget - (Vector2)transform.position).normalized;
+        rb.linearVelocity = direction * (enemyMoveSpeed * 0.5f); 
+
+        FlipEnemy();
     }
     protected void MoveToPlayer()
     {

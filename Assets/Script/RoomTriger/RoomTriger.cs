@@ -1,15 +1,12 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
-using UnityEngine.Rendering;
-using UnityEngine.UI;
+
 
 
 public class RoomTriger : MonoBehaviour
 {
     [SerializeField] private GameObject [] enemyPrefab;
-    private Animator animator;
     public GameObject bossHPBar, boss, introBoss, player;
     private List<GameObject> enemy = new List<GameObject>();
     public AudioSource bossSound;

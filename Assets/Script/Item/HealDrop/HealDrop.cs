@@ -25,7 +25,7 @@ public class HealDrop : MonoBehaviour
 
         if (isAttracting)
         {
-            transform.position = Vector3.Lerp(transform.position, player.position, Time.deltaTime * 1f);
+            transform.position = Vector3.Lerp(transform.position, player.position, Time.deltaTime * 8f);
         }
     }
 

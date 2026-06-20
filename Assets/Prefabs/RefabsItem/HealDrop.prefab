@@ -164,6 +164,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4c25df72c1a1fe3438f2d793b6aae8e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::HealDrop
-  attractDistance: 10
-  moveSpeed: 0.1
-  healAmount: 20
+  attractDistance: 3
+  moveSpeed: 1
+  healAmount: 10
