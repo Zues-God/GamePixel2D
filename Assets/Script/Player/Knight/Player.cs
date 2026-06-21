@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.UI;
@@ -14,6 +15,10 @@ public class Player : MonoBehaviour
     public GameObject hitBox;
     private float currentHpPlayer;
     private bool isAttacking = false;
+    [SerializeField] private float skillDamage = 30f;
+    [SerializeField] private float skillCooldown = 3f;
+    [SerializeField] private GameObject skillKinght;
+    private float lastSkillTime = -999f;
 
     private void Awake()
     {
@@ -30,10 +35,32 @@ public class Player : MonoBehaviour
 
     }
 
+    private void PlayerSkill()
+    {
+        if (Input.GetKeyDown(KeyCode.R) && Time.time >= lastSkillTime + skillCooldown)
+        {
+            lastSkillTime = Time.time;
+            Vector2 skillPos = transform.position;
+            StartCoroutine(SkillRoutine());
+        }
+    }
+
+
+    IEnumerator SkillRoutine()
+    {
+        Vector2 skillPos = transform.position; 
+        skillKinght.transform.position = skillPos; 
+        skillKinght.SetActive(true);
+        yield return new WaitForSeconds(0.3f);
+        skillKinght.SetActive(false);
+    }
+
+
     void Update()
     {
       
         MovePlayer();
+        PlayerSkill();
         PlayerAttack();
     }
     private void MovePlayer()
@@ -118,8 +145,6 @@ public class Player : MonoBehaviour
     {
         if (hpBar != null) { 
             hpBar.fillAmount = currentHpPlayer / maxHpPlayer;
-            Debug.Log("HP hiện tại: " + currentHpPlayer);
-
         }
     }
   

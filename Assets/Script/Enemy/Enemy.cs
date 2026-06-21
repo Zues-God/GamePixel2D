@@ -42,6 +42,7 @@ public abstract class Enemy : MonoBehaviour
     {
        
         if ( !isActive  || isKnockBack) return;
+
         else if (player == null) return;
        
             float distance = Vector2.Distance(transform.position, player.transform.position);
@@ -103,8 +104,15 @@ public abstract class Enemy : MonoBehaviour
         currenHP -= damage;
         currenHP = Mathf.Max(currenHP, 0);
         UpdateHP();
-        Vector2 direction = (transform.position - attacker.position).normalized;
-        direction.y = 0.5f;
+        Vector2 direction = (transform.position - attacker.position);
+
+        if (direction.magnitude < 0.1f)
+        {
+            direction = Random.insideUnitCircle;
+        }
+
+        direction = direction.normalized;
+        direction.y += 0.5f;
         rb.linearVelocity = Vector2.zero;
         rb.AddForce(direction * knockBackForce, ForceMode2D.Impulse);
         StartCoroutine(KnockbackRoutine());
@@ -185,5 +193,6 @@ public abstract class Enemy : MonoBehaviour
         }
     }
 
+   
 }
 

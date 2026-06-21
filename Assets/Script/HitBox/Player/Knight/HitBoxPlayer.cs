@@ -12,9 +12,6 @@ public class HitBox : MonoBehaviour
             if (enemy != null)
             {
                 enemy.TakeDamage(damage, transform.root);
-                Debug.Log("Hit enemy " + Time.frameCount);
-                Debug.Log(damage);
-               
                 
             }
         }
