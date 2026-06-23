@@ -16,6 +16,7 @@ public class RoomTriger : MonoBehaviour
     private bool spawed = false;
     public Animator [] door;
     public Transform enemyParent;
+    private bool doorOpened = false;
 
 
 
@@ -52,7 +53,22 @@ public class RoomTriger : MonoBehaviour
 
 
     }
-   
+
+    void Start()
+    {
+        enemy.Clear();
+
+        foreach (Transform child in enemyParent)
+        {
+            Enemy e = child.GetComponent<Enemy>();
+
+            if (e != null)
+            {
+                enemy.Add(child.gameObject);
+            }
+        }
+    }
+
 
 
     void SpawEnemy()
@@ -84,35 +100,44 @@ public class RoomTriger : MonoBehaviour
         gameObject.SetActive(false);
 
     }
-  
-   
+
+
 
     void Update()
     {
-       
-            if (!spawed) return;
+        if (!spawed || doorOpened) return;
 
-            GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
+        enemy.RemoveAll(e => e == null);
 
-            if (enemies.Length == 0)
+        Debug.Log("Enemy còn lại trong phòng: " + enemy.Count);
+
+
+        if (enemy.Count == 0)
+        {
+            doorOpened = true;
+            OpenDoor();
+        }
+
+        foreach (var e in enemy)
+        {
+            if (e != null)
             {
-                OpenDoor();
+                Debug.Log("Enemy trong list: " + e.name);
             }
-        
-
+        }
     }
-   void OpenDoor()
+    void OpenDoor()
     {
-        foreach (Animator d in door) 
+        Debug.Log("Door Open!");
+
+        foreach (Animator d in door)
         {
             if (d != null)
             {
                 d.SetBool("isOpen", true);
                 StartCoroutine(DisableAfterAnim(d));
             }
-
         }
-        Debug.Log("Door Open!");
     }
 
     IEnumerator DisableAfterAnim(Animator d)
