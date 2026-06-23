@@ -15,7 +15,6 @@ public class Player : MonoBehaviour
     public GameObject hitBox;
     private float currentHpPlayer;
     private bool isAttacking = false;
-    [SerializeField] private float skillDamage = 30f;
     [SerializeField] private float skillCooldown = 3f;
     [SerializeField] private GameObject skillKinght;
     private float lastSkillTime = -999f;

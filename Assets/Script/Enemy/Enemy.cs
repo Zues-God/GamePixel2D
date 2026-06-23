@@ -145,7 +145,7 @@ public abstract class Enemy : MonoBehaviour
 
     protected virtual void DestroyEnemy()
     {
-        
+        Debug.Log("Destroy Enemy Called");
         Destroy(gameObject);
     }
 
