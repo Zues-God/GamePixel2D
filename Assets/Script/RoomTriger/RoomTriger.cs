@@ -7,7 +7,7 @@ using UnityEngine;
 public class RoomTriger : MonoBehaviour
 {
     [SerializeField] private GameObject [] enemyPrefab;
-    public GameObject bossHPBar, boss, introBoss, player;
+    public GameObject bossHPBar, introBoss, player;
     private List<GameObject> enemy = new List<GameObject>();
     public AudioSource bossSound;
     public BoxCollider2D spawArena;
@@ -17,7 +17,7 @@ public class RoomTriger : MonoBehaviour
     public Animator [] door;
     public Transform enemyParent;
     private bool doorOpened = false;
-
+    [SerializeField] private bool isBossRoom;
 
 
 
@@ -30,28 +30,23 @@ public class RoomTriger : MonoBehaviour
             SpawEnemy();
             ActiveAllEnemy();
 
-            if (boss != null)
+            if (isBossRoom)
             {
+                if (bossHPBar != null)
+                    bossHPBar.SetActive(true);
 
-                StartCoroutine(PlayIntro());
-                boss.SetActive(true);
-                bossHPBar.SetActive(true);
-                bossSound.Play();
-                Debug.Log("HP Bar active: " + bossHPBar.activeSelf);
-                Debug.Log("Đã vào phòng Boss");
+                if (introBoss != null)
+                    StartCoroutine(PlayIntro());
+
+                if (bossSound != null)
+                    bossSound.Play();
             }
 
             foreach (Animator d in door)
             {
                 d.gameObject.SetActive(true);
-
             }
-
-
         }
-
-
-
     }
 
     void Start()
@@ -73,7 +68,6 @@ public class RoomTriger : MonoBehaviour
 
     void SpawEnemy()
     {
-        Debug.Log("Enemy Prefab = " + enemyPrefab);
         Bounds bounds = spawArena.bounds;
         for (int i = 0; i < enemySpaw; i++)
         {
@@ -91,14 +85,22 @@ public class RoomTriger : MonoBehaviour
     IEnumerator PlayIntro()
     {
         Time.timeScale = 0f;
-        player.GetComponent<Player>().enabled = false;
-        introBoss.SetActive(true);
-        yield return new WaitForSecondsRealtime(introDuration);
-        player.GetComponent<Player>().enabled = true;
-        introBoss.SetActive(false);
-        Time.timeScale = 1f;
-        gameObject.SetActive(false);
 
+        player.GetComponent<Player>().enabled = false;
+
+        if (introBoss != null)
+            introBoss.SetActive(true);
+
+        yield return new WaitForSecondsRealtime(introDuration);
+
+        player.GetComponent<Player>().enabled = true;
+
+        if (introBoss != null)
+            introBoss.SetActive(false);
+
+        Time.timeScale = 1f;
+
+        GetComponent<Collider2D>().enabled = false;
     }
 
 

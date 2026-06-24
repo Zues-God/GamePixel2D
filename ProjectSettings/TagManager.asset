@@ -45,23 +45,8 @@ TagManager:
   - name: Ground
     uniqueID: 2457644253
     locked: 0
-  - name: HomeGround
-    uniqueID: 1296038163
-    locked: 0
-  - name: Water
-    uniqueID: 3584490885
-    locked: 0
-  - name: Bone
-    uniqueID: 3610839165
-    locked: 0
   - name: Rock
     uniqueID: 2278696245
-    locked: 0
-  - name: HomeBoss
-    uniqueID: 4005016733
-    locked: 0
-  - name: Tree
-    uniqueID: 3676108747
     locked: 0
   - name: Default
     uniqueID: 0
