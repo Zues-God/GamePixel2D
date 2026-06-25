@@ -459,7 +459,7 @@ Transform:
   m_GameObject: {fileID: 453135046}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 31.5, y: -0.3, z: -10}
+  m_LocalPosition: {x: 26.02, y: -0.62, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2933,97 +2933,6 @@ MonoBehaviour:
   - {fileID: 1108692904}
   enemyParent: {fileID: 0}
   isBossRoom: 0
---- !u!1 &1431345739
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1431345741}
-  - component: {fileID: 1431345740}
-  m_Layer: 0
-  m_Name: Icon32_no_effect_0
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!212 &1431345740
-SpriteRenderer:
-  serializedVersion: 2
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1431345739}
-  m_Enabled: 1
-  m_CastShadows: 0
-  m_ReceiveShadows: 0
-  m_DynamicOccludee: 1
-  m_StaticShadowCaster: 0
-  m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
-  m_RayTracingMode: 0
-  m_RayTraceProcedural: 0
-  m_RayTracingAccelStructBuildFlagsOverride: 0
-  m_RayTracingAccelStructBuildFlags: 1
-  m_SmallMeshCulling: 1
-  m_ForceMeshLod: -1
-  m_MeshLodSelectionBias: 0
-  m_RenderingLayerMask: 1
-  m_RendererPriority: 0
-  m_Materials:
-  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
-  m_StaticBatchInfo:
-    firstSubMesh: 0
-    subMeshCount: 0
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_ReceiveGI: 1
-  m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_StitchLightmapSeams: 1
-  m_SelectedEditorRenderState: 0
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_GlobalIlluminationMeshLod: 0
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_MaskInteraction: 0
-  m_Sprite: {fileID: 5288317721943787079, guid: f8a50d266a562ff4395bf8702f8d2f89, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_FlipX: 0
-  m_FlipY: 0
-  m_DrawMode: 0
-  m_Size: {x: 0.8333333, y: 0.8333333}
-  m_AdaptiveModeThreshold: 0.5
-  m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
-  m_SpriteSortPoint: 0
---- !u!4 &1431345741
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1431345739}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 94.18164, y: 82.213264, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1453724880
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3871,7 +3780,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8c89e6d4b3f920d4b92f12117c3b74f2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PathController
-  uiPathLine: {fileID: 0}
+  uiPathLine: {fileID: 5631234844277015202}
 --- !u!95 &43343991444156526
 Animator:
   serializedVersion: 7
@@ -4242,11 +4151,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6d1f95987589e4d419152dcfce03a0cb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::RoomController
-  uiRoomSquare: {fileID: 0}
+  uiRoomSquare: {fileID: 659339312756243302}
   uiConnectedPaths:
-  - {fileID: 0}
+  - {fileID: 5974543733025308492}
   adjacentRoomsUI:
-  - {fileID: 0}
+  - {fileID: 3963023512762372632}
 --- !u!114 &351478832051807141
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7462,7 +7371,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8c89e6d4b3f920d4b92f12117c3b74f2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PathController
-  uiPathLine: {fileID: 0}
+  uiPathLine: {fileID: 4785800932062948586}
 --- !u!114 &1773112963343146481
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7827,12 +7736,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6d1f95987589e4d419152dcfce03a0cb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::RoomController
-  uiRoomSquare: {fileID: 0}
+  uiRoomSquare: {fileID: 3963023512762372632}
   uiConnectedPaths:
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 5631234844277015202}
+  - {fileID: 5974543733025308492}
   adjacentRoomsUI:
-  - {fileID: 0}
+  - {fileID: 659339312756243302}
+  - {fileID: 8528392563522280237}
 --- !u!483693784 &2468518374960801755
 TilemapRenderer:
   serializedVersion: 2
@@ -141514,15 +141424,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6d1f95987589e4d419152dcfce03a0cb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::RoomController
-  uiRoomSquare: {fileID: 0}
+  uiRoomSquare: {fileID: 8528392563522280237}
   uiConnectedPaths:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 127280033041557004}
+  - {fileID: 5631234844277015202}
+  - {fileID: 385644292116918278}
   adjacentRoomsUI:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 2890014188422198653}
+  - {fileID: 3963023512762372632}
+  - {fileID: 144973144073204915}
 --- !u!114 &3499574236343270162
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -142021,11 +141931,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6d1f95987589e4d419152dcfce03a0cb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::RoomController
-  uiRoomSquare: {fileID: 0}
+  uiRoomSquare: {fileID: 5179759373575431735}
   uiConnectedPaths:
-  - {fileID: 0}
+  - {fileID: 4785800932062948586}
   adjacentRoomsUI:
-  - {fileID: 0}
+  - {fileID: 5977087774332521655}
 --- !u!4 &4034098318993115827
 Transform:
   m_ObjectHideFlags: 0
@@ -142306,11 +142216,11 @@ RectTransform:
   - {fileID: 3473329568573594994}
   - {fileID: 4910399452295135620}
   - {fileID: 1311187764984636959}
-  - {fileID: 7753383006720738659}
-  - {fileID: 6839048641288099718}
   - {fileID: 2277390929626512295}
   - {fileID: 1016780423686938910}
   - {fileID: 6321442443808190180}
+  - {fileID: 7753383006720738659}
+  - {fileID: 6839048641288099718}
   - {fileID: 6571868482921269882}
   - {fileID: 6562581824249617804}
   - {fileID: 8855646551807053217}
@@ -142445,7 +142355,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8c89e6d4b3f920d4b92f12117c3b74f2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PathController
-  uiPathLine: {fileID: 0}
+  uiPathLine: {fileID: 385644292116918278}
 --- !u!1839735485 &4459236491507417989
 Tilemap:
   m_ObjectHideFlags: 0
@@ -143034,11 +142944,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6d1f95987589e4d419152dcfce03a0cb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::RoomController
-  uiRoomSquare: {fileID: 0}
+  uiRoomSquare: {fileID: 144973144073204915}
   uiConnectedPaths:
-  - {fileID: 0}
+  - {fileID: 385644292116918278}
   adjacentRoomsUI:
-  - {fileID: 0}
+  - {fileID: 8528392563522280237}
 --- !u!224 &5197241387089482400
 RectTransform:
   m_ObjectHideFlags: 0
@@ -143260,7 +143170,7 @@ Transform:
   m_GameObject: {fileID: 2726653329710471757}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 31.58, y: -0.18, z: 0}
+  m_LocalPosition: {x: 26.1, y: -0.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -143424,7 +143334,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8c89e6d4b3f920d4b92f12117c3b74f2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PathController
-  uiPathLine: {fileID: 0}
+  uiPathLine: {fileID: 5974543733025308492}
 --- !u!114 &5753406174012109543
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -143581,13 +143491,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6d1f95987589e4d419152dcfce03a0cb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::RoomController
-  uiRoomSquare: {fileID: 0}
+  uiRoomSquare: {fileID: 2890014188422198653}
   uiConnectedPaths:
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 3823398463217072499}
+  - {fileID: 127280033041557004}
   adjacentRoomsUI:
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 5977087774332521655}
+  - {fileID: 8528392563522280237}
 --- !u!224 &5916661912849327614
 RectTransform:
   m_ObjectHideFlags: 0
@@ -181057,11 +180967,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6d1f95987589e4d419152dcfce03a0cb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::RoomController
-  uiRoomSquare: {fileID: 0}
+  uiRoomSquare: {fileID: 5977087774332521655}
   uiConnectedPaths:
-  - {fileID: 0}
+  - {fileID: 4785800932062948586}
+  - {fileID: 3823398463217072499}
   adjacentRoomsUI:
-  - {fileID: 0}
+  - {fileID: 5179759373575431735}
+  - {fileID: 2890014188422198653}
 --- !u!1 &7413549914087891997
 GameObject:
   m_ObjectHideFlags: 0
@@ -181473,7 +181385,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8c89e6d4b3f920d4b92f12117c3b74f2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PathController
-  uiPathLine: {fileID: 0}
+  uiPathLine: {fileID: 3823398463217072499}
 --- !u!61 &7973868005426630187
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -184435,7 +184347,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8c89e6d4b3f920d4b92f12117c3b74f2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PathController
-  uiPathLine: {fileID: 0}
+  uiPathLine: {fileID: 127280033041557004}
 --- !u!222 &8651096720332879553
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -195411,4 +195323,3 @@ SceneRoots:
   - {fileID: 7304617927215664634}
   - {fileID: 5406757093878524004}
   - {fileID: 496110597}
-  - {fileID: 1431345741}
