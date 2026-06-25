@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:Assets/Animation/Player/PlayerKinght/SkillKnight.controller.meta
 guid: 74f1297205ce43f40b3c9cd0cdecb02e
+========
+guid: 140d632fd4505d34f93ba49241ccb80c
+>>>>>>>> origin/TaiNP:Assets/Animation/Enemy/LavaEnemy/Enemy1.controller.meta
 NativeFormatImporter:
   externalObjects: {}
   mainObjectFileID: 9100000
