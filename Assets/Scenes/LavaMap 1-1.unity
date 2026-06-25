@@ -10697,7 +10697,7 @@ Animator:
   m_GameObject: {fileID: 1186351778}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 140d632fd4505d34f93ba49241ccb80c, type: 2}
+  m_Controller: {fileID: 9100000, guid: 29192af0d32e4c5439f439a35d5d05f2, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -11813,7 +11813,7 @@ TilemapRenderer:
   m_LightmapParameters: {fileID: 0}
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: -1837323043
-  m_SortingLayer: -7
+  m_SortingLayer: -2
   m_SortingOrder: 0
   m_MaskInteraction: 0
   m_ChunkSize: {x: 32, y: 32, z: 32}
