@@ -129,7 +129,7 @@ ScriptedImporter:
   animatedSpriteImportData:
   - name: Flattened_Frame_0
     originalName: 
-    pivot: {x: 0.5208333, y: 0.43478256}
+    pivot: {x: 0.5208333, y: 0.4130435}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     customData: 
