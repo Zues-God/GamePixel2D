@@ -1,6 +1,5 @@
 using System.Collections;
 using UnityEngine;
-using UnityEngine.InputSystem;
 using UnityEngine.UI;
 
 public class Player : MonoBehaviour
@@ -8,29 +7,37 @@ public class Player : MonoBehaviour
     [SerializeField] private float moveSpeed = 10f;
     [SerializeField] private float maxHpPlayer = 100f;
     [SerializeField] private Image hpBar;
+    [Header("Energy")]
+    [SerializeField] private float maxEnergy = 200f;
+    [SerializeField] private Image energyBar;
     [SerializeField] AudioSource stopAudio;
     private Rigidbody2D rb;
     private SpriteRenderer rbSprite;
     private Animator animator;
     public GameObject hitBox;
     private float currentHpPlayer;
+    private float currentEnergy;
     private bool isAttacking = false;
+    [SerializeField] private float skillCost = 40f;
     [SerializeField] private float skillCooldown = 3f;
     [SerializeField] private GameObject skillKinght;
     private float lastSkillTime = -999f;
+    public GameObject swordAnimation;
 
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
         rbSprite = rb.GetComponent<SpriteRenderer>();
-        animator = GetComponent<Animator>(); 
+        animator = GetComponent<Animator>();
     }
 
     void Start()
     {
         currentHpPlayer = maxHpPlayer;
+        currentEnergy = maxEnergy;
         hitBox.SetActive(false);
-        UpdateHP(); 
+        UpdateEnergy();
+        UpdateHP();
 
     }
 
@@ -38,6 +45,9 @@ public class Player : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.R) && Time.time >= lastSkillTime + skillCooldown)
         {
+
+            currentEnergy -= skillCost;
+            UpdateEnergy();
             lastSkillTime = Time.time;
             Vector2 skillPos = transform.position;
             StartCoroutine(SkillRoutine());
@@ -47,8 +57,8 @@ public class Player : MonoBehaviour
 
     IEnumerator SkillRoutine()
     {
-        Vector2 skillPos = transform.position; 
-        skillKinght.transform.position = skillPos; 
+        Vector2 skillPos = transform.position;
+        skillKinght.transform.position = skillPos;
         skillKinght.SetActive(true);
         yield return new WaitForSeconds(0.3f);
         skillKinght.SetActive(false);
@@ -57,7 +67,7 @@ public class Player : MonoBehaviour
 
     void Update()
     {
-      
+
         MovePlayer();
         PlayerSkill();
         PlayerAttack();
@@ -67,13 +77,16 @@ public class Player : MonoBehaviour
         Vector2 playerInput = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
         rb.linearVelocity = playerInput.normalized * moveSpeed;
 
-        if (playerInput.x < 0) {
+        if (playerInput.x < 0)
+        {
 
             rbSprite.flipX = true;
 
-        } else if (playerInput.x > 0) {
+        }
+        else if (playerInput.x > 0)
+        {
 
-            rbSprite.flipX= false;
+            rbSprite.flipX = false;
 
         }
 
@@ -81,18 +94,19 @@ public class Player : MonoBehaviour
         {
             animator.SetBool("isRun", true);
         }
-        else {
+        else
+        {
             animator.SetBool("isRun", false);
         }
 
     }
 
-    
+
     private void PlayerAttack()
     {
-        
+
         if (Input.GetMouseButtonDown(0) && !isAttacking)
-        {   
+        {
             isAttacking = true;
             animator.SetTrigger("isAttack");
         }
@@ -111,13 +125,23 @@ public class Player : MonoBehaviour
         hitBox.SetActive(false);
     }
 
-   
+
     private void Die()
     {
+
         stopAudio.Stop();
         Destroy(gameObject);
     }
- 
+    public void EnableAnimationSword()
+    {
+        swordAnimation.SetActive(true);
+    }
+
+    public void DisableAnimationSword()
+    {
+        swordAnimation.SetActive(false);
+    }   
+
 
 
     public void TakeDamage(float damage)
@@ -125,8 +149,9 @@ public class Player : MonoBehaviour
         currentHpPlayer -= damage;
         currentHpPlayer = Mathf.Max(currentHpPlayer, 0);
         UpdateHP();
-        if(currentHpPlayer <= 0) {
-          Die();
+        if (currentHpPlayer <= 0)
+        {
+            Die();
         }
 
     }
@@ -142,10 +167,23 @@ public class Player : MonoBehaviour
     }
     private void UpdateHP()
     {
-        if (hpBar != null) { 
+        if (hpBar != null)
+        {
             hpBar.fillAmount = currentHpPlayer / maxHpPlayer;
         }
     }
-  
+    public void AddEnergy(float amount)
+    {
+        currentEnergy += amount;
+        currentEnergy = Mathf.Min(currentEnergy, maxEnergy);
+        UpdateEnergy();
+    }
+    private void UpdateEnergy()
+    {
+        if (energyBar != null)
+        {
+            energyBar.fillAmount = currentEnergy / maxEnergy;
+        }
+    }
 
 }
