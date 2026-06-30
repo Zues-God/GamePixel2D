@@ -5470,6 +5470,38 @@ MonoBehaviour:
   - {fileID: 1785561496}
   enemyParent: {fileID: 2145066719063443731}
   isBossRoom: 0
+--- !u!1 &1854895948
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1854895949}
+  m_Layer: 8
+  m_Name: WeaponParent
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1854895949
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1854895948}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 3174933108300874659}
+  m_Father: {fileID: 5406757093878524004}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1966676849
 GameObject:
   m_ObjectHideFlags: 0
@@ -13422,7 +13454,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 6022207327527443602}
-  m_Father: {fileID: 5406757093878524004}
+  m_Father: {fileID: 1854895949}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &3177389202526380002
 Transform:
@@ -150687,7 +150719,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 3174933108300874659}
+  - {fileID: 1854895949}
   - {fileID: 3246391333346437749}
   - {fileID: 5176019042235510160}
   - {fileID: 343732519}
@@ -190852,6 +190884,7 @@ MonoBehaviour:
   animator: {fileID: 2669854818891632425}
   bulletPrefab: {fileID: 7174288011742912108, guid: d11c57d658c4edd4c9ae965e1f6b6ac0, type: 3}
   firePoint: {fileID: 6022207327527443602}
+  manaCost: 5
 --- !u!114 &7615643868333904663
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -190868,13 +190901,14 @@ MonoBehaviour:
   maxHpPlayer: 100
   hpBar: {fileID: 3148658805359598772}
   maxEnergy: 200
-  energyBar: {fileID: 0}
+  energyBar: {fileID: 493194291683446026}
   stopAudio: {fileID: 343732518}
   hitBox: {fileID: 0}
   skillCost: 40
   skillCooldown: 0
   skillKinght: {fileID: 0}
   swordAnimation: {fileID: 0}
+  weapon: {fileID: 1854895949}
 --- !u!224 &7635421615227516131
 RectTransform:
   m_ObjectHideFlags: 0
