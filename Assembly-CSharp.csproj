@@ -95,6 +95,7 @@
     <Compile Include="Assets\Script\Player\Wizar\Skill\ChargeSkill.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\CameraController.cs" />
     <Compile Include="Assets\Script\Player\Wizar\Weapon\FileBall.cs" />
+    <Compile Include="Assets\Script\Player\WindAttack\PotionProjectile.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark03.cs" />
     <Compile Include="Assets\Script\Gun\Bullet.cs" />
     <Compile Include="Assets\Script\RoomTriger\RoomTriger.cs" />
@@ -107,6 +108,7 @@
     <Compile Include="Assets\Script\LivingRoom\RoomScript\CharacterSelectionUI.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TextConsoleSimulator.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TeleType.cs" />
+    <Compile Include="Assets\Script\Player\WindAttack\PlayerThrowPotion.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_TextEventCheck.cs" />
     <Compile Include="Assets\Script\Player\Wizar\Weapon\PlayerWeaponController.cs" />
     <Compile Include="Assets\Script\MouseButton\CursorManager.cs" />
