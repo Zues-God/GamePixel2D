@@ -12,7 +12,6 @@ public class CharacterSelectionUI : MonoBehaviour
     [SerializeField] private TMP_Text skillText;
     [SerializeField] private TMP_Text descriptionText;
 
-    [SerializeField] private Transform spawnPoint;
 
 
     private CharacterData currentCharacter;
@@ -48,14 +47,9 @@ public class CharacterSelectionUI : MonoBehaviour
     public void PlayCharacter()
     {
 
-        CharacterDisplay display =
-        SelectionManager.Instance
-        .GetCurrentDisplay();
+        CharacterDisplay display = SelectionManager.Instance.GetCurrentDisplay();
 
-        Instantiate(
-            currentCharacter.playerPrefab,
-            display.spawnPoint.position,
-            Quaternion.identity);
+        Instantiate(currentCharacter.playerPrefab, display.spawnPoint.position, Quaternion.identity);
 
         panel.SetActive(false);
         display.gameObject.SetActive(false);
