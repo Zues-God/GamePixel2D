@@ -7145,6 +7145,7 @@ MonoBehaviour:
   wanderRadius: 7
   aggroRange: 5
   wanderCooldown: 2
+  laserRoot: {fileID: 0}
   knockBackForce: 5
   knockBackTime: 0.15
   animator: {fileID: 7189009781661688168}
@@ -7917,6 +7918,7 @@ MonoBehaviour:
   wanderRadius: 5
   aggroRange: 10
   wanderCooldown: 2
+  laserRoot: {fileID: 0}
   knockBackForce: 5
   knockBackTime: 0.15
   animator: {fileID: 9056171953919841807}
@@ -10305,6 +10307,7 @@ MonoBehaviour:
   wanderRadius: 3
   aggroRange: 5
   wanderCooldown: 2
+  laserRoot: {fileID: 0}
   knockBackForce: 5
   knockBackTime: 0.15
   animator: {fileID: 6342680621541329084}
@@ -10839,6 +10842,7 @@ MonoBehaviour:
   wanderRadius: 7
   aggroRange: 5
   wanderCooldown: 2
+  laserRoot: {fileID: 0}
   knockBackForce: 5
   knockBackTime: 0.15
   animator: {fileID: 8991348007863018664}
@@ -12659,6 +12663,7 @@ MonoBehaviour:
   wanderRadius: 7
   aggroRange: 5
   wanderCooldown: 2
+  laserRoot: {fileID: 0}
   knockBackForce: 5
   knockBackTime: 0.15
   animator: {fileID: 4897519147993125101}
@@ -13398,6 +13403,7 @@ MonoBehaviour:
   wanderRadius: 3
   aggroRange: 5
   wanderCooldown: 2
+  laserRoot: {fileID: 0}
   knockBackForce: 5
   knockBackTime: 0.15
   animator: {fileID: 7436971872599883001}
@@ -147506,6 +147512,7 @@ MonoBehaviour:
   wanderRadius: 3
   aggroRange: 5
   wanderCooldown: 2
+  laserRoot: {fileID: 0}
   knockBackForce: 5
   knockBackTime: 0.15
   animator: {fileID: 8662321569776056633}
@@ -147966,6 +147973,7 @@ MonoBehaviour:
   wanderRadius: 3
   aggroRange: 5
   wanderCooldown: 2
+  laserRoot: {fileID: 0}
   knockBackForce: 5
   knockBackTime: 0.15
   animator: {fileID: 8388167106531889165}
@@ -148719,6 +148727,7 @@ MonoBehaviour:
   wanderRadius: 5
   aggroRange: 10
   wanderCooldown: 2
+  laserRoot: {fileID: 0}
   knockBackForce: 5
   knockBackTime: 0.15
   animator: {fileID: 5502137505408043446}
@@ -149144,6 +149153,7 @@ MonoBehaviour:
   wanderRadius: 3
   aggroRange: 5
   wanderCooldown: 2
+  laserRoot: {fileID: 0}
   knockBackForce: 5
   knockBackTime: 0.15
   animator: {fileID: 929346581087147966}
@@ -149406,6 +149416,7 @@ MonoBehaviour:
   wanderRadius: 7
   aggroRange: 5
   wanderCooldown: 2
+  laserRoot: {fileID: 0}
   knockBackForce: 5
   knockBackTime: 0.15
   animator: {fileID: 2801532088964354134}
@@ -152407,6 +152418,7 @@ MonoBehaviour:
   wanderRadius: 5
   aggroRange: 10
   wanderCooldown: 2
+  laserRoot: {fileID: 0}
   knockBackForce: 5
   knockBackTime: 0.15
   animator: {fileID: 2976305168882764045}
@@ -189649,6 +189661,7 @@ MonoBehaviour:
   wanderRadius: 5
   aggroRange: 10
   wanderCooldown: 2
+  laserRoot: {fileID: 0}
   knockBackForce: 5
   knockBackTime: 0.15
   animator: {fileID: 1170267425195438851}
@@ -190486,6 +190499,7 @@ MonoBehaviour:
   wanderRadius: 5
   aggroRange: 10
   wanderCooldown: 2
+  laserRoot: {fileID: 0}
   knockBackForce: 5
   knockBackTime: 0.15
   animator: {fileID: 1620487863759027528}
@@ -191954,6 +191968,7 @@ MonoBehaviour:
   wanderRadius: 7
   aggroRange: 5
   wanderCooldown: 2
+  laserRoot: {fileID: 0}
   knockBackForce: 5
   knockBackTime: 0.15
   animator: {fileID: 5769785622436732910}
@@ -192107,6 +192122,7 @@ MonoBehaviour:
   wanderRadius: 3
   aggroRange: 5
   wanderCooldown: 2
+  laserRoot: {fileID: 0}
   knockBackForce: 5
   knockBackTime: 0.15
   animator: {fileID: 4401084785731061767}
@@ -194737,6 +194753,7 @@ MonoBehaviour:
   wanderRadius: 7
   aggroRange: 5
   wanderCooldown: 2
+  laserRoot: {fileID: 0}
   knockBackForce: 5
   knockBackTime: 0.15
   animator: {fileID: 1663924029181399023}
@@ -195223,6 +195240,7 @@ MonoBehaviour:
   wanderRadius: 5
   aggroRange: 10
   wanderCooldown: 2
+  laserRoot: {fileID: 0}
   knockBackForce: 5
   knockBackTime: 0.15
   animator: {fileID: 684248286993299592}
