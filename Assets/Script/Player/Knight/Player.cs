@@ -23,6 +23,8 @@ public class Player : MonoBehaviour
     [SerializeField] private GameObject skillKinght;
     private float lastSkillTime = -999f;
     public GameObject swordAnimation;
+    [SerializeField] private Transform weapon;
+
 
     private void Awake()
     {
@@ -81,12 +83,14 @@ public class Player : MonoBehaviour
         {
 
             rbSprite.flipX = true;
+            weapon.localScale = new Vector3(-1, 1, 1);
 
         }
-        else if (playerInput.x > 0)
+        else if (playerInput.x > 0 )
         {
 
             rbSprite.flipX = false;
+            weapon.localScale = new Vector3(1, 1, 1);
 
         }
 
@@ -100,6 +104,26 @@ public class Player : MonoBehaviour
         }
 
     }
+
+    public bool HasEnoughMana(float amount)
+    {
+        return currentEnergy >= amount;
+    }
+
+    public bool UseMana(float amount)
+    {
+        if (currentEnergy < amount)
+            return false;
+
+        currentEnergy -= amount;
+
+        currentEnergy = Mathf.Max(currentEnergy, 0);
+
+        UpdateEnergy();
+
+        return true;
+    }
+
 
 
     private void PlayerAttack()
