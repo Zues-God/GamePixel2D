@@ -22,31 +22,31 @@ AnimationClip:
     curve:
     - time: 0
       value: {fileID: 7472888664798032227, guid: acd475256de7be94cacbc8b14135e1e5, type: 3}
-    - time: 0.083333336
+    - time: 0.05
       value: {fileID: -4455673162248575327, guid: acd475256de7be94cacbc8b14135e1e5, type: 3}
-    - time: 0.15
+    - time: 0.1
       value: {fileID: 4786415388047625772, guid: acd475256de7be94cacbc8b14135e1e5, type: 3}
-    - time: 0.23333333
+    - time: 0.15
       value: {fileID: -2628994672167258997, guid: acd475256de7be94cacbc8b14135e1e5, type: 3}
-    - time: 0.3
+    - time: 0.2
       value: {fileID: -9059634060450866100, guid: acd475256de7be94cacbc8b14135e1e5, type: 3}
-    - time: 0.38333333
+    - time: 0.25
       value: {fileID: -2426538267944501906, guid: acd475256de7be94cacbc8b14135e1e5, type: 3}
-    - time: 0.46666667
+    - time: 0.31666666
       value: {fileID: -62255236141545980, guid: acd475256de7be94cacbc8b14135e1e5, type: 3}
-    - time: 0.53333336
+    - time: 0.35
       value: {fileID: 4719693533727640313, guid: acd475256de7be94cacbc8b14135e1e5, type: 3}
-    - time: 0.6166667
+    - time: 0.41666666
       value: {fileID: -2370315009993471079, guid: acd475256de7be94cacbc8b14135e1e5, type: 3}
-    - time: 0.7
+    - time: 0.46666667
       value: {fileID: 3012750383598445972, guid: acd475256de7be94cacbc8b14135e1e5, type: 3}
-    - time: 0.76666665
+    - time: 0.51666665
       value: {fileID: -4213508787110064185, guid: acd475256de7be94cacbc8b14135e1e5, type: 3}
-    - time: 0.85
+    - time: 0.56666666
       value: {fileID: 3076159345550647510, guid: acd475256de7be94cacbc8b14135e1e5, type: 3}
-    - time: 0.9166667
+    - time: 0.6166667
       value: {fileID: -3255163214515754965, guid: acd475256de7be94cacbc8b14135e1e5, type: 3}
-    - time: 1
+    - time: 0.6666667
       value: {fileID: 190986809189357370, guid: acd475256de7be94cacbc8b14135e1e5, type: 3}
     attribute: m_Sprite
     path: 
@@ -89,7 +89,7 @@ AnimationClip:
     m_AdditiveReferencePoseClip: {fileID: 0}
     m_AdditiveReferencePoseTime: 0
     m_StartTime: 0
-    m_StopTime: 1.0166667
+    m_StopTime: 0.68333334
     m_OrientationOffsetY: 0
     m_Level: 0
     m_CycleOffset: 0
@@ -116,7 +116,7 @@ AnimationClip:
     floatParameter: 0
     intParameter: 0
     messageOptions: 0
-  - time: 1
+  - time: 0.6666667
     functionName: DestroyEnemy
     data: 
     objectReferenceParameter: {fileID: 0}
