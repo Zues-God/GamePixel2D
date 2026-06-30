@@ -112,6 +112,7 @@
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_TextEventCheck.cs" />
     <Compile Include="Assets\Script\Player\Wizar\Weapon\PlayerWeaponController.cs" />
     <Compile Include="Assets\Script\Enemy\EnergyEnemy\IceEE\RangeAttack.cs" />
+    <Compile Include="Assets\Script\Item\EnergyDrop\EnergyDrop.cs" />
     <Compile Include="Assets\Script\MouseButton\CursorManager.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TextMeshProFloatingText.cs" />
     <Compile Include="Assets\Script\Player\Wizar\Skill\MeteorExplosion.cs" />

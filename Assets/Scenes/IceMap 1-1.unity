@@ -190867,10 +190867,14 @@ MonoBehaviour:
   moveSpeed: 10
   maxHpPlayer: 100
   hpBar: {fileID: 3148658805359598772}
+  maxEnergy: 200
+  energyBar: {fileID: 0}
   stopAudio: {fileID: 343732518}
   hitBox: {fileID: 0}
+  skillCost: 40
   skillCooldown: 0
   skillKinght: {fileID: 0}
+  swordAnimation: {fileID: 0}
 --- !u!224 &7635421615227516131
 RectTransform:
   m_ObjectHideFlags: 0
