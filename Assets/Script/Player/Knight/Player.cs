@@ -26,6 +26,7 @@ public class Player : MonoBehaviour
     [SerializeField] private Transform weapon;
 
 
+
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -71,6 +72,7 @@ public class Player : MonoBehaviour
     {
 
         MovePlayer();
+        HandleFacingDirection();
         PlayerSkill();
         PlayerAttack();
     }
@@ -104,6 +106,41 @@ public class Player : MonoBehaviour
         }
 
     }
+
+    private void HandleFacingDirection()
+    {
+        if (Input.GetMouseButton(0))
+        {
+            Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+
+            if (mousePos.x < transform.position.x)
+            {
+                rbSprite.flipX = true;
+                weapon.localScale = new Vector3(-1, 1, 1);
+
+            }
+            else
+            {
+                rbSprite.flipX = false;
+                weapon.localScale = new Vector3(1, 1, 1);
+
+            }
+        }
+        else
+        {
+            float horizontalInput = Input.GetAxisRaw("Horizontal");
+
+            if (horizontalInput > 0)
+            {
+                rbSprite.flipX = false; 
+            }
+            else if (horizontalInput < 0)
+            {
+                rbSprite.flipX = true;  
+            }
+        }
+    }
+
 
     public bool HasEnoughMana(float amount)
     {
