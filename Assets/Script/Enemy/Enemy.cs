@@ -17,6 +17,7 @@ public abstract class Enemy : MonoBehaviour
     [SerializeField] float wanderRadius = 3f;
     [SerializeField] float aggroRange = 5f;
     [SerializeField] float wanderCooldown = 2f;
+    [SerializeField] protected Transform laserRoot;
     protected float lastAttackTime = 0f;
     public float knockBackForce = 5f;
     protected Player player;
@@ -93,9 +94,15 @@ public abstract class Enemy : MonoBehaviour
 
     protected void FlipEnemy()
     {
-        if (player != null)
+        if (player == null) return;
+
+        bool facingLeft = player.transform.position.x < transform.position.x;
+
+        transform.localScale = new Vector3(facingLeft ? -1 : 1, 1, 1);
+
+        if (laserRoot != null)
         {
-            transform.localScale = new Vector3(player.transform.position.x < transform.position.x ? -1 : 1, 1, 1);
+            laserRoot.localScale = new Vector3(facingLeft ? -1 : 1, 1, 1);
         }
     }
 
