@@ -106,6 +106,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 57b7a9c592e3eb147925db55b51839ee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PotionProjectile
+  speed: 10
+  lifeTime: 3
 --- !u!50 &3408851133037948365
 Rigidbody2D:
   serializedVersion: 5
@@ -163,7 +165,7 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
