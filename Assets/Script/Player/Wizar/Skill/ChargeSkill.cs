@@ -31,12 +31,15 @@ public class ChargeSkill : MonoBehaviour
     private float finalChargeTime;
     private Vector3 targetPosition;
 
+    private Player player;
+
     private void Start()
     {
         if (chargeEffect != null)
         {
             chargeEffect.SetActive(false);
         }
+        player = GetComponentInParent<Player>();
     }
 
     private void Update()
@@ -93,10 +96,15 @@ public class ChargeSkill : MonoBehaviour
         targetPosition.z = 0;
 
         float manaCost =
-            finalChargeTime *
-            manaPerSecond;
-        Debug.Log(
-            $"Mana Cost: {manaCost}");
+    finalChargeTime *
+    manaPerSecond;
+
+        if (!player.UseMana(manaCost))
+        {
+            Debug.Log("Không đủ Mana");
+
+            return;
+        }
 
         SpawnSkill();
 

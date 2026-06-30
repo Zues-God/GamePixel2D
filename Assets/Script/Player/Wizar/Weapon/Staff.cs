@@ -6,18 +6,22 @@ public class Staff : Weapon
     [SerializeField] private Animator animator;
     [SerializeField] private GameObject bulletPrefab;
     [SerializeField] private Transform firePoint;
+    [Header("Mana")]
+    [SerializeField] private float manaCost = 5f;
 
+    private Player player;
     private bool isHolding = false;
     private bool isCasting = false;
     private int queuedShots = 0;
 
     private float holdStartTime;
-
+    private void Start()
+    {
+        player = GetComponentInParent<Player>();
+    }
     public override void Attack()
     {
         queuedShots++;
-
-        Debug.Log("Queued Shots: " + queuedShots);
 
         animator.SetBool("canExitAttack", false);
 
@@ -26,7 +30,6 @@ public class Staff : Weapon
             isCasting = true;
             animator.SetBool("isCasting", true);
 
-            Debug.Log("Start Cast");
         }
     }
 
@@ -39,7 +42,21 @@ public class Staff : Weapon
 
     public void Shoot()
     {
-        Debug.Log($"Shoot | Queue={queuedShots} | Holding={isHolding}");
+        if (!player.UseMana(manaCost))
+        {
+            Debug.Log("Không đủ Mana");
+
+            queuedShots = 0;
+
+            isHolding = false;
+
+            animator.SetBool("canExitAttack", true);
+            animator.SetBool("isCasting", false);
+
+            isCasting = false;
+
+            return;
+        }
 
         // 1. Luôn thực hiện bắn đạn khi animation gọi tới event này
         SpawnBullet();
@@ -49,15 +66,12 @@ public class Staff : Weapon
         if (queuedShots > 0)
         {
             queuedShots--;
-            Debug.Log("Bắn đạn | Còn lại: " + queuedShots);
         }
 
         // 3. Kiểm tra điều kiện để dừng Attack
         // Chỉ dừng khi: KHÔNG còn giữ chuột VÀ đã xử lý hết đạn trong hàng đợi
         if (!isHolding && queuedShots <= 0)
         {
-            Debug.Log("Hết đạn trong queue và không đè chuột -> Dừng animation");
-
             // Kích hoạt cờ cho phép thoát attack
             animator.SetBool("canExitAttack", true);
 
