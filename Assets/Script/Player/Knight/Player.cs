@@ -10,7 +10,6 @@ public class Player : MonoBehaviour
     [Header("Energy")]
     [SerializeField] private float maxEnergy = 200f;
     [SerializeField] private Image energyBar;
-    [SerializeField] AudioSource stopAudio;
     private Rigidbody2D rb;
     private SpriteRenderer rbSprite;
     private Animator animator;
@@ -24,7 +23,6 @@ public class Player : MonoBehaviour
     private float lastSkillTime = -999f;
     public GameObject animationWeapon;
     [SerializeField] private Transform weapon;
-    public Animator isrun;
 
 
 
@@ -39,7 +37,6 @@ public class Player : MonoBehaviour
     {
         currentHpPlayer = maxHpPlayer;
         currentEnergy = maxEnergy;
-        hitBox.SetActive(false);
         UpdateEnergy();
         UpdateHP();
 
@@ -69,12 +66,7 @@ public class Player : MonoBehaviour
         skillPLayer.SetActive(false);
     }
 
-    public void Enable()
-    {
-
-        isrun.enabled = true;
-
-    }
+ 
 
     void Update()
     {
@@ -197,8 +189,6 @@ public class Player : MonoBehaviour
 
     private void Die()
     {
-
-        stopAudio.Stop();
         Destroy(gameObject);
     }
     public void EnableAnimationSword()
