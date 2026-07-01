@@ -80,8 +80,8 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_GlobalIlluminationMeshLod: 0
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -1658723291
+  m_SortingLayer: 4
   m_SortingOrder: 0
   m_MaskInteraction: 0
   m_Sprite: {fileID: 2367449957533476818, guid: 56dd4b1d463a9574da3078e706d1c5a7, type: 3}
@@ -154,9 +154,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Arrow
   damage: 10
   lifeTime: 3
-  wallLayer:
-    serializedVersion: 2
-    m_Bits: 0
 --- !u!50 &4887799443022911696
 Rigidbody2D:
   serializedVersion: 5
@@ -165,7 +162,7 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6964655212547799522}
-  m_BodyType: 1
+  m_BodyType: 0
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0

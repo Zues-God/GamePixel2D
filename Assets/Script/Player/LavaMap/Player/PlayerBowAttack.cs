@@ -12,6 +12,9 @@ public class PlayerBowAttack : MonoBehaviour
     private Animator animator;
 
     private bool canShoot = true;
+    private bool shootRequested = false;
+
+    public Animator animationAttack;
 
     void Start()
     {
@@ -31,8 +34,35 @@ public class PlayerBowAttack : MonoBehaviour
         // CHỈ 1 LẦN / CLICK + CHỐNG GIỮ INPUT LỖI
         if (Input.GetMouseButtonDown(0) && canShoot)
         {
-            ShootArrow();
+            shootRequested = true;
+            canShoot = false;
+
+            if (animator != null)
+                animator.SetTrigger("isAttack");
         }
+
+    }
+
+    public void AnimationShoot()
+    {
+        Debug.Log("AnimationShoot");
+        Debug.Log("shootRequested = " + shootRequested);
+        if (!shootRequested)
+            return;
+
+        shootRequested = false;
+
+        ShootArrow();
+    }
+
+    public void EnableShoot()
+    {
+        canShoot = true;
+    }
+
+    public void DisableShoot()
+    {
+        canShoot = false;
     }
 
     void ShootArrow()
@@ -49,10 +79,18 @@ public class PlayerBowAttack : MonoBehaviour
 
         arrow.transform.position = firePoint.position;
         arrow.SetAttacker(transform);
+
+        Debug.Log("Shoot");
         arrow.Shoot(dir, arrowSpeed);
 
-        if (animator != null)
-            animator.SetTrigger("isAttack");
+        Debug.Log(arrow);
+
+        if (arrow == null)
+        {
+            Debug.Log("No Arrow");
+            return;
+        }
+
     }
 
     Arrow GetArrowFromPool()

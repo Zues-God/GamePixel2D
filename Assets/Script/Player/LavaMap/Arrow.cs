@@ -22,10 +22,15 @@ public class Arrow : MonoBehaviour
 
     public void Shoot(Vector2 direction, float speed)
     {
+        Debug.Log("Shoot direction = " + direction);
+        Debug.Log("Speed = " + speed);
+
         gameObject.SetActive(true);
 
         rb.gravityScale = 0f;
         rb.linearVelocity = direction * speed;
+
+        Debug.Log("Velocity = " + rb.linearVelocity);
 
         float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
         transform.rotation = Quaternion.Euler(0, 0, angle);
