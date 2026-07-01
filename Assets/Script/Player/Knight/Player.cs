@@ -20,10 +20,11 @@ public class Player : MonoBehaviour
     private bool isAttacking = false;
     [SerializeField] private float skillCost = 40f;
     [SerializeField] private float skillCooldown = 3f;
-    [SerializeField] private GameObject skillKinght;
+    [SerializeField] private GameObject skillPLayer;
     private float lastSkillTime = -999f;
-    public GameObject swordAnimation;
+    public GameObject animationWeapon;
     [SerializeField] private Transform weapon;
+    public Animator isrun;
 
 
 
@@ -62,12 +63,18 @@ public class Player : MonoBehaviour
     IEnumerator SkillRoutine()
     {
         Vector2 skillPos = transform.position;
-        skillKinght.transform.position = skillPos;
-        skillKinght.SetActive(true);
+        skillPLayer.transform.position = skillPos;
+        skillPLayer.SetActive(true);
         yield return new WaitForSeconds(0.3f);
-        skillKinght.SetActive(false);
+        skillPLayer.SetActive(false);
     }
 
+    public void Enable()
+    {
+
+        isrun.enabled = true;
+
+    }
 
     void Update()
     {
@@ -196,12 +203,12 @@ public class Player : MonoBehaviour
     }
     public void EnableAnimationSword()
     {
-        swordAnimation.SetActive(true);
+        animationWeapon.SetActive(true);
     }
 
     public void DisableAnimationSword()
     {
-        swordAnimation.SetActive(false);
+        animationWeapon.SetActive(false);
     }   
 
 
