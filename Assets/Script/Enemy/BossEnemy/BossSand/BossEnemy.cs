@@ -5,8 +5,8 @@ using UnityEngine.UI;
 
 public class BossEnemy : Enemy
 {
-    [SerializeField] GameObject HPBarBoss, door;
-    [SerializeField] AudioSource BossSound;
+  
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("Player"))
@@ -14,6 +14,7 @@ public class BossEnemy : Enemy
             if (player != null)
             {
                 player.TakeDamage(enterDamage);
+                Debug.Log("Player take damage: " + enterDamage);
             }
 
         }
@@ -27,30 +28,10 @@ public class BossEnemy : Enemy
             if (player != null)
             {
                 player.TakeDamage(stayDamage);
+                Debug.Log("Player take damage: " + stayDamage);
+
             }
         }
-    }
-
-
-    protected virtual void AnimationDieBoss()
-    {
-        isDead = true;
-        rb.linearVelocity = Vector2.zero;
-        GetComponent<Collider2D>().enabled = false;
-        Animator animator = GetComponent<Animator>();
-        if (animator != null)
-        {
-            animator.SetTrigger("isDie");
-        }
-
-    }
- 
-
-    protected virtual void DestroyEnemyBoss()
-    {
-        HPBarBoss.SetActive(false);
-        BossSound.Stop();
-        Destroy(gameObject);
     }
 
 

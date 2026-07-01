@@ -14,6 +14,9 @@ public abstract class Enemy : MonoBehaviour
     [SerializeField] protected float stayDamage = 1f;
     [SerializeField] protected float attackRange = 1f;
     [SerializeField] protected float attackCooldown = 1f;
+    [SerializeField] float wanderRadius = 3f;
+    [SerializeField] float aggroRange = 5f;
+    [SerializeField] float wanderCooldown = 2f;
     protected float lastAttackTime = 0f;
     public float knockBackForce = 5f;
     protected Player player;
@@ -22,11 +25,12 @@ public abstract class Enemy : MonoBehaviour
     public float knockBackTime = 0.15f;
     public Animator animator;
     public GameObject hitBox;
-    public bool isDead = false;
     protected Rigidbody2D rb;
     protected bool isActive = false;
-   
-    
+    private Vector2 wanderTarget;
+    private float wanderTimer;
+
+
     protected virtual void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -37,22 +41,45 @@ public abstract class Enemy : MonoBehaviour
     protected virtual void Update()
     {
        
-        if ( !isActive || isDead || isKnockBack) return;
-        else if (player == null)
-        {
-            return;
-        }
+        if ( !isActive  || isKnockBack) return;
+
+        else if (player == null) return;
+       
             float distance = Vector2.Distance(transform.position, player.transform.position);
-        if (distance < attackRange)
+        if (distance < aggroRange)
         {
-
-            Attack();
-
+            if (distance < attackRange)
+            {
+                Attack();
+            }
+            else
+            {
+                MoveToPlayer();
+            }
         }
         else
         {
-            MoveToPlayer();
+            Wander();
         }
+    }
+
+
+    void Wander()
+    {
+        wanderTimer -= Time.deltaTime;
+
+        if (wanderTimer <= 0)
+        {
+            Vector2 randomPos = Random.insideUnitCircle * wanderRadius;
+            wanderTarget = (Vector2)transform.position + randomPos;
+
+            wanderTimer = wanderCooldown;
+        }
+
+        Vector2 direction = (wanderTarget - (Vector2)transform.position).normalized;
+        rb.linearVelocity = direction * (enemyMoveSpeed * 0.5f); 
+
+        FlipEnemy();
     }
     protected void MoveToPlayer()
     {
@@ -77,8 +104,15 @@ public abstract class Enemy : MonoBehaviour
         currenHP -= damage;
         currenHP = Mathf.Max(currenHP, 0);
         UpdateHP();
-        Vector2 direction = (transform.position - attacker.position).normalized;
-        direction.y = 0.5f;
+        Vector2 direction = (transform.position - attacker.position);
+
+        if (direction.magnitude < 0.1f)
+        {
+            direction = Random.insideUnitCircle;
+        }
+
+        direction = direction.normalized;
+        direction.y += 0.5f;
         rb.linearVelocity = Vector2.zero;
         rb.AddForce(direction * knockBackForce, ForceMode2D.Impulse);
         StartCoroutine(KnockbackRoutine());
@@ -99,7 +133,6 @@ public abstract class Enemy : MonoBehaviour
 
     protected virtual void AnimationDie()
     {
-        isDead = true;   
         rb.linearVelocity = Vector2.zero;
         GetComponent<Collider2D>().enabled = false;
         Animator animator = GetComponent<Animator>();
@@ -112,7 +145,7 @@ public abstract class Enemy : MonoBehaviour
 
     protected virtual void DestroyEnemy()
     {
-        
+        Debug.Log("Destroy Enemy Called");
         Destroy(gameObject);
     }
 
@@ -160,5 +193,6 @@ public abstract class Enemy : MonoBehaviour
         }
     }
 
+   
 }
 

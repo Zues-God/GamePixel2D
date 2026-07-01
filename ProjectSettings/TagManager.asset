@@ -5,18 +5,16 @@ TagManager:
   serializedVersion: 3
   tags:
   - Enemy
-  - Ground
-  - Rock
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Enemy
   - Water
   - UI
-  - 
-  - 
-  - 
+  - Wall
+  - Skill
+  - Player
   - 
   - 
   - 
@@ -47,14 +45,14 @@ TagManager:
   - name: Ground
     uniqueID: 2457644253
     locked: 0
-  - name: Skill
-    uniqueID: 3932701387
-    locked: 0
   - name: Rock
     uniqueID: 2278696245
     locked: 0
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: SkillKnight
+    uniqueID: 13472641
     locked: 0
   - name: Player
     uniqueID: 1847382067

@@ -1,49 +1,28 @@
 fileFormatVersion: 2
-guid: d2527f42ba7127d4f8ade72cacc19c30
+guid: b9b4497b2df58e54aad5bb635e3a409c
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 6154836139068792331
-    second: HealDrop_0
+      213: -6888756438569675735
+    second: New Piskel (1)_0
   - first:
-      213: 1304465331385770944
-    second: HealDrop_1
+      213: 9173839873224666002
+    second: New Piskel (1)_1
   - first:
-      213: 6718992590290204909
-    second: HealDrop_2
+      213: -745645855993587873
+    second: New Piskel (1)_2
   - first:
-      213: 1255629426334921485
-    second: HealDrop_3
+      213: 4123733795721074919
+    second: New Piskel (1)_3
   - first:
-      213: -842492821019845060
-    second: HealDrop_4
+      213: -1753449832276896209
+    second: New Piskel (1)_4
   - first:
-      213: -4474218871022211549
-    second: HealDrop_5
+      213: 3188600494121364513
+    second: New Piskel (1)_5
   - first:
-      213: 292022288305106388
-    second: HealDrop_6
-  - first:
-      213: 7023630523348579237
-    second: HealDrop_7
-  - first:
-      213: 3564229433286420719
-    second: HealDrop_8
-  - first:
-      213: 7776862373440310958
-    second: HealDrop_9
-  - first:
-      213: 5668862129089892347
-    second: HealDrop_10
-  - first:
-      213: 1703426884755775051
-    second: HealDrop_11
-  - first:
-      213: -4650543024109011852
-    second: HealDrop_12
-  - first:
-      213: -4068335619872288600
-    second: HealDrop_13
+      213: 393433629526434239
+    second: New Piskel (1)_6
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -90,7 +69,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 20
+  spritePixelsToUnits: 126
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -155,20 +134,20 @@ TextureImporter:
       name: HealDrop_0
       rect:
         serializedVersion: 2
-        x: 9
-        y: 634
-        width: 29
-        height: 29
+        x: 0
+        y: 0
+        width: 96
+        height: 96
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: b0e9ee7dbde5a6550800000000000000
-      internalID: 6154836139068792331
+      spriteID: d084bc53f6913e84f9d9955e9f3f4f70
+      internalID: -715761244
       vertices: []
       indices: 
       edges: []
@@ -177,20 +156,20 @@ TextureImporter:
       name: HealDrop_1
       rect:
         serializedVersion: 2
-        x: 9
-        y: 587
-        width: 29
-        height: 29
+        x: 96
+        y: 0
+        width: 96
+        height: 96
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 0c3af0bbe446a1210800000000000000
-      internalID: 1304465331385770944
+      spriteID: a4b478a9f451df34995cf4bc67b13fc7
+      internalID: -276139514
       vertices: []
       indices: 
       edges: []
@@ -199,20 +178,20 @@ TextureImporter:
       name: HealDrop_2
       rect:
         serializedVersion: 2
-        x: 9
-        y: 541
-        width: 29
-        height: 29
+        x: 192
+        y: 0
+        width: 96
+        height: 96
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: de8bab08928ae3d50800000000000000
-      internalID: 6718992590290204909
+      spriteID: 23ad2f88b06d45841bbbfcedee439871
+      internalID: -1177303710
       vertices: []
       indices: 
       edges: []
@@ -221,20 +200,20 @@ TextureImporter:
       name: HealDrop_3
       rect:
         serializedVersion: 2
-        x: 9
-        y: 494
-        width: 29
-        height: 29
+        x: 288
+        y: 0
+        width: 96
+        height: 96
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: d0378368f44ec6110800000000000000
-      internalID: 1255629426334921485
+      spriteID: c9e1cd02cefdbd147b936845dfd86fde
+      internalID: -623176394
       vertices: []
       indices: 
       edges: []
@@ -243,20 +222,20 @@ TextureImporter:
       name: HealDrop_4
       rect:
         serializedVersion: 2
-        x: 9
-        y: 448
-        width: 29
-        height: 29
+        x: 384
+        y: 0
+        width: 96
+        height: 96
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: c3e9b453e3dde44f0800000000000000
-      internalID: -842492821019845060
+      spriteID: 5f8e8b67ff94b4f4889b30e016930582
+      internalID: 1801555783
       vertices: []
       indices: 
       edges: []
@@ -265,20 +244,20 @@ TextureImporter:
       name: HealDrop_5
       rect:
         serializedVersion: 2
-        x: 9
-        y: 401
-        width: 29
-        height: 29
+        x: 480
+        y: 0
+        width: 96
+        height: 96
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 32e2f5964a168e1c0800000000000000
-      internalID: -4474218871022211549
+      spriteID: dc41bd9b38f4b864db577ba2498ed5ed
+      internalID: -567356345
       vertices: []
       indices: 
       edges: []
@@ -287,174 +266,20 @@ TextureImporter:
       name: HealDrop_6
       rect:
         serializedVersion: 2
-        x: 9
-        y: 355
-        width: 29
-        height: 29
+        x: 576
+        y: 0
+        width: 96
+        height: 96
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 4dd2ce859b87d0400800000000000000
-      internalID: 292022288305106388
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: HealDrop_7
-      rect:
-        serializedVersion: 2
-        x: 9
-        y: 308
-        width: 29
-        height: 29
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 5a378c98fb2f87160800000000000000
-      internalID: 7023630523348579237
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: HealDrop_8
-      rect:
-        serializedVersion: 2
-        x: 9
-        y: 259
-        width: 29
-        height: 29
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: fe8670519cfa67130800000000000000
-      internalID: 3564229433286420719
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: HealDrop_9
-      rect:
-        serializedVersion: 2
-        x: 9
-        y: 209
-        width: 29
-        height: 29
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: eaec2040027fceb60800000000000000
-      internalID: 7776862373440310958
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: HealDrop_10
-      rect:
-        serializedVersion: 2
-        x: 9
-        y: 160
-        width: 29
-        height: 29
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: bff411d4218dbae40800000000000000
-      internalID: 5668862129089892347
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: HealDrop_11
-      rect:
-        serializedVersion: 2
-        x: 9
-        y: 110
-        width: 29
-        height: 29
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: b4ed7bef9b9c3a710800000000000000
-      internalID: 1703426884755775051
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: HealDrop_12
-      rect:
-        serializedVersion: 2
-        x: 9
-        y: 61
-        width: 29
-        height: 29
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 47cbf4b52c3f57fb0800000000000000
-      internalID: -4650543024109011852
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: HealDrop_13
-      rect:
-        serializedVersion: 2
-        x: 9
-        y: 11
-        width: 29
-        height: 29
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 8a091760f4e5a87c0800000000000000
-      internalID: -4068335619872288600
+      spriteID: f57b4071653344c4e8b285569211e04d
+      internalID: -2008880982
       vertices: []
       indices: 
       edges: []
@@ -463,7 +288,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: e0602063e2da86649b1208564faa3d45
     internalID: 0
     vertices: []
     indices: 
@@ -471,22 +296,17 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     spriteCustomMetadata:
-      entries: []
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":96.0,"y":96.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":1,"keepEmptyRects":false,"isAlternate":false}'
     nameFileIdTable:
-      HealDrop_0: 6154836139068792331
-      HealDrop_1: 1304465331385770944
-      HealDrop_10: 5668862129089892347
-      HealDrop_11: 1703426884755775051
-      HealDrop_12: -4650543024109011852
-      HealDrop_13: -4068335619872288600
-      HealDrop_2: 6718992590290204909
-      HealDrop_3: 1255629426334921485
-      HealDrop_4: -842492821019845060
-      HealDrop_5: -4474218871022211549
-      HealDrop_6: 292022288305106388
-      HealDrop_7: 7023630523348579237
-      HealDrop_8: 3564229433286420719
-      HealDrop_9: 7776862373440310958
+      HealDrop_0: -715761244
+      HealDrop_1: -276139514
+      HealDrop_2: -1177303710
+      HealDrop_3: -623176394
+      HealDrop_4: 1801555783
+      HealDrop_5: -567356345
+      HealDrop_6: -2008880982
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

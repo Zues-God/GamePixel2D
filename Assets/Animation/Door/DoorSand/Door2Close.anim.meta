@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:Assets/Animation/Door/DoorSand/Door2Close.anim.meta
 guid: bee38e559f617b64a826832254c2a26b
+========
+guid: 18d278aada438d8438082988fee3c434
+>>>>>>>> origin/TaiNP:Assets/Animation/Enemy/LavaEnemy/BossAttack.anim.meta
 NativeFormatImporter:
   externalObjects: {}
   mainObjectFileID: 7400000
