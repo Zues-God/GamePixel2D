@@ -2,6 +2,7 @@ using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
 
+
 public class Player : MonoBehaviour
 {
     [SerializeField] private float moveSpeed = 10f;
@@ -23,22 +24,22 @@ public class Player : MonoBehaviour
     private float lastSkillTime = -999f;
     public GameObject animationWeapon;
     [SerializeField] private Transform weapon;
-
-
+    private float lastHitTime;
+    [SerializeField] private float hitCooldown = 0.3f;
 
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
         rbSprite = rb.GetComponent<SpriteRenderer>();
         animator = GetComponent<Animator>();
+       
     }
 
-    void Start()
+    protected virtual void Start()
     {
         currentHpPlayer = maxHpPlayer;
         currentEnergy = maxEnergy;
-        UpdateEnergy();
-        UpdateHP();
+       
 
     }
 
@@ -66,15 +67,14 @@ public class Player : MonoBehaviour
         skillPLayer.SetActive(false);
     }
 
- 
-
-    void Update()
+    protected virtual void Update()
     {
 
         MovePlayer();
         HandleFacingDirection();
         PlayerSkill();
         PlayerAttack();
+
     }
     private void MovePlayer()
     {
@@ -141,7 +141,6 @@ public class Player : MonoBehaviour
         }
     }
 
-
     public bool HasEnoughMana(float amount)
     {
         return currentEnergy >= amount;
@@ -199,21 +198,23 @@ public class Player : MonoBehaviour
     public void DisableAnimationSword()
     {
         animationWeapon.SetActive(false);
-    }   
-
+    }
 
 
     public void TakeDamage(float damage)
     {
+        if (Time.time < lastHitTime + hitCooldown) return;
+        lastHitTime = Time.time;
         currentHpPlayer -= damage;
         currentHpPlayer = Mathf.Max(currentHpPlayer, 0);
         UpdateHP();
+
         if (currentHpPlayer <= 0)
         {
             Die();
         }
-
     }
+
 
     public void Heal(float healValue)
     {

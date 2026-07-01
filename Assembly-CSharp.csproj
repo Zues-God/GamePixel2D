@@ -69,6 +69,7 @@
     <Compile Include="Assets\Script\Player\LavaMap\Player\PlayerController.cs" />
     <Compile Include="Assets\Script\LivingRoom\Gate\Gate.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\VertexShakeB.cs" />
+    <Compile Include="Assets\Script\Player\Knight\ShieldRicochet.cs" />
     <Compile Include="Assets\Script\LivingRoom\RoomScript\CameraController.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\VertexJitter.cs" />
     <Compile Include="Assets\Script\LivingRoom\CharScript\CharacterManager.cs" />
@@ -76,6 +77,7 @@
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\VertexZoom.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_TextSelector_B.cs" />
     <Compile Include="Assets\Script\MainMenu\MainMenu.cs" />
+    <Compile Include="Assets\Script\Player\Knight\PlayerKnight.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\SkewTextExample.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\WarpTextExample.cs" />
     <Compile Include="Assets\Script\Enemy\BossEnemy\BossSand\BossLaser.cs" />
@@ -118,6 +120,7 @@
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TeleType.cs" />
     <Compile Include="Assets\Script\Player\WindAttack\PlayerThrowPotion.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_TextEventCheck.cs" />
+    <Compile Include="Assets\Script\Player\Knight\PlayerShield.cs" />
     <Compile Include="Assets\Script\Player\Wizar\Weapon\PlayerWeaponController.cs" />
     <Compile Include="Assets\Script\Enemy\EnergyEnemy\IceEE\RangeAttack.cs" />
     <Compile Include="Assets\Script\Item\EnergyDrop\EnergyDrop.cs" />
