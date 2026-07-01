@@ -4,6 +4,7 @@ public class FileBall : MonoBehaviour
 {
     [SerializeField] private float speed = 15f;
     [SerializeField] private float lifeTime = 3f;
+    [SerializeField] public float takeDamage = 3f;
 
     private Vector2 direction;
 
@@ -27,10 +28,13 @@ public class FileBall : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-
         if (other.CompareTag("Enemy"))
         {
-            Destroy(gameObject);
+            Enemy enemy = other.GetComponent<Enemy>();
+            if (enemy != null)
+            {
+                enemy.TakeDamage(takeDamage, transform.root);
+            }
         }
 
         if (other.CompareTag("Wall"))

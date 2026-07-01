@@ -21,4 +21,4 @@ MonoBehaviour:
   skillName: 
   skillDescription: 
   portrait: {fileID: 0}
-  playerPrefab: {fileID: 0}
+  playerPrefab: {fileID: 1678192768798565126, guid: d28b02679efaa1a4b8f561710578b994, type: 3}

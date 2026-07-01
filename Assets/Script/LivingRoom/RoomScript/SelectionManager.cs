@@ -12,8 +12,7 @@ public class SelectionManager : MonoBehaviour
 
 
     public void ShowCharacterInfo(
-        CharacterData data,
-        CharacterDisplay display)
+        CharacterData data, CharacterDisplay display)
     {
         currentDisplay = display;
 
