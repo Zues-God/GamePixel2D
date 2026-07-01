@@ -46,7 +46,7 @@ public class Player : MonoBehaviour
 
     private void PlayerSkill()
     {
-        if (Input.GetKeyDown(KeyCode.R) && Time.time >= lastSkillTime + skillCooldown)
+        if (Input.GetKeyDown(KeyCode.R) && Time.time >= lastSkillTime + skillCooldown && currentEnergy >= skillCost)
         {
 
             currentEnergy -= skillCost;
@@ -55,6 +55,7 @@ public class Player : MonoBehaviour
             Vector2 skillPos = transform.position;
             StartCoroutine(SkillRoutine());
         }
+      
     }
 
 
@@ -96,7 +97,7 @@ public class Player : MonoBehaviour
 
         }
 
-        if (playerInput != Vector2.zero)
+        if (playerInput != Vector2.zero)          
         {
             animator.SetBool("isRun", true);
         }
