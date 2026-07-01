@@ -11843,9 +11843,7 @@ GameObject:
   - component: {fileID: 1702187786}
   - component: {fileID: 1702187785}
   - component: {fileID: 1702187784}
-  - component: {fileID: 1702187787}
   - component: {fileID: 1702187788}
-  - component: {fileID: 1702187789}
   - component: {fileID: 1702187791}
   - component: {fileID: 1702187790}
   m_Layer: 0
@@ -12065,23 +12063,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!114 &1702187787
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1702187780}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 567398d4ea8706642bbaf7b9bdf6950f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::PlayerController
-  moveSpeed: 5
-  arrowPrefab: {fileID: 6964655212547799522, guid: 4194a60ae71c8864993398466b86dbfa, type: 3}
-  firePoint: {fileID: 362737914}
-  arrowSpeed: 10
-  poolSize: 15
 --- !u!114 &1702187788
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12103,26 +12084,10 @@ MonoBehaviour:
   hitBox: {fileID: 1513888302}
   skillCost: 40
   skillCooldown: 3
-  skillKinght: {fileID: 0}
-  swordAnimation: {fileID: 0}
+  skillPLayer: {fileID: 0}
+  animationWeapon: {fileID: 0}
   weapon: {fileID: 1621669338}
---- !u!114 &1702187789
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1702187780}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7859a60099612854d84442b37bd49319, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::PlayerBowAttack
-  arrowPrefab: {fileID: 6964655212547799522, guid: 4194a60ae71c8864993398466b86dbfa, type: 3}
-  firePoint: {fileID: 362737914}
-  arrowSpeed: 10
-  poolSize: 15
-  animationAttack: {fileID: 1702187783}
+  isrun: {fileID: 0}
 --- !u!114 &1702187790
 MonoBehaviour:
   m_ObjectHideFlags: 0
