@@ -20,10 +20,11 @@ public class Player : MonoBehaviour
     private bool isAttacking = false;
     [SerializeField] private float skillCost = 40f;
     [SerializeField] private float skillCooldown = 3f;
-    [SerializeField] private GameObject skillKinght;
+    [SerializeField] private GameObject skillPLayer;
     private float lastSkillTime = -999f;
-    public GameObject swordAnimation;
+    public GameObject animationWeapon;
     [SerializeField] private Transform weapon;
+    public Animator isrun;
 
 
 
@@ -46,7 +47,7 @@ public class Player : MonoBehaviour
 
     private void PlayerSkill()
     {
-        if (Input.GetKeyDown(KeyCode.R) && Time.time >= lastSkillTime + skillCooldown)
+        if (Input.GetKeyDown(KeyCode.R) && Time.time >= lastSkillTime + skillCooldown && currentEnergy >= skillCost)
         {
 
             currentEnergy -= skillCost;
@@ -55,18 +56,25 @@ public class Player : MonoBehaviour
             Vector2 skillPos = transform.position;
             StartCoroutine(SkillRoutine());
         }
+      
     }
 
 
     IEnumerator SkillRoutine()
     {
         Vector2 skillPos = transform.position;
-        skillKinght.transform.position = skillPos;
-        skillKinght.SetActive(true);
+        skillPLayer.transform.position = skillPos;
+        skillPLayer.SetActive(true);
         yield return new WaitForSeconds(0.3f);
-        skillKinght.SetActive(false);
+        skillPLayer.SetActive(false);
     }
 
+    public void Enable()
+    {
+
+        isrun.enabled = true;
+
+    }
 
     void Update()
     {
@@ -96,7 +104,7 @@ public class Player : MonoBehaviour
 
         }
 
-        if (playerInput != Vector2.zero)
+        if (playerInput != Vector2.zero)          
         {
             animator.SetBool("isRun", true);
         }
@@ -195,12 +203,12 @@ public class Player : MonoBehaviour
     }
     public void EnableAnimationSword()
     {
-        swordAnimation.SetActive(true);
+        animationWeapon.SetActive(true);
     }
 
     public void DisableAnimationSword()
     {
-        swordAnimation.SetActive(false);
+        animationWeapon.SetActive(false);
     }   
 
 
