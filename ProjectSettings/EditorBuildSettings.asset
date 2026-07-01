@@ -5,9 +5,12 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 0
-    path: Assets/Scenes/SandMap 1-1.unity
-    guid: 8c9cfa26abfee488c85f1582747f6a02
+  - enabled: 1
+    path: Assets/Scenes/MainMenu.unity
+    guid: 4c6672b9bd172784fa195692504058ed
+  - enabled: 1
+    path: Assets/Scenes/MainLobby.unity
+    guid: 39ef40a0d7921a04fa6497692529898f
   - enabled: 1
     path: Assets/Scenes/DarkMap 1-1.unity
     guid: d9d2fdcdeb606784a938894855cba5a5
@@ -21,11 +24,20 @@ EditorBuildSettings:
     path: Assets/Scenes/IceMap 1-1.unity
     guid: c371868da4c42ce4d9b2f51e9c8a6789
   - enabled: 1
-    path: Assets/Scenes/MainLobby.unity
-    guid: 39ef40a0d7921a04fa6497692529898f
+    path: Assets/Scenes/IceMap 1-2.unity
+    guid: 927d8ffde0560b44a8f845dd32b4b1c4
   - enabled: 1
-    path: Assets/Scenes/MainMenu.unity
-    guid: 4c6672b9bd172784fa195692504058ed
+    path: Assets/Scenes/IceMap 1-3.unity
+    guid: e7a6d7c2be0beed439424aec100b29f4
+  - enabled: 1
+    path: Assets/Scenes/LavaMap 1-1.unity
+    guid: 7a30d3e8d0e95454aaef2a3b96feecf6
+  - enabled: 1
+    path: Assets/Scenes/LavaMap 1-2.unity
+    guid: 7df872a1a87e91543a311134c41fda49
+  - enabled: 1
+    path: Assets/Scenes/LavaMap 1-3.unity
+    guid: 3c12b7220c496894691f5d2567c1bd8d
   - enabled: 1
     path: Assets/Scenes/SandMap 1-3.unity
     guid: 39dce37973964e144b2e744e1dccb847

@@ -236,10 +236,15 @@ MonoBehaviour:
   wanderRadius: 3
   aggroRange: 5
   wanderCooldown: 2
+  laserRoot: {fileID: 0}
   knockBackForce: 5
   knockBackTime: 0.15
   animator: {fileID: 0}
   hitBox: {fileID: 0}
+  laser: {fileID: 0}
+  players: {fileID: 0}
+  rbs: {fileID: 0}
+  movementScript: {fileID: 0}
 --- !u!212 &367851386
 SpriteRenderer:
   serializedVersion: 2
@@ -289,7 +294,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_MaskInteraction: 0
-  m_Sprite: {fileID: -6691896082935905008, guid: c819f7c1dfbea0144910886c2f4596c7, type: 3}
+  m_Sprite: {fileID: -1217949150510304377, guid: c819f7c1dfbea0144910886c2f4596c7, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0

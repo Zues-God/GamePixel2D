@@ -49,6 +49,11 @@ public class CharacterSelectionUI : MonoBehaviour
 
         CharacterDisplay display = SelectionManager.Instance.GetCurrentDisplay();
 
+        if (CharacterManager.Instance != null)
+        {
+            CharacterManager.Instance.SelectCharacter(currentCharacter);
+        }
+
         Instantiate(currentCharacter.playerPrefab, display.spawnPoint.position, Quaternion.identity);
 
         panel.SetActive(false);

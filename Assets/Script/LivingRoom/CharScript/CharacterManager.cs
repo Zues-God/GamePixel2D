@@ -8,16 +8,24 @@ public class CharacterManager : MonoBehaviour
 
     private void Awake()
     {
-        Instance = this;
+        if (Instance == null)
+        {
+            Instance = this;
+
+            DontDestroyOnLoad(gameObject);
+
+            Debug.Log("CharacterManager Created");
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
     }
 
-    public void SelectCharacter(
-        CharacterData data)
+    public void SelectCharacter(CharacterData data)
     {
         SelectedCharacter = data;
 
-        Debug.Log(
-            "Selected: "
-            + data.characterName);
+        Debug.Log("Selected Character: " + data.characterName);
     }
 }
