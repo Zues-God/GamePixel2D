@@ -6,7 +6,7 @@ using UnityEngine;
 
 public class RoomTriger : MonoBehaviour
 {
-    [SerializeField] private GameObject [] enemyPrefab;
+    [SerializeField] private GameObject[] enemyPrefab;
     public GameObject bossHPBar, introBoss, player;
     private List<GameObject> enemy = new List<GameObject>();
     public AudioSource bossSound;
@@ -14,7 +14,7 @@ public class RoomTriger : MonoBehaviour
     public int enemySpaw = 5;
     public float introDuration = 2.5f;
     private bool spawed = false;
-    public Animator [] door;
+    public Animator[] door;
     public Transform enemyParent;
     private bool doorOpened = false;
     [SerializeField] private bool isBossRoom;
@@ -74,7 +74,7 @@ public class RoomTriger : MonoBehaviour
             float randomX = UnityEngine.Random.Range(bounds.min.x, bounds.max.x);
             float randomY = UnityEngine.Random.Range(bounds.min.y, bounds.max.y);
             Vector2 spawnPos = new Vector2(randomX, randomY);
-            GameObject randomEnemy = enemyPrefab[ Random.Range(0, enemyPrefab.Length)];
+            GameObject randomEnemy = enemyPrefab[Random.Range(0, enemyPrefab.Length)];
             GameObject e = Instantiate(randomEnemy, spawnPos, Quaternion.identity, enemyParent);
             enemy.Add(e);
 
@@ -144,7 +144,7 @@ public class RoomTriger : MonoBehaviour
 
     IEnumerator DisableAfterAnim(Animator d)
     {
-        yield return new WaitForSeconds(0.3f); 
+        yield return new WaitForSeconds(0.3f);
 
         d.gameObject.SetActive(false);
     }
@@ -152,13 +152,13 @@ public class RoomTriger : MonoBehaviour
     {
         foreach (Transform child in enemyParent)
         {
-           Enemy e  = child.GetComponent<Enemy>();
+            Enemy e = child.GetComponent<Enemy>();
 
             if (e != null)
             {
                 e.ActivateEnemy();
             }
-           
+
         }
     }
 }

@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class HitBoxEnemy : MonoBehaviour
 {
-    
+
     public float damage = 1f;
     private void OnTriggerEnter2D(Collider2D other)
     {
@@ -16,6 +16,6 @@ public class HitBoxEnemy : MonoBehaviour
             }
 
         }
-        
+
     }
 }

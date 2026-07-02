@@ -1,6 +1,5 @@
 using System.Collections;
 using UnityEngine;
-using UnityEngine.UIElements;
 
 public class BossLaser : MonoBehaviour
 {
@@ -19,14 +18,18 @@ public class BossLaser : MonoBehaviour
 
     [Header("Collision")]
     [SerializeField] private LayerMask wallMask;
-    [SerializeField] private GameObject warningLaser; 
+    [SerializeField] private GameObject warningLaser;
     [SerializeField] private float warningTime = 1.5f;
 
     private SpriteRenderer bodyRenderer;
     private BoxCollider2D bodyCollider;
     private float currentLength;
     private Vector2 lockedPosition;
-   
+    [Header("Circle Attack")]
+    [SerializeField] private GameObject laserBulletPrefab;
+    [SerializeField] private int bulletCount = 12;
+    [SerializeField] private float circleDelay = 0.5f;
+    [SerializeField] private float spawnRadius = 0.5f;
 
     private void Awake()
     {
@@ -60,7 +63,7 @@ public class BossLaser : MonoBehaviour
             warningLaser.SetActive(true);
 
             warningLaser.transform.position = head.position;
-          
+
             float timer = 0f;
             float blinkInterval = 0.15f;
 
@@ -79,7 +82,7 @@ public class BossLaser : MonoBehaviour
         laser.gameObject.SetActive(true);
         bool playerStillThere = Vector2.Distance(player.position, lockedPosition) < 0.5f;
 
-        RaycastHit2D hit = Physics2D.Raycast( head.position, dir, 100f, wallMask );
+        RaycastHit2D hit = Physics2D.Raycast(head.position, dir, 100f, wallMask);
 
         float finalLength;
 
@@ -103,6 +106,39 @@ public class BossLaser : MonoBehaviour
             warningLaser.SetActive(false);
 
         laser.gameObject.SetActive(false);
+
+        yield return new WaitForSeconds(stickTime);
+
+        currentLength = 0;
+        UpdateLaser(0);
+        laser.SetActive(false);
+
+        yield return new WaitForSeconds(circleDelay);
+
+        FireCircle();
+
+
+
+    }
+
+    private void FireCircle()
+    {
+        float angleStep = 360f / bulletCount;
+
+        for (int i = 0; i < bulletCount; i++)
+        {
+            float angle = i * angleStep;
+
+            float rad = angle * Mathf.Deg2Rad;
+
+            Vector2 dir = new Vector2(Mathf.Cos(rad), Mathf.Sin(rad));
+
+            Vector2 spawnPos = (Vector2)head.position + dir * spawnRadius;
+
+            GameObject bullet = Instantiate(laserBulletPrefab, spawnPos, Quaternion.identity);
+
+            bullet.GetComponent<LaserBullet>().Init(dir);
+        }
     }
 
 
@@ -126,5 +162,5 @@ public class BossLaser : MonoBehaviour
         }
     }
 
-    
+
 }

@@ -10,6 +10,6 @@ public class CharacterDisplay : MonoBehaviour
 
     private void OnMouseDown()
     {
-        SelectionManager.Instance.ShowCharacterInfo( characterData, this);
+        SelectionManager.Instance.ShowCharacterInfo(characterData, this);
     }
 }

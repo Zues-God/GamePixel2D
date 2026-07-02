@@ -22,22 +22,22 @@ AnimationClip:
     curve:
     - time: 0
       value: {fileID: -5341597898538695221, guid: 89f0e0395cc71c741841d85255560f76, type: 3}
-    - time: 0.06666667
+    - time: 0.1
       value: {fileID: -8978408729274254430, guid: 89f0e0395cc71c741841d85255560f76, type: 3}
-    - time: 0.11666667
-      value: {fileID: 797768032434522389, guid: 89f0e0395cc71c741841d85255560f76, type: 3}
     - time: 0.18333334
+      value: {fileID: 797768032434522389, guid: 89f0e0395cc71c741841d85255560f76, type: 3}
+    - time: 0.28333333
       value: {fileID: 7394835561953233644, guid: 89f0e0395cc71c741841d85255560f76, type: 3}
-    - time: 0.25
+    - time: 0.38333333
       value: {fileID: -4469117517395524942, guid: 89f0e0395cc71c741841d85255560f76, type: 3}
-    - time: 0.31666666
+    - time: 0.48333332
       value: {fileID: -5041315827434484139, guid: 89f0e0395cc71c741841d85255560f76, type: 3}
-    - time: 0.36666667
+    - time: 0.56666666
       value: {fileID: -274854406761784476, guid: 89f0e0395cc71c741841d85255560f76, type: 3}
-    - time: 0.43333334
+    - time: 0.6666667
       value: {fileID: -1702599639152044942, guid: 89f0e0395cc71c741841d85255560f76, type: 3}
     attribute: m_Sprite
-    path: 'LaserBoss/WarningLaser '
+    path: 
     classID: 212
     script: {fileID: 0}
     flags: 2
@@ -49,7 +49,7 @@ AnimationClip:
   m_ClipBindingConstant:
     genericBindings:
     - serializedVersion: 2
-      path: 301457795
+      path: 0
       attribute: 0
       script: {fileID: 0}
       typeID: 212
@@ -71,7 +71,7 @@ AnimationClip:
     m_AdditiveReferencePoseClip: {fileID: 0}
     m_AdditiveReferencePoseTime: 0
     m_StartTime: 0
-    m_StopTime: 0.45000002
+    m_StopTime: 0.68333334
     m_OrientationOffsetY: 0
     m_Level: 0
     m_CycleOffset: 0
