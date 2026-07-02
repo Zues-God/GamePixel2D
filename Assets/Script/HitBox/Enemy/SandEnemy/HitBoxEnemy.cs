@@ -9,6 +9,7 @@ public class HitBoxEnemy : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             Player player = other.GetComponent<Player>();
+
             if (player != null)
             {
                 player.TakeDamage(damage);
