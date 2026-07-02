@@ -11,9 +11,9 @@ public class PlayerKnight : Player
 
     protected override void Update()
     {
-        base.Update(); 
+        base.Update();
 
-        HandleShield(); 
+        HandleShield();
     }
 
 
@@ -26,7 +26,7 @@ public class PlayerKnight : Player
         }
     }
 
-  
+
     private void ThrowShield()
     {
         if (shieldPrefab == null || throwPoint == null) return;

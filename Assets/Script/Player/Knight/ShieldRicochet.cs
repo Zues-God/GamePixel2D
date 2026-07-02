@@ -13,7 +13,7 @@ public class ShieldRicochet : MonoBehaviour
     private PlayerShield playerShield;
 
     private bool isFlying = false;
-  
+
 
     public void Init(Vector2 dir, Transform playerRef)
     {
@@ -28,7 +28,7 @@ public class ShieldRicochet : MonoBehaviour
         StartCoroutine(RicochetRoutine());
     }
 
-   
+
     void Update()
     {
         if (isFlying)

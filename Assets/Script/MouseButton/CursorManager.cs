@@ -7,12 +7,12 @@ public class CursorManager : MonoBehaviour
     [SerializeField] private Texture2D cursorShoot;
     [SerializeField] private Texture2D cursorReload;
 
-    private Vector2 hotspot = new Vector2 (16, 48);
+    private Vector2 hotspot = new Vector2(16, 48);
 
     void Start()
     {
         Cursor.SetCursor(cursorNormal, hotspot, CursorMode.Auto);
-        
+
     }
 
     void Update()

@@ -7,35 +7,42 @@ public class BossEnemy : Enemy
     [SerializeField] private Transform players;
     [SerializeField] private Rigidbody2D rbs;
     [SerializeField] private MonoBehaviour movementScript;
+    [SerializeField] private GameObject animationLaser;
     protected override void Start()
     {
         base.Start();
 
         laser.SetTarget(players);
 
-        StartCoroutine(LaserLoop()); 
+        StartCoroutine(LaserLoop());
     }
 
     private IEnumerator FireLaser()
     {
-        if (rbs != null)
-            rbs.linearVelocity = Vector2.zero;
+        if (rbs != null) rbs.linearVelocity = Vector2.zero;
 
-        if (movementScript != null)
-            movementScript.enabled = false;
+        if (movementScript != null) movementScript.enabled = false;
 
         yield return StartCoroutine(laser.Fire());
 
-        if (movementScript != null)
-            movementScript.enabled = true;
+        if (movementScript != null) movementScript.enabled = true;
+
+
+
     }
 
     private IEnumerator LaserLoop()
     {
         while (true)
         {
-            yield return new WaitForSeconds(5f); 
+            yield return new WaitForSeconds(10f);
+            animationLaser.SetActive(true);
             yield return StartCoroutine(FireLaser());
+            animationLaser.SetActive(false);
+
         }
     }
+
+
+
 }

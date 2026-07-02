@@ -2,26 +2,15 @@ using UnityEngine;
 
 public class EnergyEnemy : Enemy
 {
-    [SerializeField] private GameObject Energy;
-    private void OnTriggerEnter2D(Collider2D collision)
+    [SerializeField] private GameObject energyDrop;
+    protected override void DestroyEnemy()
     {
-        if (collision.CompareTag("Player"))
-        {
-            if (player != null)
-            {
-                player.TakeDamage(enterDamage);
-            }
 
-        }
-    }
-    private void OnTriggerStay2D(Collider2D collision)
-    {
-        if (collision.CompareTag("Player"))
+        if (energyDrop != null)
         {
-            if (player != null)
-            {
-                player.TakeDamage(stayDamage);
-            }
+            GameObject energy = Instantiate(energyDrop, transform.position, Quaternion.identity);
+            Destroy(energy, 5f);
         }
+        base.DestroyEnemy();
     }
 }

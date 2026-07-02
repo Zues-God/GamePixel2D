@@ -54,7 +54,6 @@
     <Compile Include="Assets\Script\Enemy\Enemy.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\EnvMapAnimator.cs" />
     <Compile Include="Assets\Script\Enemy\HealEnemy\SandHealEnemy\HealEnemy.cs" />
-    <Compile Include="Assets\Script\Player\Knight\Player.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_TextSelector_A.cs" />
     <Compile Include="Assets\Script\LivingRoom\RoomScript\SelectionManager.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark02.cs" />
@@ -109,6 +108,7 @@
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark03.cs" />
     <Compile Include="Assets\Script\Gun\Bullet.cs" />
     <Compile Include="Assets\Script\RoomTriger\RoomTriger.cs" />
+    <Compile Include="Assets\Script\Player\Player.cs" />
     <Compile Include="Assets\Script\LivingRoom\Gate\PlayerSpawner.cs" />
     <Compile Include="Assets\Script\Enemy\BossEnemy\BossSand\BossEnemy.cs" />
     <Compile Include="Assets\Script\Minimap\RoomController.cs" />
@@ -124,6 +124,7 @@
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_TextEventCheck.cs" />
     <Compile Include="Assets\Script\Player\Knight\PlayerShield.cs" />
     <Compile Include="Assets\Script\Player\Wizar\Weapon\PlayerWeaponController.cs" />
+    <Compile Include="Assets\Script\Enemy\BossEnemy\BossSand\LaserBullet.cs" />
     <Compile Include="Assets\Script\Enemy\EnergyEnemy\IceEE\RangeAttack.cs" />
     <Compile Include="Assets\Script\Item\EnergyDrop\EnergyDrop.cs" />
     <Compile Include="Assets\Script\MouseButton\CursorManager.cs" />

@@ -34,7 +34,7 @@ public class Bullet : MonoBehaviour
             {
                 enemy.TakeDamage(damage, transform.root);
             }
-            Destroy(gameObject);    
+            Destroy(gameObject);
         }
     }
 }

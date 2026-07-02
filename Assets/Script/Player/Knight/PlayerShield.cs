@@ -6,11 +6,11 @@ public class PlayerShield : MonoBehaviour
 
     public void ThrowShield()
     {
-        shieldOnPlayer.SetActive(false); 
+        shieldOnPlayer.SetActive(false);
     }
 
     public void RecoverShield()
     {
-        shieldOnPlayer.SetActive(true); 
+        shieldOnPlayer.SetActive(true);
     }
 }
