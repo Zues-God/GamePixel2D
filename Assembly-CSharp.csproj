@@ -87,6 +87,7 @@
     <Compile Include="Assets\Script\LivingRoom\Gate\RunManager.cs" />
     <Compile Include="Assets\Script\Enemy\EnergyEnemy\IceEE\Buttlet.cs" />
     <Compile Include="Assets\Script\Minimap\MinimapManager.cs" />
+    <Compile Include="Assets\Script\Enemy\BossEnemy\IceBoss\Boss.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\VertexShakeA.cs" />
     <Compile Include="Assets\Script\Item\HealDrop\HealDrop.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark01_UGUI.cs" />
