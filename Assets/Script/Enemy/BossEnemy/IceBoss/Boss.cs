@@ -6,7 +6,11 @@ public class Boss : Enemy
     [Header("Skill Settings")]
     [SerializeField] private float skillCooldown = 30f;
     [SerializeField] private float skillDuration = 10f;
-
+    [Header("Projectile")]
+    [SerializeField] private GameObject projectilePrefab;
+    [SerializeField] private Transform firePoint;
+    [SerializeField] private float projectileSpeed = 8f;
+    [SerializeField] private float projectileDamage = 20f;
     private bool isUsingSkill = false;
     private Coroutine skillCoroutine;
 
@@ -25,11 +29,7 @@ public class Boss : Enemy
             rb.linearVelocity = Vector2.zero;
             return;
         }
-        Debug.Log(animator.GetCurrentAnimatorStateInfo(0).IsName("Skill_Start"));
-        Debug.Log(animator.GetCurrentAnimatorStateInfo(0).IsName("Skill_Loop"));
-        Debug.Log(animator.GetCurrentAnimatorStateInfo(0).normalizedTime);
         base.Update();
-        Debug.Log(animator.speed);
     }
 
     private IEnumerator SkillRoutine()
@@ -96,5 +96,47 @@ public class Boss : Enemy
     public bool IsUsingSkill()
     {
         return isUsingSkill;
+    }
+
+    // Animation Event trong Skill_Loop
+    public void ShootProjectile()
+    {
+        if (player == null)
+            return;
+
+        if (projectilePrefab == null)
+            return;
+
+        Vector2 direction =
+            (player.transform.position - firePoint.position).normalized;
+
+        GameObject bullet =
+            Instantiate(
+                projectilePrefab,
+                firePoint.position,
+                Quaternion.identity);
+
+        BossButtletSkill projectile =
+            bullet.GetComponent<BossButtletSkill>();
+
+        if (projectile != null)
+        {
+            projectile.Initialize(
+                direction,
+                projectileSpeed,
+                projectileDamage);
+        }
+
+        Debug.Log("Boss Shoot");
+    }
+
+    protected override void DestroyEnemy()
+    {
+        if (GateSpawm.Instance != null)
+        {
+            GateSpawm.Instance.ShowPortal();
+        }
+
+        base.DestroyEnemy();
     }
 }

@@ -22,7 +22,7 @@ AnimationClip:
     curve:
     - time: 0
       value: {fileID: 6648339286156649250, guid: c10c49009ec10b24db7345dc633873ac, type: 3}
-    - time: 0.083333336
+    - time: 0.1
       value: {fileID: 6648339286156649250, guid: c10c49009ec10b24db7345dc633873ac, type: 3}
     attribute: m_Sprite
     path: 
@@ -53,7 +53,7 @@ AnimationClip:
     m_AdditiveReferencePoseClip: {fileID: 0}
     m_AdditiveReferencePoseTime: 0
     m_StartTime: 0
-    m_StopTime: 0.1
+    m_StopTime: 0.11666667
     m_OrientationOffsetY: 0
     m_Level: 0
     m_CycleOffset: 0
@@ -73,8 +73,8 @@ AnimationClip:
   m_HasGenericRootTransform: 0
   m_HasMotionFloatCurves: 0
   m_Events:
-  - time: 0.016666668
-    functionName: 
+  - time: 0.05
+    functionName: ShootProjectile
     data: 
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0

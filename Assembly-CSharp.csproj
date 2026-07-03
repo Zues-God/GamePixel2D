@@ -80,6 +80,7 @@
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\SkewTextExample.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\WarpTextExample.cs" />
     <Compile Include="Assets\Script\Enemy\BossEnemy\IceBoss\BossController.cs" />
+    <Compile Include="Assets\Script\LivingRoom\Gate\ExitGate.cs" />
     <Compile Include="Assets\Script\Enemy\BossEnemy\BossSand\BossLaser.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\ShaderPropAnimator.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_TextInfoDebugTool.cs" />
@@ -92,6 +93,7 @@
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark01_UGUI.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\SimpleScript.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark04.cs" />
+    <Compile Include="Assets\Script\Enemy\BossEnemy\IceBoss\BossButtletSkill.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\ChatController.cs" />
     <Compile Include="Assets\Script\Player\Wizar\Weapon\Weapon.cs" />
     <Compile Include="Assets\Script\Minimap\PathController.cs" />
@@ -101,6 +103,7 @@
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TextMeshSpawner.cs" />
     <Compile Include="Assets\Script\Gun\Gun.cs" />
     <Compile Include="Assets\Script\Player\Knight\SkillAOE.cs" />
+    <Compile Include="Assets\Script\LivingRoom\Gate\GateSpawm.cs" />
     <Compile Include="Assets\Script\Player\Wizar\Skill\ChargeSkill.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\CameraController.cs" />
     <Compile Include="Assets\Script\Player\Wizar\Weapon\FileBall.cs" />

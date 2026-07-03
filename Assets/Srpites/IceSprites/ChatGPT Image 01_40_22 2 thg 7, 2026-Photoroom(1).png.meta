@@ -177,7 +177,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 48
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -537,10 +537,10 @@ TextureImporter:
       name: ChatGPT Image 01_40_22 2 thg 7, 2026-Photoroom(1)_14
       rect:
         serializedVersion: 2
-        x: 2104
-        y: 637
-        width: 526
-        height: 637
+        x: 2379
+        y: 949
+        width: 76
+        height: 92
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}

@@ -137,4 +137,31 @@ public class RunManager : MonoBehaviour
 
         Debug.Log("=====================");
     }
+
+    public void GoNextStage()
+    {
+        Debug.Log("===== GO NEXT STAGE =====");
+
+        switch (currentStage)
+        {
+            case 1:
+                currentStage = 2;
+                SceneManager.LoadScene(currentBiome.stage2);
+                break;
+
+            case 2:
+                currentStage = 3;
+                SceneManager.LoadScene(currentBiome.bossScene);
+                break;
+
+            case 3:
+                Debug.Log("Biome Completed!");
+
+                CompleteCurrentBiome();
+
+                SceneManager.LoadScene("LivingRoom");
+
+                break;
+        }
+    }
 }
