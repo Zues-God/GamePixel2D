@@ -5,14 +5,12 @@ public class ShieldRicochet : MonoBehaviour
 {
     [SerializeField] private float speed = 12f;
     [SerializeField] private float lifeTime = 2f;
-
     [SerializeField] private LayerMask wallMask;
     [SerializeField] private float rotateSpeed = 720f;
-
     private Vector2 direction;
     private PlayerShield playerShield;
-
     private bool isFlying = false;
+    public string weaponName;
 
 
     public void Init(Vector2 dir, Transform playerRef)

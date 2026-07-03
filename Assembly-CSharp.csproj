@@ -55,6 +55,7 @@
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\EnvMapAnimator.cs" />
     <Compile Include="Assets\Script\Enemy\HealEnemy\SandHealEnemy\HealEnemy.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_TextSelector_A.cs" />
+    <Compile Include="Assets\Script\Player\Knight\WeaponPickup.cs" />
     <Compile Include="Assets\Script\LivingRoom\RoomScript\SelectionManager.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark02.cs" />
     <Compile Include="Assets\Script\LivingRoom\Gate\BiomeData.cs" />

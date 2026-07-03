@@ -84,19 +84,19 @@ public class RoomTriger : MonoBehaviour
 
     IEnumerator PlayIntro()
     {
+        
         Time.timeScale = 0f;
 
         player.GetComponent<Player>().enabled = false;
 
         if (introBoss != null)
             introBoss.SetActive(true);
-
+         player.gameObject.SetActive(false);
         yield return new WaitForSecondsRealtime(introDuration);
-
+        player.gameObject.SetActive(true);
         player.GetComponent<Player>().enabled = true;
 
-        if (introBoss != null)
-            introBoss.SetActive(false);
+        if (introBoss != null) introBoss.SetActive(false);
 
         Time.timeScale = 1f;
 
