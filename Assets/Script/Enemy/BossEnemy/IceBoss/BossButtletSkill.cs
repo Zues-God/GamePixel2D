@@ -51,13 +51,9 @@ public class BossButtletSkill : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        // Chống va chạm liên tục trong cùng một frame
         if (Time.time < nextBounceTime)
             return;
-
-        //----------------------------
-        // Player
-        //----------------------------
+        
         Player player =
             collision.collider.GetComponent<Player>();
 
@@ -70,9 +66,6 @@ public class BossButtletSkill : MonoBehaviour
             return;
         }
 
-        //----------------------------
-        // Wall
-        //----------------------------
         if (collision.collider.CompareTag("Wall"))
         {
             if (!canBounce)
@@ -82,8 +75,6 @@ public class BossButtletSkill : MonoBehaviour
             }
 
             currentBounce++;
-
-            Debug.Log($"Bounce {currentBounce}/{maxBounce}");
 
             if (currentBounce > maxBounce)
             {
@@ -97,13 +88,11 @@ public class BossButtletSkill : MonoBehaviour
             direction =
                 Vector2.Reflect(direction, normal).normalized;
 
-            // Đẩy viên đạn ra khỏi tường
             transform.position +=
                 (Vector3)(direction * pushOutDistance);
 
             RotateBullet();
 
-            // Chống va chạm liên tục
             nextBounceTime =
                 Time.time + bounceCooldown;
         }

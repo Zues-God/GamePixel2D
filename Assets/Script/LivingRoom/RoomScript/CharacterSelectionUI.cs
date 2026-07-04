@@ -33,8 +33,7 @@ public class CharacterSelectionUI : MonoBehaviour
         statsText.text =
             $"HP: {data.hp}\n" +
             $"Mana: {data.mana}\n" +
-            $"Attack: {data.attack}\n" +
-            $"Defense: {data.defense}";
+            $"Attack: {data.attack}\n";
 
         skillText.text =
             $"{data.skillName}\n\n" +

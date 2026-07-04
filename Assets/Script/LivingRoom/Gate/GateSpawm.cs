@@ -16,7 +16,5 @@ public class GateSpawm : MonoBehaviour
     public void ShowPortal()
     {
         portal.SetActive(true);
-
-        Debug.Log("Portal Spawn");
     }
 }

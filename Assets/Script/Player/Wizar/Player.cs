@@ -30,8 +30,6 @@ public class Wizar : MonoBehaviour
     {
         currentHpPlayer = maxHpPlayer;
         UpdateHP();
-
-        Debug.Log("Player Spawned");
     }
 
     private void Update()
@@ -102,8 +100,6 @@ public class Wizar : MonoBehaviour
 
         UpdateHP();
 
-        Debug.Log("Player nhận sát thương: " + damage + " | HP còn: " + currentHpPlayer);
-
         if (currentHpPlayer <= 0)
         {
             Die();
@@ -116,14 +112,10 @@ public class Wizar : MonoBehaviour
         currentHpPlayer = Mathf.Min(currentHpPlayer, maxHpPlayer);
 
         UpdateHP();
-
-        Debug.Log("Player hồi máu: " + healValue + " | HP hiện tại: " + currentHpPlayer);
     }
 
     private void Die()
     {
-        Debug.Log("Player Dead");
-
         if (stopAudio != null)
         {
             stopAudio.Stop();

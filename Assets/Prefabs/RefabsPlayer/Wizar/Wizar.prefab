@@ -3072,17 +3072,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Player
   moveSpeed: 10
-  maxHpPlayer: 100
+  maxHpPlayer: 80
   hpBar: {fileID: 320775516053358461}
   maxEnergy: 200
   energyBar: {fileID: 8275572161645621420}
-  stopAudio: {fileID: 140454192446974299}
   hitBox: {fileID: 0}
   skillCost: 0
   skillCooldown: 0
-  skillKinght: {fileID: 0}
-  swordAnimation: {fileID: 0}
+  skillPlayer: {fileID: 0}
+  animationWeapon: {fileID: 0}
   weapon: {fileID: 3960274554096033974}
+  hitCooldown: 0.1
 --- !u!1 &8721593274400097892
 GameObject:
   m_ObjectHideFlags: 0

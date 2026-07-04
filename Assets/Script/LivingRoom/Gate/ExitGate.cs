@@ -14,8 +14,6 @@ public class ExitGate : MonoBehaviour
 
         isLoading = true;
 
-        Debug.Log("Player Enter Portal");
-
         RunManager.Instance.GoNextStage();
     }
 }

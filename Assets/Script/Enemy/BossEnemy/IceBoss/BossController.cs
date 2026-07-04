@@ -20,21 +20,18 @@ public class BossController : Enemy
 
     protected override void Update()
     {
-        // Đang dùng skill
         if (isUsingSkill)
         {
             CheckSkillDuration();
             return;
         }
 
-        // Ưu tiên dùng skill nếu đủ cooldown
         if (Time.time >= nextSkillTime)
         {
             StartSkill();
             return;
         }
 
-        // Chưa dùng skill thì chạy AI bình thường
         base.Update();
     }
 
@@ -44,10 +41,8 @@ public class BossController : Enemy
 
         skillStartTime = Time.time;
 
-        // Dừng di chuyển
         rb.linearVelocity = Vector2.zero;
 
-        // Bắt đầu animation skill
         animator.SetBool("isSkill", true);
 
         Debug.Log("===== BOSS START SKILL =====");
@@ -65,7 +60,6 @@ public class BossController : Enemy
         }
     }
 
-    // Animation Event ở cuối Skill_End
     public void FinishSkill()
     {
         isUsingSkill = false;

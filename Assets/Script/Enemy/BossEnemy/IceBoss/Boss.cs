@@ -23,7 +23,6 @@ public class Boss : Enemy
 
     protected override void Update()
     {
-        // ?ang dùng skill thì không cho Enemy AI ho?t ??ng
         if (isUsingSkill)
         {
             rb.linearVelocity = Vector2.zero;
@@ -36,16 +35,11 @@ public class Boss : Enemy
     {
         while (true)
         {
-            // Ch? h?i chiêu
             yield return new WaitForSecondsRealtime(skillCooldown);
-
-            // N?u Boss ch?a ???c kích ho?t thì ch?
             if (!isActive)
                 continue;
 
             StartSkill();
-
-            // Th?i gian dùng skill
             yield return new WaitForSecondsRealtime(skillDuration);
 
             EndSkill();
@@ -59,26 +53,18 @@ public class Boss : Enemy
         rb.linearVelocity = Vector2.zero;
 
         animator.SetBool("isSkill", true);
-
-        Debug.Log("========== BOSS START SKILL ==========");
     }
 
     private void EndSkill()
     {
         animator.SetBool("isSkill", false);
-
-        Debug.Log("========== BOSS END SKILL ==========");
     }
 
-    // Animation Event ? frame cu?i c?a Skill_End
     public void FinishSkill()
     {
         isUsingSkill = false;
-
-        Debug.Log("========== FINISH SKILL ==========");
     }
 
-    // Override hàm ch?t c?a Enemy
     protected override void AnimationDie()
     {
         if (skillCoroutine != null)
@@ -98,7 +84,6 @@ public class Boss : Enemy
         return isUsingSkill;
     }
 
-    // Animation Event trong Skill_Loop
     public void ShootProjectile()
     {
         if (player == null)
@@ -126,8 +111,6 @@ public class Boss : Enemy
                 projectileSpeed,
                 projectileDamage);
         }
-
-        Debug.Log("Boss Shoot");
     }
 
     protected override void DestroyEnemy()

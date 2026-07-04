@@ -8,7 +8,6 @@ public class PlayerSpawner : MonoBehaviour
     {
         if (CharacterManager.Instance == null)
         {
-            Debug.LogError("Không có CharacterManager!");
             return;
         }
 
@@ -17,7 +16,6 @@ public class PlayerSpawner : MonoBehaviour
 
         if (character == null)
         {
-            Debug.LogError("Chưa chọn nhân vật!");
             return;
         }
 
@@ -25,7 +23,5 @@ public class PlayerSpawner : MonoBehaviour
             character.playerPrefab,
             spawnPoint.position,
             Quaternion.identity);
-
-        Debug.Log("Spawn Player: " + character.name);
     }
 }
