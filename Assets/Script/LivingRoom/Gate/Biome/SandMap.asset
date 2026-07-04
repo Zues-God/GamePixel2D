@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: SandMap
   m_EditorClassIdentifier: Assembly-CSharp::BiomeData
   biomeName: 
-  stage1: 
-  stage2: 
-  bossScene: 
+  stage1: SandMap 1-1
+  stage2: SandMap 1-2
+  bossScene: SandMap 1-3

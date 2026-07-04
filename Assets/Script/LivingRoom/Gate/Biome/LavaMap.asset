@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: LavaMap
   m_EditorClassIdentifier: Assembly-CSharp::BiomeData
   biomeName: 
-  stage1: 
-  stage2: 
-  bossScene: 
+  stage1: LavaMap 1-1
+  stage2: LavaMap 1-2
+  bossScene: LavaMap 1-3

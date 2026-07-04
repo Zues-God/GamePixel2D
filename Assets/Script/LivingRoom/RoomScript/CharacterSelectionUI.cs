@@ -12,7 +12,7 @@ public class CharacterSelectionUI : MonoBehaviour
     [SerializeField] private TMP_Text skillText;
     [SerializeField] private TMP_Text descriptionText;
 
-
+    [SerializeField] private CameraController lobbyCamera;
 
     private CharacterData currentCharacter;
 
@@ -62,5 +62,24 @@ public class CharacterSelectionUI : MonoBehaviour
     public void Hide()
     {
         panel.SetActive(false);
+
+        if (lobbyCamera != null)
+        {
+            lobbyCamera.BackToLobby();
+        }
+
+        currentCharacter = null;
+    }
+
+    public void CloseButton()
+    {
+        panel.SetActive(false);
+
+        currentCharacter = null;
+
+        if (lobbyCamera != null)
+        {
+            lobbyCamera.BackToLobby();
+        }
     }
 }

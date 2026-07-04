@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: WindMap
   m_EditorClassIdentifier: Assembly-CSharp::BiomeData
   biomeName: 
-  stage1: 
-  stage2: 
-  bossScene: 
+  stage1: MapWind 1-1
+  stage2: MapWind 1-2
+  bossScene: MapWind 1-3
