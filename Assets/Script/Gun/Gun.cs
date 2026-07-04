@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 public class Gun : MonoBehaviour
@@ -9,26 +10,24 @@ public class Gun : MonoBehaviour
     [SerializeField] private GameObject bulletPrefabs;
     [SerializeField] private float shotDelay = 0.15f;
     private float nextShot;
-    [SerializeField] private int maxAmmo = 24;
-    public int currenAmmo;
     public string weaponName;
     public bool canUse = true;
+    [SerializeField] private float manaCost = 5f;
+    private Player player;
+    [SerializeField] private Audio audioManager;
 
-    void Start()
+
+
+    public void SetPlayer(Player p)
     {
-        currenAmmo = maxAmmo;
-
+        player = p;
     }
 
     void Update()
     {
 
-     
-
         RotateGun();
         Shoot();
-        ReloadBullet();
-
     }
 
     void RotateGun()
@@ -54,19 +53,18 @@ public class Gun : MonoBehaviour
     void Shoot()
     {
         if (!canUse) return;
-        if (Input.GetMouseButton(0) && currenAmmo > 0 && Time.time > nextShot)
+
+        if (Input.GetMouseButton(0) && Time.time > nextShot)
         {
+            if (!player.UseMana(manaCost))
+            {
+                return;
+            }
             nextShot = Time.time + shotDelay;
             Instantiate(bulletPrefabs, firePos.position, firePos.rotation);
-            currenAmmo -= 1;
+            audioManager.PlayShootSound();  
         }
     }
-    void ReloadBullet()
-    {
-        if (Input.GetMouseButton(1) && currenAmmo < maxAmmo)
-        {
-            currenAmmo = maxAmmo;
-        }
-    }
+
 
 }

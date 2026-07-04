@@ -20,6 +20,7 @@ public class Player : MonoBehaviour
     [SerializeField] private float skillCost = 40f;
     [SerializeField] private float skillCooldown = 3f;
     [SerializeField] private GameObject skillPlayer;
+    [SerializeField] private Audio audioManager;
     private Rigidbody2D rb;
     private SpriteRenderer rbSprite;
     private Animator animator;
@@ -30,7 +31,6 @@ public class Player : MonoBehaviour
     public GameObject animationWeapon;
     private float lastHitTime;
     private GameObject currentWeapon;
-    private float rotateOffset = 180f;
 
     private void Awake()
     {
@@ -50,7 +50,7 @@ public class Player : MonoBehaviour
     public void PickupGun(GameObject gunObj)
     {
        
-
+        audioManager.PlayTakeWeaponSound();
         gunObj.transform.SetParent(backHolder);
 
         gunObj.transform.localPosition = Vector3.zero;
@@ -63,13 +63,11 @@ public class Player : MonoBehaviour
             weapon1.SetActive(false);
 
         }
-
         currentWeapon = weapon2;
-
         Gun gun = weapon2.GetComponent<Gun>();
+        gun.SetPlayer(this);
         if (gun != null)
             gun.canUse = true;
-
         WeaponPickup pickup = weapon2.GetComponent<WeaponPickup>();
         if (pickup != null)
             Destroy(pickup);
@@ -112,6 +110,7 @@ public class Player : MonoBehaviour
             lastSkillTime = Time.time;
             Vector2 skillPos = transform.position;
             StartCoroutine(SkillRoutine());
+            audioManager.PlaySkillSound();
         }
 
     }
@@ -129,12 +128,8 @@ public class Player : MonoBehaviour
     protected virtual void Update()
     {
 
-        if (Input.GetKeyDown(KeyCode.E))
-        {
-            SwapWeapon();
-           
-        }
       
+        ChangeWeapon();
         MovePlayer();
         HandleFacingDirection();
         PlayerSkill();
@@ -142,6 +137,21 @@ public class Player : MonoBehaviour
        
     }
 
+
+    private void ChangeWeapon()
+    {
+        if (Input.GetKeyDown(KeyCode.E))
+        {
+            audioManager.PlayChangeWeaponSound();
+            if (weapon2.transform.childCount == 0)
+            {
+                Debug.LogWarning("No weapon to swap to.");
+                return;
+
+            }
+            SwapWeapon();  
+        }
+    }
 
     private void MovePlayer()
     {
@@ -235,6 +245,7 @@ public class Player : MonoBehaviour
         if (Input.GetMouseButtonDown(0))
         {
             animator.SetTrigger("isAttack");
+            audioManager.PlayAttackSound();
         }
     }
 
