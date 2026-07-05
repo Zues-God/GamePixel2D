@@ -18,8 +18,6 @@ public class CharacterData : ScriptableObject
 
     public int attack;
 
-    public int defense;
-
     [Header("Skill")]
     public string skillName;
 

@@ -13,8 +13,6 @@ public class CharacterManager : MonoBehaviour
             Instance = this;
 
             DontDestroyOnLoad(gameObject);
-
-            Debug.Log("CharacterManager Created");
         }
         else
         {
@@ -25,7 +23,5 @@ public class CharacterManager : MonoBehaviour
     public void SelectCharacter(CharacterData data)
     {
         SelectedCharacter = data;
-
-        Debug.Log("Selected Character: " + data.characterName);
     }
 }

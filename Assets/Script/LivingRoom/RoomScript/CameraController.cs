@@ -2,27 +2,49 @@ using UnityEngine;
 
 public class CameraController : MonoBehaviour
 {
-    public static CameraController Instance;
+    public Camera cam;
+    [SerializeField] private Transform defaultPoint;
+    [SerializeField] private float defaultSize = 12.5f;
 
-    [SerializeField] private Camera mainCamera;
+    public float moveSpeed = 5;
+    public float zoomSpeed = 5;
 
-    [SerializeField] private float normalSize = 8f;
-    [SerializeField] private float zoomSize = 5f;
+    private Vector3 targetPos;
+    private float targetSize;
 
-    private void Awake()
+    void Start()
     {
-        Instance = this;
+        targetPos = transform.position;
+        targetSize = cam.orthographicSize;
     }
 
-    public void ZoomIn()
+    void Update()
     {
-        mainCamera.orthographicSize =
-            zoomSize;
+        transform.position =
+            Vector3.Lerp(
+                transform.position,
+                targetPos,
+                Time.deltaTime * moveSpeed);
+
+        cam.orthographicSize =
+            Mathf.Lerp(
+                cam.orthographicSize,
+                targetSize,
+                Time.deltaTime * zoomSpeed);
     }
 
-    public void ZoomOut()
+    public void Focus(Transform point, float size)
     {
-        mainCamera.orthographicSize =
-            normalSize;
+        targetPos = new Vector3(
+            point.position.x,
+            point.position.y,
+            transform.position.z);
+
+        targetSize = size;
+    }
+
+    public void BackToLobby()
+    {
+        Focus(defaultPoint, defaultSize);
     }
 }

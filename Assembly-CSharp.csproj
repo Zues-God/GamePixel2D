@@ -43,7 +43,7 @@
     <UnityVersion>6000.4.6f1</UnityVersion>
   </PropertyGroup>
   <ItemGroup>
-    <Analyzer Include="C:\Program Files\Microsoft Visual Studio\18\Community\Common7\IDE\Extensions\Microsoft\Visual Studio Tools for Unity\Analyzers\Microsoft.Unity.Analyzers.dll" />
+    <Analyzer Include="C:\Program Files\Microsoft Visual Studio\18\Insiders\Common7\IDE\Extensions\Microsoft\Visual Studio Tools for Unity\Analyzers\Microsoft.Unity.Analyzers.dll" />
     <Analyzer Include="C:\Program Files\Unity\Hub\Editor\6000.4.6f1\Editor\Data\Tools\BuildPipeline\Unity.SourceGenerators\Unity.SourceGenerators.dll" />
     <Analyzer Include="C:\Program Files\Unity\Hub\Editor\6000.4.6f1\Editor\Data\Tools\BuildPipeline\Unity.SourceGenerators\Unity.Properties.SourceGenerator.dll" />
     <Analyzer Include="C:\Program Files\Unity\Hub\Editor\6000.4.6f1\Editor\Data\Tools\BuildPipeline\Unity.SourceGenerators\Unity.UIToolkit.SourceGenerator.dll" />
@@ -82,17 +82,21 @@
     <Compile Include="Assets\Script\Player\Knight\PlayerKnight.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\SkewTextExample.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\WarpTextExample.cs" />
+    <Compile Include="Assets\Script\Enemy\BossEnemy\IceBoss\BossController.cs" />
+    <Compile Include="Assets\Script\LivingRoom\Gate\ExitGate.cs" />
     <Compile Include="Assets\Script\Enemy\BossEnemy\BossSand\BossLaser.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\ShaderPropAnimator.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_TextInfoDebugTool.cs" />
     <Compile Include="Assets\Script\LivingRoom\Gate\RunManager.cs" />
     <Compile Include="Assets\Script\Enemy\EnergyEnemy\IceEE\Buttlet.cs" />
     <Compile Include="Assets\Script\Minimap\MinimapManager.cs" />
+    <Compile Include="Assets\Script\Enemy\BossEnemy\IceBoss\Boss.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\VertexShakeA.cs" />
     <Compile Include="Assets\Script\Item\HealDrop\HealDrop.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark01_UGUI.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\SimpleScript.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark04.cs" />
+    <Compile Include="Assets\Script\Enemy\BossEnemy\IceBoss\BossButtletSkill.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\ChatController.cs" />
     <Compile Include="Assets\Script\Player\Wizar\Weapon\Weapon.cs" />
     <Compile Include="Assets\Script\Minimap\PathController.cs" />
@@ -102,6 +106,7 @@
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TextMeshSpawner.cs" />
     <Compile Include="Assets\Script\Gun\Gun.cs" />
     <Compile Include="Assets\Script\Player\Knight\SkillAOE.cs" />
+    <Compile Include="Assets\Script\LivingRoom\Gate\GateSpawm.cs" />
     <Compile Include="Assets\Script\Player\Wizar\Skill\ChargeSkill.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\CameraController.cs" />
     <Compile Include="Assets\Script\Player\Wizar\Weapon\FileBall.cs" />
@@ -111,6 +116,7 @@
     <Compile Include="Assets\Script\RoomTriger\RoomTriger.cs" />
     <Compile Include="Assets\Script\Player\Player.cs" />
     <Compile Include="Assets\Script\LivingRoom\Gate\PlayerSpawner.cs" />
+    <Compile Include="Assets\Script\LivingRoom\Gate\RoomTrigger.cs" />
     <Compile Include="Assets\Script\Enemy\BossEnemy\BossSand\BossEnemy.cs" />
     <Compile Include="Assets\Script\Minimap\RoomController.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\DropdownSample.cs" />

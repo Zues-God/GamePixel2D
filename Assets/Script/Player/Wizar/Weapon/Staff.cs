@@ -36,16 +36,12 @@ public class Staff : Weapon
     public override void SetHolding(bool holding)
     {
         isHolding = holding;
-
-        Debug.Log("Holding: " + isHolding);
     }
 
     public void Shoot()
     {
         if (!player.UseMana(manaCost))
         {
-            Debug.Log("Không đủ Mana");
-
             queuedShots = 0;
 
             isHolding = false;
@@ -137,11 +133,8 @@ public class Staff : Weapon
         // nếu chỉ click nhanh
         if (Time.time - holdStartTime < 0.5f)
         {
-            Debug.Log("Click");
             return;
         }
-
-        Debug.Log("Stop Hold");
 
         isHolding = false;
     }
@@ -149,8 +142,6 @@ public class Staff : Weapon
     // Animation Event cuối Attack_End
     public void EndAttack()
     {
-        Debug.Log("END ATTACK");
-
         isCasting = false;
 
         animator.SetBool(

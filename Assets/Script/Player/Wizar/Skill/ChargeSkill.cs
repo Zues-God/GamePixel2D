@@ -68,8 +68,6 @@ public class ChargeSkill : MonoBehaviour
         {
             chargeEffect.SetActive(true);
         }
-
-        Debug.Log("Start Charge");
     }
 
     private void ReleaseCharge()
@@ -101,8 +99,6 @@ public class ChargeSkill : MonoBehaviour
 
         if (!player.UseMana(manaCost))
         {
-            Debug.Log("Không đủ Mana");
-
             return;
         }
 
