@@ -1,5 +1,6 @@
 using System.Collections;
 using UnityEngine;
+using UnityEngine.Rendering;
 using UnityEngine.UI;
 
 
@@ -8,24 +9,28 @@ public class Player : MonoBehaviour
     [SerializeField] private float moveSpeed = 10f;
     [SerializeField] private float maxHpPlayer = 100f;
     [SerializeField] private Image hpBar;
-    [Header("Energy")]
     [SerializeField] private float maxEnergy = 200f;
     [SerializeField] private Image energyBar;
+    [SerializeField] private float hitCooldown = 0.1f;
+    [SerializeField] private Transform weaponHolder;
+    [SerializeField] private Transform backHolder;
+    [SerializeField] private GameObject weapon1;
+    [SerializeField] private GameObject weapon2;
+    [SerializeField] private Transform weapon;
+    [SerializeField] private float skillCost = 40f;
+    [SerializeField] private float skillCooldown = 3f;
+    [SerializeField] private GameObject skillPlayer;
+    [SerializeField] private Audio audioManager;
     private Rigidbody2D rb;
     private SpriteRenderer rbSprite;
     private Animator animator;
     public GameObject hitBox;
     private float currentHpPlayer;
     private float currentEnergy;
-    private bool isAttacking = false;
-    [SerializeField] private float skillCost = 40f;
-    [SerializeField] private float skillCooldown = 3f;
-    [SerializeField] private GameObject skillPlayer;
     private float lastSkillTime = -999f;
     public GameObject animationWeapon;
-    [SerializeField] private Transform weapon;
     private float lastHitTime;
-    [SerializeField] private float hitCooldown = 0.1f;
+    private GameObject currentWeapon;
 
     private void Awake()
     {
@@ -37,11 +42,63 @@ public class Player : MonoBehaviour
 
     protected virtual void Start()
     {
+        currentWeapon = weapon1;
+        weapon1.transform.SetParent(weaponHolder);
         currentHpPlayer = maxHpPlayer;
         currentEnergy = maxEnergy;
-
-
     }
+    public void PickupGun(GameObject gunObj)
+    {
+       
+        audioManager.PlayTakeWeaponSound();
+        gunObj.transform.SetParent(backHolder);
+
+        gunObj.transform.localPosition = Vector3.zero;
+        gunObj.transform.localRotation = Quaternion.identity;
+
+        weapon2 = gunObj;
+
+        if (weapon1 != null)
+        {
+            weapon1.SetActive(false);
+
+        }
+        currentWeapon = weapon2;
+        Gun gun = weapon2.GetComponent<Gun>();
+        gun.SetPlayer(this);
+        if (gun != null)
+            gun.canUse = true;
+        WeaponPickup pickup = weapon2.GetComponent<WeaponPickup>();
+        if (pickup != null)
+            Destroy(pickup);
+    }
+
+    public void SwapWeapon()
+    {
+        if (weapon1 == null || weapon2 == null) return;
+
+        if (currentWeapon == weapon1)
+        {
+        
+            currentWeapon = weapon2;
+
+            weapon1.SetActive(false);
+            weapon2.SetActive(true);
+        }
+        else
+        {
+         
+            currentWeapon = weapon1;
+
+            weapon2.SetActive(false);
+            weapon1.SetActive(true);
+        }
+    }
+
+
+ 
+
+
 
     private void PlayerSkill()
     {
@@ -53,6 +110,7 @@ public class Player : MonoBehaviour
             lastSkillTime = Time.time;
             Vector2 skillPos = transform.position;
             StartCoroutine(SkillRoutine());
+            audioManager.PlaySkillSound();
         }
 
     }
@@ -70,12 +128,31 @@ public class Player : MonoBehaviour
     protected virtual void Update()
     {
 
+      
+        ChangeWeapon();
         MovePlayer();
         HandleFacingDirection();
         PlayerSkill();
         PlayerAttack();
-
+       
     }
+
+
+    private void ChangeWeapon()
+    {
+        if (Input.GetKeyDown(KeyCode.E))
+        {
+            audioManager.PlayChangeWeaponSound();
+            if (weapon2.transform.childCount == 0)
+            {
+                Debug.LogWarning("No weapon to swap to.");
+                return;
+
+            }
+            SwapWeapon();  
+        }
+    }
+
     private void MovePlayer()
     {
         Vector2 playerInput = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
@@ -83,17 +160,17 @@ public class Player : MonoBehaviour
 
         if (playerInput.x < 0)
         {
-
             rbSprite.flipX = true;
-            weapon.localScale = new Vector3(-1, 1, 1);
 
+            if (weapon != null)
+                weapon.transform.localScale = new Vector3(-1, 1, 1);
         }
         else if (playerInput.x > 0)
         {
-
             rbSprite.flipX = false;
-            weapon.localScale = new Vector3(1, 1, 1);
 
+            if (weapon != null)
+                weapon.transform.localScale = new Vector3(1, 1, 1);
         }
 
         if (playerInput != Vector2.zero)
@@ -116,13 +193,13 @@ public class Player : MonoBehaviour
             if (mousePos.x < transform.position.x)
             {
                 rbSprite.flipX = true;
-                weapon.localScale = new Vector3(-1, 1, 1);
+                weapon.transform.localScale = new Vector3(-1, 1, 1);
 
             }
             else
             {
                 rbSprite.flipX = false;
-                weapon.localScale = new Vector3(1, 1, 1);
+                weapon.transform.localScale = new Vector3(1, 1, 1);
 
             }
         }
@@ -161,14 +238,14 @@ public class Player : MonoBehaviour
     }
 
 
-
-    private void PlayerAttack()
+    void PlayerAttack()
     {
+        if (currentWeapon == weapon2) return;
 
-        if (Input.GetMouseButtonDown(0) && !isAttacking)
+        if (Input.GetMouseButtonDown(0))
         {
-            isAttacking = true;
             animator.SetTrigger("isAttack");
+            audioManager.PlayAttackSound();
         }
     }
 
@@ -181,7 +258,6 @@ public class Player : MonoBehaviour
 
     public void DisableHitBox()
     {
-        isAttacking = false;
         hitBox.SetActive(false);
     }
 

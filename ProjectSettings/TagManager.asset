@@ -67,6 +67,9 @@ TagManager:
   - name: Enemy
     uniqueID: 419568385
     locked: 0
+  - name: Blood
+    uniqueID: 3222404085
+    locked: 0
   - name: LaserBoss
     uniqueID: 2155291527
     locked: 0

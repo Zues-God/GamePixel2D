@@ -27,8 +27,6 @@ public class BossEnemy : Enemy
 
         if (movementScript != null) movementScript.enabled = true;
 
-
-
     }
 
     private IEnumerator LaserLoop()
