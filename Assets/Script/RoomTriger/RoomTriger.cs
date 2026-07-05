@@ -6,7 +6,7 @@ using UnityEngine;
 
 public class RoomTriger : MonoBehaviour
 {
-    [SerializeField] private GameObject [] enemyPrefab;
+    [SerializeField] private GameObject[] enemyPrefab;
     public GameObject bossHPBar, introBoss, player;
     private List<GameObject> enemy = new List<GameObject>();
     public AudioSource bossSound;
@@ -14,11 +14,17 @@ public class RoomTriger : MonoBehaviour
     public int enemySpaw = 5;
     public float introDuration = 2.5f;
     private bool spawed = false;
-    public Animator [] door;
+    public Animator[] door;
     public Transform enemyParent;
-    private bool doorOpened = false;
     [SerializeField] private bool isBossRoom;
-
+    [Header("Wave System")]
+    [SerializeField] private int totalWaves = 3;
+    [SerializeField] private int minEnemyPerWave = 2;
+    [SerializeField] private int maxEnemyPerWave = 6;
+    [SerializeField] private GameObject exitPortal;
+    [SerializeField] private bool isLastRoom;
+    private int currentWave = 0;
+    private bool roomCleared = false;
 
 
 
@@ -27,8 +33,6 @@ public class RoomTriger : MonoBehaviour
         if (collision.CompareTag("Player") && !spawed)
         {
             spawed = true;
-            SpawEnemy();
-            ActiveAllEnemy();
 
             if (isBossRoom)
             {
@@ -46,8 +50,12 @@ public class RoomTriger : MonoBehaviour
             {
                 d.gameObject.SetActive(true);
             }
+
+            StartNextWave(); 
         }
     }
+
+
 
     void Start()
     {
@@ -65,38 +73,56 @@ public class RoomTriger : MonoBehaviour
     }
 
 
-
-    void SpawEnemy()
+    void StartNextWave()
     {
-        Bounds bounds = spawArena.bounds;
-        for (int i = 0; i < enemySpaw; i++)
-        {
-            float randomX = UnityEngine.Random.Range(bounds.min.x, bounds.max.x);
-            float randomY = UnityEngine.Random.Range(bounds.min.y, bounds.max.y);
-            Vector2 spawnPos = new Vector2(randomX, randomY);
-            GameObject randomEnemy = enemyPrefab[ Random.Range(0, enemyPrefab.Length)];
-            GameObject e = Instantiate(randomEnemy, spawnPos, Quaternion.identity, enemyParent);
-            enemy.Add(e);
+        currentWave++;
 
+        if (currentWave > totalWaves)
+        {
+            RoomCleared();
+            return;
         }
 
+        int enemyCount = Random.Range(minEnemyPerWave, maxEnemyPerWave + 1);
+
+        SpawnWave(enemyCount);
     }
 
+    void SpawnWave(int amount)
+    {
+        Bounds bounds = spawArena.bounds;
+
+        for (int i = 0; i < amount; i++)
+        {
+            float randomX = Random.Range(bounds.min.x, bounds.max.x);
+            float randomY = Random.Range(bounds.min.y, bounds.max.y);
+
+            Vector2 spawnPos = new Vector2(randomX, randomY);
+
+            GameObject randomEnemy = enemyPrefab[Random.Range(0, enemyPrefab.Length)];
+
+            GameObject e = Instantiate(randomEnemy, spawnPos, Quaternion.identity, enemyParent);
+
+            enemy.Add(e);
+        }
+
+        ActiveAllEnemy();
+    }
     IEnumerator PlayIntro()
     {
+        
         Time.timeScale = 0f;
 
         player.GetComponent<Player>().enabled = false;
 
         if (introBoss != null)
             introBoss.SetActive(true);
-
+         player.gameObject.SetActive(false);
         yield return new WaitForSecondsRealtime(introDuration);
-
+        player.gameObject.SetActive(true);
         player.GetComponent<Player>().enabled = true;
 
-        if (introBoss != null)
-            introBoss.SetActive(false);
+        if (introBoss != null) introBoss.SetActive(false);
 
         Time.timeScale = 1f;
 
@@ -107,25 +133,15 @@ public class RoomTriger : MonoBehaviour
 
     void Update()
     {
-        if (!spawed || doorOpened) return;
+        if (!spawed || roomCleared) return;
 
         enemy.RemoveAll(e => e == null);
 
-        Debug.Log("Enemy còn lại trong phòng: " + enemy.Count);
-
-
         if (enemy.Count == 0)
         {
-            doorOpened = true;
-            OpenDoor();
-        }
+            Debug.Log("Wave " + currentWave + " cleared!");
 
-        foreach (var e in enemy)
-        {
-            if (e != null)
-            {
-                Debug.Log("Enemy trong list: " + e.name);
-            }
+            StartNextWave(); 
         }
     }
     void OpenDoor()
@@ -139,12 +155,25 @@ public class RoomTriger : MonoBehaviour
                 d.SetBool("isOpen", true);
                 StartCoroutine(DisableAfterAnim(d));
             }
+
+            if (isLastRoom && exitPortal != null)
+            {
+                exitPortal.SetActive(true);
+            }
+
         }
     }
+    void RoomCleared()
+    {
+        roomCleared = true;
 
+        Debug.Log("ROOM CLEARED!");
+
+        OpenDoor();
+    }
     IEnumerator DisableAfterAnim(Animator d)
     {
-        yield return new WaitForSeconds(0.3f); 
+        yield return new WaitForSeconds(0.3f);
 
         d.gameObject.SetActive(false);
     }
@@ -152,13 +181,13 @@ public class RoomTriger : MonoBehaviour
     {
         foreach (Transform child in enemyParent)
         {
-           Enemy e  = child.GetComponent<Enemy>();
+            Enemy e = child.GetComponent<Enemy>();
 
             if (e != null)
             {
                 e.ActivateEnemy();
             }
-           
+
         }
     }
 }

@@ -4,7 +4,7 @@ public class DameLaser : MonoBehaviour
 {
     [SerializeField] private float damageLaser = 20f;
 
-   private void OnTriggerEnter2D(Collider2D collision)
+    private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("Player"))
         {
