@@ -57,6 +57,7 @@
     <Compile Include="Assets\Script\Player\Knight\Player.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_TextSelector_A.cs" />
     <Compile Include="Assets\Script\LivingRoom\RoomScript\SelectionManager.cs" />
+    <Compile Include="Assets\Script\Player\Archer\Player\PlayerAttackOverride.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark02.cs" />
     <Compile Include="Assets\Script\LivingRoom\Gate\BiomeData.cs" />
     <Compile Include="Assets\Script\Enemy\EnergyEnemy\EnergySandEnemy\EnergyEnemy.cs" />
@@ -66,13 +67,13 @@
     <Compile Include="Assets\Script\LivingRoom\CharScript\CharacterData.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_ExampleScript_01.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMPro_InstructionOverlay.cs" />
-    <Compile Include="Assets\Script\Player\LavaMap\Player\PlayerController.cs" />
     <Compile Include="Assets\Script\LivingRoom\Gate\Gate.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\VertexShakeB.cs" />
     <Compile Include="Assets\Script\LivingRoom\RoomScript\CameraController.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\VertexJitter.cs" />
     <Compile Include="Assets\Script\LivingRoom\CharScript\CharacterManager.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_UiFrameRateCounter.cs" />
+    <Compile Include="Assets\Script\Player\Archer\Arrow.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\VertexZoom.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_TextSelector_B.cs" />
     <Compile Include="Assets\Script\MainMenu\MainMenu.cs" />
@@ -80,6 +81,7 @@
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\WarpTextExample.cs" />
     <Compile Include="Assets\Script\Enemy\BossEnemy\BossSand\BossLaser.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\ShaderPropAnimator.cs" />
+    <Compile Include="Assets\Script\Player\Archer\Player\PlayerController.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_TextInfoDebugTool.cs" />
     <Compile Include="Assets\Script\LivingRoom\Gate\RunManager.cs" />
     <Compile Include="Assets\Script\Enemy\EnergyEnemy\IceEE\Buttlet.cs" />
@@ -109,7 +111,6 @@
     <Compile Include="Assets\Script\Minimap\RoomController.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\DropdownSample.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\VertexColorCycler.cs" />
-    <Compile Include="Assets\Script\Player\LavaMap\Arrow.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\ObjectSpin.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_PhoneNumberValidator.cs" />
     <Compile Include="Assets\Script\LivingRoom\RoomScript\CharacterSelectionUI.cs" />
@@ -120,13 +121,12 @@
     <Compile Include="Assets\Script\Enemy\EnergyEnemy\IceEE\RangeAttack.cs" />
     <Compile Include="Assets\Script\Item\EnergyDrop\EnergyDrop.cs" />
     <Compile Include="Assets\Script\MouseButton\CursorManager.cs" />
-    <Compile Include="Assets\Script\Player\LavaMap\Player\PlayerAttackOverride.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TextMeshProFloatingText.cs" />
     <Compile Include="Assets\Script\Player\Wizar\Skill\MeteorExplosion.cs" />
-    <Compile Include="Assets\Script\Player\LavaMap\Player\PlayerBowAttack.cs" />
     <Compile Include="Assets\Script\Player\Wizar\Weapon\Staff.cs" />
     <Compile Include="Assets\Script\Enemy\BossEnemy\BossSand\DameLaser.cs" />
     <Compile Include="Assets\Script\HitBox\Player\Knight\HitBoxPlayer.cs" />
+    <Compile Include="Assets\Script\Player\Archer\Player\PlayerBowAttack.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
