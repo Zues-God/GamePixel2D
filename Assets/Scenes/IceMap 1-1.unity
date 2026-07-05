@@ -471,7 +471,7 @@ Transform:
   m_GameObject: {fileID: 453135046}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 31.960001, y: -0.38, z: -10}
+  m_LocalPosition: {x: 119.119995, y: -5.22, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -4319,7 +4319,7 @@ Rigidbody2D:
   m_LinearDamping: 0
   m_AngularDamping: 0.05
   m_GravityScale: 0
-  m_Material: {fileID: 6200000, guid: e315d1eb494720a40ab18a0b4e997c53, type: 2}
+  m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -4355,7 +4355,7 @@ Transform:
   m_GameObject: {fileID: 935811160}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -62.98745, y: -103.00836, z: 0}
+  m_LocalPosition: {x: -63.58, y: -103.46, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -5219,6 +5219,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1646132171}
   - component: {fileID: 1646132170}
+  - component: {fileID: 1646132172}
   m_Layer: 0
   m_Name: PlayerManager
   m_TagString: Untagged
@@ -5254,6 +5255,31 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1646132172
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1646132169}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5711bcbcfa04ca64b9e10f17aea5e15f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::RoomTrigger
+  enemyPrefab: []
+  bossHPBar: {fileID: 0}
+  introBoss: {fileID: 0}
+  player: {fileID: 0}
+  bossSound: {fileID: 0}
+  spawArena: {fileID: 0}
+  enemySpaw: 5
+  introDuration: 2.5
+  door: []
+  enemyParent: {fileID: 0}
+  isBossRoom: 0
+  exitPortal: {fileID: 0}
+  isLastRoom: 0
 --- !u!1 &1739124889
 GameObject:
   m_ObjectHideFlags: 0
@@ -5284,7 +5310,7 @@ Transform:
   m_GameObject: {fileID: 1739124889}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -21.08, y: 3.67, z: 0}
+  m_LocalPosition: {x: 206.65, y: 99.2, z: 0}
   m_LocalScale: {x: 1, y: 2, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -148016,7 +148042,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &3959721905022216800
 RectTransform:
   m_ObjectHideFlags: 0
@@ -151545,7 +151571,7 @@ Transform:
   m_GameObject: {fileID: 3944071373402951964}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 32.04, y: -0.26, z: 0}
+  m_LocalPosition: {x: 119.2, y: -5.1, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -153027,7 +153053,7 @@ GameObject:
   - component: {fileID: 1002485935}
   - component: {fileID: 6420781234535626570}
   - component: {fileID: 6420781234535626569}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: WallDesign
   m_TagString: Wall
   m_Icon: {fileID: 0}
@@ -153217,7 +153243,7 @@ Rigidbody2D:
   m_LinearDamping: 0
   m_AngularDamping: 0.05
   m_GravityScale: 0
-  m_Material: {fileID: 6200000, guid: e315d1eb494720a40ab18a0b4e997c53, type: 2}
+  m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -195591,19 +195617,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5711bcbcfa04ca64b9e10f17aea5e15f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::RoomTrigger
-  enemyPrefab: []
+  enemyPrefab:
+  - {fileID: 5186135561884473530, guid: 77ca822577ae4124d8c7f67557d80285, type: 3}
+  - {fileID: 7046441772444037224, guid: 084bdf0c2ae0fe949b912094d9d04c8f, type: 3}
+  - {fileID: 5303001592074546479, guid: dd849d6c825c0bd4f9b9dfb552fd3262, type: 3}
   bossHPBar: {fileID: 0}
   introBoss: {fileID: 0}
-  player: {fileID: 0}
+  player: {fileID: 3944071373402951964}
   bossSound: {fileID: 0}
-  spawArena: {fileID: 0}
+  spawArena: {fileID: 4916166225404601388}
   enemySpaw: 5
   introDuration: 2.5
-  door: []
-  enemyParent: {fileID: 0}
+  door:
+  - {fileID: 1263754754}
+  enemyParent: {fileID: 5270556755785405969}
   isBossRoom: 0
-  exitPortal: {fileID: 0}
-  isLastRoom: 0
+  exitPortal: {fileID: 935811160}
+  isLastRoom: 1
 --- !u!114 &8574640121454118395
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -207039,7 +207069,7 @@ Rigidbody2D:
   m_LinearDamping: 0
   m_AngularDamping: 0.05
   m_GravityScale: 0
-  m_Material: {fileID: 6200000, guid: e315d1eb494720a40ab18a0b4e997c53, type: 2}
+  m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
