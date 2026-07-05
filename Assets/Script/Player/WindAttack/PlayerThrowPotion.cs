@@ -42,7 +42,7 @@ public class PlayerThrowPotion : MonoBehaviour
             Quaternion.identity
         );
 
-        potion.GetComponent<PotionProjectile>().Init(direction);
+        potion.GetComponent<PotionProjectile>().SetDirection(direction);
     }
 
     // GỌI Ở CUỐI ANIMATION EVENT
