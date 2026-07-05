@@ -6,12 +6,12 @@ public class MinimapManager : MonoBehaviour
     public static MinimapManager Instance;
 
     [Header("Cấu trúc UI Tổng")]
-    public RectTransform mapContent; 
+    public RectTransform mapContent;
 
     [Header("Khung đánh dấu Vị Trí (3 Khung riêng biệt)")]
-    public RectTransform roomHighlight;          
-    public RectTransform horizontalPathHighlight; 
-    public RectTransform verticalPathHighlight;   
+    public RectTransform roomHighlight;
+    public RectTransform horizontalPathHighlight;
+    public RectTransform verticalPathHighlight;
 
     private void Awake()
     {

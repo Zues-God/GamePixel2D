@@ -1,5 +1,4 @@
 using System.Collections;
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -10,8 +9,6 @@ public abstract class Enemy : MonoBehaviour
     [SerializeField] protected float enemyMoveSpeed = 10f;
     [SerializeField] protected float maxHP = 50f;
     [SerializeField] private Image hpBar;
-    [SerializeField] protected float enterDamage = 1f;
-    [SerializeField] protected float stayDamage = 1f;
     [SerializeField] protected float attackRange = 1f;
     [SerializeField] protected float attackCooldown = 1f;
     [SerializeField] float wanderRadius = 3f;
@@ -41,12 +38,12 @@ public abstract class Enemy : MonoBehaviour
     }
     protected virtual void Update()
     {
-       
-        if ( !isActive  || isKnockBack) return;
+
+        if (!isActive || isKnockBack) return;
 
         else if (player == null) return;
-       
-            float distance = Vector2.Distance(transform.position, player.transform.position);
+
+        float distance = Vector2.Distance(transform.position, player.transform.position);
         if (distance < aggroRange)
         {
             if (distance < attackRange)
@@ -78,7 +75,7 @@ public abstract class Enemy : MonoBehaviour
         }
 
         Vector2 direction = (wanderTarget - (Vector2)transform.position).normalized;
-        rb.linearVelocity = direction * (enemyMoveSpeed * 0.5f); 
+        rb.linearVelocity = direction * (enemyMoveSpeed * 0.5f);
 
         FlipEnemy();
     }
@@ -143,7 +140,7 @@ public abstract class Enemy : MonoBehaviour
         rb.linearVelocity = Vector2.zero;
         GetComponent<Collider2D>().enabled = false;
         Animator animator = GetComponent<Animator>();
-        if(animator != null)
+        if (animator != null)
         {
             animator.SetTrigger("isDie");
         }
@@ -169,8 +166,8 @@ public abstract class Enemy : MonoBehaviour
         Debug.Log("Enemy ðang attack");
         if (Time.time - lastAttackTime < attackCooldown) return;
         {
-            lastAttackTime = Time.time; 
-            rb.linearVelocity = Vector2.zero;  
+            lastAttackTime = Time.time;
+            rb.linearVelocity = Vector2.zero;
         }
         if (animator != null)
         {
@@ -200,6 +197,6 @@ public abstract class Enemy : MonoBehaviour
         }
     }
 
-   
+
 }
 
