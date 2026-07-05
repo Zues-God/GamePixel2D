@@ -49,8 +49,6 @@ public class Player : MonoBehaviour
     }
     public void PickupGun(GameObject gunObj)
     {
-       
-        audioManager.PlayTakeWeaponSound();
         gunObj.transform.SetParent(backHolder);
 
         gunObj.transform.localPosition = Vector3.zero;

@@ -39,4 +39,5 @@ public class Audio : MonoBehaviour
         audioSource.PlayOneShot(takeWeaponClip);
     }
 
+
 }

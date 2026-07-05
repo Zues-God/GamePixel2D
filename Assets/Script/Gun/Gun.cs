@@ -1,36 +1,32 @@
-using System;
 using UnityEngine;
 
 public class Gun : MonoBehaviour
-
 {
-
-    private float rotateOffset = 180f;
-    [SerializeField] private Transform firePos;
+    protected float rotateOffset = 180f;
+    [SerializeField] protected Transform firePos;
     [SerializeField] private GameObject bulletPrefabs;
     [SerializeField] private float shotDelay = 0.15f;
     private float nextShot;
+
     public string weaponName;
     public bool canUse = true;
     [SerializeField] private float manaCost = 5f;
-    private Player player;
-    [SerializeField] private Audio audioManager;
 
-
+    protected Player player;
+    [SerializeField] protected Audio audioManager;
 
     public void SetPlayer(Player p)
     {
         player = p;
     }
 
-    void Update()
+    protected virtual void Update()
     {
-
         RotateGun();
         Shoot();
     }
 
-    void RotateGun()
+    protected void RotateGun()
     {
         if (!canUse) return;
 
@@ -50,7 +46,7 @@ public class Gun : MonoBehaviour
             transform.localScale = new Vector3(1, -1, 1);
     }
 
-    void Shoot()
+    protected virtual void Shoot()
     {
         if (!canUse) return;
 
@@ -62,9 +58,7 @@ public class Gun : MonoBehaviour
             }
             nextShot = Time.time + shotDelay;
             Instantiate(bulletPrefabs, firePos.position, firePos.rotation);
-            audioManager.PlayShootSound();  
+            audioManager.PlayShootSound();
         }
     }
-
-
 }
