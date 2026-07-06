@@ -8,7 +8,7 @@ public class Chest : MonoBehaviour
     {
         if (collision.CompareTag("Player"))
         {
-            animationChest.SetTrigger("Open");
+            animationChest.SetTrigger("isOpenChest");
 
         }
     }
