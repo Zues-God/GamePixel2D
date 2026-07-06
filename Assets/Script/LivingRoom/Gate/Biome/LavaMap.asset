@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9c870ff4a0fe52146b9d8af734bc4082, type: 3}
   m_Name: LavaMap
   m_EditorClassIdentifier: Assembly-CSharp::BiomeData
-  biomeName: 
+  biomeName: Lava
   stage1: LavaMap 1-1
   stage2: LavaMap 1-2
   bossScene: LavaMap 1-3
