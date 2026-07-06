@@ -1824,7 +1824,7 @@ MonoBehaviour:
   lobbyCamera: {fileID: 2128560809}
   zoomSize: 4
   spawnPoint: {fileID: 587403384}
-  focusPoint: {fileID: 0}
+  focusPoint: {fileID: 915511796}
 --- !u!212 &635086178
 SpriteRenderer:
   serializedVersion: 2
