@@ -76,6 +76,8 @@ public class RunManager : MonoBehaviour
 
         currentStage = 0;
 
+        SaveManager.Instance.DeleteSave();
+
         SceneManager.LoadScene("MainLobby");
     }
 

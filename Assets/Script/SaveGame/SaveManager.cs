@@ -7,6 +7,7 @@ public class SaveManager : MonoBehaviour
 
     private const string LAST_SCENE = "LAST_SCENE";
     private const string HAS_SAVE = "HAS_SAVE";
+    private const string SELECTED_CHARACTER = "SELECTED_CHARACTER";
 
     private void Awake()
     {
@@ -49,8 +50,41 @@ public class SaveManager : MonoBehaviour
         PlayerPrefs.SetString(LAST_SCENE, sceneName);
         PlayerPrefs.SetInt(HAS_SAVE, 1);
 
+        // Also persist currently selected character (if any)
+        if (CharacterManager.Instance != null && CharacterManager.Instance.SelectedCharacter != null)
+        {
+            PlayerPrefs.SetString(SELECTED_CHARACTER, CharacterManager.Instance.SelectedCharacter.characterName);
+        }
+
         PlayerPrefs.Save();
 
+    }
+
+    // Public helper to save a selected character explicitly
+    public void SaveSelectedCharacter(CharacterData data)
+    {
+        if (data == null)
+            return;
+
+        PlayerPrefs.SetString(SELECTED_CHARACTER, data.characterName);
+        PlayerPrefs.Save();
+    }
+
+    // Get the saved character name (empty if none)
+    public string GetSavedCharacterName()
+    {
+        return PlayerPrefs.GetString(SELECTED_CHARACTER, string.Empty);
+    }
+
+    public bool HasSavedCharacter()
+    {
+        return PlayerPrefs.HasKey(SELECTED_CHARACTER);
+    }
+
+    public void DeleteSavedCharacter()
+    {
+        PlayerPrefs.DeleteKey(SELECTED_CHARACTER);
+        PlayerPrefs.Save();
     }
 
     public bool HasSave()

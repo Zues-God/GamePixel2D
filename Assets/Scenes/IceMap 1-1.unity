@@ -399,7 +399,7 @@ Transform:
   m_GameObject: {fileID: 453135046}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 32.04, y: -0.26, z: -10}
+  m_LocalPosition: {x: 665.94336, y: 523.9787, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -5162,7 +5162,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1646132171}
   - component: {fileID: 1646132170}
-  - component: {fileID: 1646132172}
   m_Layer: 0
   m_Name: PlayerManager
   m_TagString: Untagged
@@ -5198,31 +5197,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1646132172
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1646132169}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5711bcbcfa04ca64b9e10f17aea5e15f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::RoomTrigger
-  enemyPrefab: []
-  bossHPBar: {fileID: 0}
-  introBoss: {fileID: 0}
-  player: {fileID: 0}
-  bossSound: {fileID: 0}
-  spawArena: {fileID: 0}
-  enemySpaw: 5
-  introDuration: 2.5
-  door: []
-  enemyParent: {fileID: 0}
-  isBossRoom: 0
-  exitPortal: {fileID: 0}
-  isLastRoom: 0
 --- !u!1 &1739124889
 GameObject:
   m_ObjectHideFlags: 0
@@ -151271,6 +151245,7 @@ MonoBehaviour:
   bulletPrefab: {fileID: 7174288011742912108, guid: d11c57d658c4edd4c9ae965e1f6b6ac0, type: 3}
   firePoint: {fileID: 7759433711393313181}
   manaCost: 1
+  audio: {fileID: 0}
 --- !u!114 &5692089652927427968
 MonoBehaviour:
   m_ObjectHideFlags: 0
