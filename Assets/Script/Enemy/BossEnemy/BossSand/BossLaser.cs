@@ -15,7 +15,6 @@ public class BossLaser : MonoBehaviour
     [Header("Settings")]
     [SerializeField] private float stickTime = 1.2f;
 
-
     [Header("Collision")]
     [SerializeField] private LayerMask wallMask;
     [SerializeField] private GameObject warningLaser;
@@ -25,17 +24,25 @@ public class BossLaser : MonoBehaviour
     private BoxCollider2D bodyCollider;
     private float currentLength;
     private Vector2 lockedPosition;
-    [Header("Circle Attack")]
-    [SerializeField] private GameObject laserBulletPrefab;
-    [SerializeField] private int bulletCount = 12;
-    [SerializeField] private float circleDelay = 0.5f;
-    [SerializeField] private float spawnRadius = 0.5f;
+
+    private SpriteRenderer warningRenderer;
+    private float warningBaseWidth = 1f;
+
 
     private void Awake()
     {
         bodyRenderer = body.GetComponent<SpriteRenderer>();
         bodyCollider = body.GetComponent<BoxCollider2D>();
 
+        if (warningLaser != null)
+        {
+            warningRenderer = warningLaser.GetComponent<SpriteRenderer>();
+            if (warningRenderer != null && warningRenderer.sprite != null)
+            {
+                warningBaseWidth = warningRenderer.sprite.bounds.size.x;
+                if (warningBaseWidth <= 0f) warningBaseWidth = 1f;
+            }
+        }
 
         UpdateLaser(0);
     }
@@ -47,7 +54,6 @@ public class BossLaser : MonoBehaviour
 
     public IEnumerator Fire()
     {
-
         lockedPosition = player.position;
 
         Vector2 dir = (lockedPosition - (Vector2)head.position).normalized;
@@ -58,11 +64,18 @@ public class BossLaser : MonoBehaviour
 
         float distanceToTarget = Vector2.Distance(head.position, lockedPosition);
 
+        RaycastHit2D wallHit = Physics2D.Raycast(head.position, dir, 100f, wallMask);
+        float lengthToWallOrTarget = wallHit.collider != null
+            ? Mathf.Min(wallHit.distance, distanceToTarget)
+            : distanceToTarget;
+
         if (warningLaser != null)
         {
             warningLaser.SetActive(true);
-
             warningLaser.transform.position = head.position;
+            warningLaser.transform.rotation = Quaternion.Euler(0, 0, angle);
+
+            UpdateWarningLaser(); 
 
             float timer = 0f;
             float blinkInterval = 0.15f;
@@ -82,8 +95,6 @@ public class BossLaser : MonoBehaviour
         laser.gameObject.SetActive(true);
         bool playerStillThere = Vector2.Distance(player.position, lockedPosition) < 0.5f;
 
-        RaycastHit2D hit = Physics2D.Raycast(head.position, dir, 100f, wallMask);
-
         float finalLength;
 
         if (playerStillThere)
@@ -92,7 +103,7 @@ public class BossLaser : MonoBehaviour
         }
         else
         {
-            finalLength = hit.collider != null ? hit.distance : distanceToTarget;
+            finalLength = wallHit.collider != null ? wallHit.distance : distanceToTarget; 
         }
 
         currentLength = finalLength;
@@ -107,40 +118,11 @@ public class BossLaser : MonoBehaviour
 
         laser.gameObject.SetActive(false);
 
-        yield return new WaitForSeconds(stickTime);
 
-        currentLength = 0;
-        UpdateLaser(0);
-        laser.SetActive(false);
-
-        yield return new WaitForSeconds(circleDelay);
-
-        FireCircle();
-
-
-
+      
     }
 
-    private void FireCircle()
-    {
-        float angleStep = 360f / bulletCount;
-
-        for (int i = 0; i < bulletCount; i++)
-        {
-            float angle = i * angleStep;
-
-            float rad = angle * Mathf.Deg2Rad;
-
-            Vector2 dir = new Vector2(Mathf.Cos(rad), Mathf.Sin(rad));
-
-            Vector2 spawnPos = (Vector2)head.position + dir * spawnRadius;
-
-            GameObject bullet = Instantiate(laserBulletPrefab, spawnPos, Quaternion.identity);
-
-            bullet.GetComponent<LaserBullet>().Init(dir);
-        }
-    }
-
+ 
 
     void UpdateLaser(float length)
     {
@@ -157,9 +139,41 @@ public class BossLaser : MonoBehaviour
             float height = bodyCollider.size.y;
             float safeLength = Mathf.Max(length, 0.05f);
             bodyCollider.size = new Vector2(safeLength, height);
-            bodyCollider.offset = Vector2.zero;
             bodyCollider.offset = new Vector2(length * 0f, 0);
         }
+    }
+
+    private void UpdateWarningLaser()
+    {
+        if (warningRenderer == null) return;
+
+        Vector2 direction = transform.right;
+
+        float maxDistance = 20f;
+
+        RaycastHit2D hit = Physics2D.Raycast(
+            transform.position,
+            direction,
+            maxDistance,
+            LayerMask.GetMask("Wall") 
+        );
+
+        float length;
+
+        if (hit.collider != null)
+        {
+            length = hit.distance;
+        }
+        else
+        {
+            length = maxDistance;
+        }
+
+        float safeLength = Mathf.Max(length, 0.05f);
+
+        Vector3 scale = warningLaser.transform.localScale;
+        scale.x = safeLength / warningBaseWidth;
+        warningLaser.transform.localScale = scale;
     }
 
 

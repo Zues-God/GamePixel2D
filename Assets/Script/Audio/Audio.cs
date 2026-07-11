@@ -9,6 +9,8 @@ public class Audio : MonoBehaviour
     [SerializeField] private AudioClip skillClip;
     [SerializeField] private AudioClip changeWeaponClip;
     [SerializeField] private AudioClip takeWeaponClip;
+    [SerializeField] private AudioClip laserBossClip;
+
 
 
 
@@ -37,6 +39,11 @@ public class Audio : MonoBehaviour
     public void PlayTakeWeaponSound()
     {
         audioSource.PlayOneShot(takeWeaponClip);
+    }
+
+    public void LaserBossSound()
+    {
+        audioSource.PlayOneShot(laserBossClip);
     }
 
 }

@@ -2,6 +2,7 @@ using UnityEngine;
 
 public class WeaponPickup : MonoBehaviour
 {
+    [SerializeField] private Audio audioManager;
     private void OnTriggerStay2D(Collider2D col)
     {
         if (col.CompareTag("Player") && Input.GetKeyDown(KeyCode.F))
@@ -10,6 +11,7 @@ public class WeaponPickup : MonoBehaviour
 
             if (player != null)
             {
+                audioManager.PlayTakeWeaponSound();
                 player.PickupGun(gameObject);
             }
         }

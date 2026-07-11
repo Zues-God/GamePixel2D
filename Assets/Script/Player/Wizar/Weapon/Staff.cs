@@ -8,7 +8,7 @@ public class Staff : Weapon
     [SerializeField] private Transform firePoint;
     [Header("Mana")]
     [SerializeField] private float manaCost = 5f;
-
+    [SerializeField] private Audio audio;
     private Player player;
     private bool isHolding = false;
     private bool isCasting = false;
@@ -40,6 +40,9 @@ public class Staff : Weapon
 
     public void Shoot()
     {
+
+        audio.PlayShootSound();
+
         if (!player.UseMana(manaCost))
         {
             queuedShots = 0;
@@ -94,6 +97,7 @@ public class Staff : Weapon
                 bulletPrefab,
                 firePoint.position,
                 Quaternion.identity);
+
 
         FileBall bulletScript =
             bullet.GetComponent<FileBall>();

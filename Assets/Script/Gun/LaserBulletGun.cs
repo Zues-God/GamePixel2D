@@ -16,7 +16,6 @@ public class LaserBulletGun : MonoBehaviour
     public BoxCollider2D bodyCollider;
 
     private float baseWidth = 1f;
-    private bool canShoot = false;
 
     void Start()
     {
@@ -29,21 +28,10 @@ public class LaserBulletGun : MonoBehaviour
 
     void Update()
     {
-        if (!canShoot)
-        {
-            if (!Input.GetMouseButton(0)) canShoot = true;
-            UpdateLaser(0);
-            return;
-        }
 
-        if (Input.GetMouseButton(0))
-        {
-            ShootLaser();
-        }
-        else
-        {
-            UpdateLaser(0);
-        }
+        ShootLaser();
+
+
     }
 
     void ShootLaser()
@@ -75,13 +63,25 @@ public class LaserBulletGun : MonoBehaviour
             body.localScale = scale;
         }
 
-        body.localPosition = Vector3.zero; 
+        body.localPosition = Vector3.zero;
         tail.localPosition = new Vector3(safeLength, 0, 0);
 
         if (bodyCollider != null)
         {
             bodyCollider.size = new Vector2(safeLength, bodyCollider.size.y);
             bodyCollider.offset = new Vector2(safeLength * 0.5f, 0);
+        }
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Enemy"))
+        {
+            Enemy enemy = collision.GetComponent<Enemy>();
+            if (enemy != null)
+            {
+                enemy.TakeDamage(100, transform.root);
+            }
         }
     }
 }
