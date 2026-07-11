@@ -42,7 +42,6 @@ public class RoomTriger : MonoBehaviour
                 if (bossSound != null)
                     bossSound.Play();
 
-                // activate boss after playing intro
                 if (boss != null)
                 {
                     StartCoroutine(ActivateBossAfterIntro());
@@ -55,7 +54,6 @@ public class RoomTriger : MonoBehaviour
                 d.gameObject.SetActive(true);
             }
 
-            // start normal waves only when not a boss room
             if (!isBossRoom)
             {
                 StartNextWave();
@@ -69,7 +67,6 @@ public class RoomTriger : MonoBehaviour
     {
         enemy.Clear();
 
-        // If this room is a boss room, ensure boss gameobject is inactive until player enters
         if (isBossRoom && boss != null)
         {
             boss.SetActive(false);
@@ -145,42 +142,35 @@ public class RoomTriger : MonoBehaviour
 
     private IEnumerator ActivateBossAfterIntro()
     {
-        // Wait for intro coroutine to finish (play intro handles time scale and player disable)
         yield return StartCoroutine(PlayIntro());
 
         if (boss == null) yield break;
 
-        // Activate boss GameObject and ensure its Enemy logic runs
         boss.SetActive(true);
 
         Enemy e = boss.GetComponent<Enemy>();
         if (e != null)
         {
-            // add to tracking list so room knows there is an enemy
             enemy.Add(boss);
             e.ActivateEnemy();
         }
 
-        // Optionally play boss intro animation or reset animator state
         Animator anim = boss.GetComponent<Animator>();
         if (anim != null)
         {
             anim.SetBool("isRun", true);
         }
 
-        // Start monitoring boss to clear room when defeated
         StartCoroutine(MonitorBossObject());
     }
 
     private IEnumerator MonitorBossObject()
     {
-        // Wait until boss GameObject is destroyed (or set to null)
         while (boss != null)
         {
             yield return null;
         }
 
-        // Boss defeated: hide HP bar and clear room
         if (bossHPBar != null) bossHPBar.SetActive(false);
         RoomCleared();
     }
@@ -197,7 +187,6 @@ public class RoomTriger : MonoBehaviour
         {
             Debug.Log("Wave " + currentWave + " cleared!");
 
-            // only start normal waves when not a boss room
             if (!isBossRoom)
             {
                 StartNextWave();

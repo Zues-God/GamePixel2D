@@ -143,40 +143,34 @@ public class BossLaser : MonoBehaviour
         }
     }
 
-    // ✅ Set độ dài cho warningLaser bằng localScale (vì nó chỉ là 1 sprite đơn, không có head/body/tail)
     private void UpdateWarningLaser()
     {
         if (warningRenderer == null) return;
 
-        // 👉 hướng bắn (ví dụ theo rotation)
         Vector2 direction = transform.right;
 
         float maxDistance = 20f;
 
-        // 👉 raycast chỉ hit tường
         RaycastHit2D hit = Physics2D.Raycast(
             transform.position,
             direction,
             maxDistance,
-            LayerMask.GetMask("Wall") // 👈 CHỈ tường
+            LayerMask.GetMask("Wall") 
         );
 
         float length;
 
         if (hit.collider != null)
         {
-            // 👉 dừng ở tường
             length = hit.distance;
         }
         else
         {
-            // 👉 không có tường → full length
             length = maxDistance;
         }
 
         float safeLength = Mathf.Max(length, 0.05f);
 
-        // 👉 scale laser
         Vector3 scale = warningLaser.transform.localScale;
         scale.x = safeLength / warningBaseWidth;
         warningLaser.transform.localScale = scale;

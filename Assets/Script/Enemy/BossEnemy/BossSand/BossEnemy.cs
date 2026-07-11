@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections;
+using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 
@@ -11,11 +12,33 @@ public class BossEnemy : Enemy
     [SerializeField] private MonoBehaviour movementScript;
     [SerializeField] private GameObject animationLaser, bulletRefabs;
     [SerializeField] private float bulletSpeed = 20f;
-    [SerializeField] private float recordInterval = 2f; 
-    [SerializeField] private float delayBeforeFire = 1f; 
-    const int bulletCount = 8;
+    [SerializeField] private float delayBeforeFire = 1f;
+    [SerializeField] private int bulletCount = 12;
     [SerializeField] private float circleBulletSpeed = 5f;
+
+    [Header("Skill Cooldowns")]
+    [SerializeField] private float laserCooldown = 10f;
+    [SerializeField] private float fireBulletCooldown = 4f;
+    [SerializeField] private float circleBulletCooldown = 6f;
+
+    [Header("Skill Loop Settings")]
+    [SerializeField] private float skillCheckInterval = 0.5f; 
+    [SerializeField] private float firstSkillDelay = 2f;
+
+    [SerializeField] private Audio audioManager;
+    private enum BossSkillType
+    {
+        Laser,
+        FireBullet,
+        CircleBullet
+    }
+
     private Vector3 lastRecordedPlayerPosition;
+    private bool isUsingSkill = false;
+
+    private float nextLaserReadyTime;
+    private float nextFireBulletReadyTime;
+    private float nextCircleBulletReadyTime;
 
     protected override void Start()
     {
@@ -23,57 +46,98 @@ public class BossEnemy : Enemy
 
         laser.SetTarget(players);
 
-        StartCoroutine(LaserLoop());
-        StartCoroutine(DelayedFireLoop());
+        nextLaserReadyTime = Time.time + firstSkillDelay;
+        nextFireBulletReadyTime = Time.time + firstSkillDelay;
+        nextCircleBulletReadyTime = Time.time + firstSkillDelay;
+
+        StartCoroutine(SkillLoop());
     }
+
     protected override void Update()
     {
         base.Update();
-     
     }
 
-    private IEnumerator DelayedFireLoop()
+    private IEnumerator SkillLoop()
     {
         while (true)
         {
-            if (player != null)
+            if (!isUsingSkill)
             {
-                lastRecordedPlayerPosition = player.transform.position;
-                yield return new WaitForSeconds(delayBeforeFire);
-
-                Vector3 direction = (lastRecordedPlayerPosition - firePoint.position).normalized;
-                float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
-                firePoint.rotation = Quaternion.Euler(0f, 0f, angle);
-                FireBullet(direction);
+                UseSkill();
             }
 
-            yield return new WaitForSeconds(recordInterval);
+            yield return new WaitForSeconds(skillCheckInterval);
         }
     }
 
-    private IEnumerator FireLaser()
+    public void UseSkill()
     {
+        if (isUsingSkill) return;
+
+        List<BossSkillType> readySkills = new List<BossSkillType>();
+
+        if (Time.time >= nextLaserReadyTime) readySkills.Add(BossSkillType.Laser);
+        if (Time.time >= nextFireBulletReadyTime) readySkills.Add(BossSkillType.FireBullet);
+        if (Time.time >= nextCircleBulletReadyTime) readySkills.Add(BossSkillType.CircleBullet);
+
+        if (readySkills.Count == 0) return; 
+
+        BossSkillType chosen = readySkills[UnityEngine.Random.Range(0, readySkills.Count)];
+        StartCoroutine(ExecuteSkill(chosen));
+    }
+
+    private IEnumerator ExecuteSkill(BossSkillType skill)
+    {
+        isUsingSkill = true;
+
+        switch (skill)
+        {
+            case BossSkillType.Laser:
+                nextLaserReadyTime = Time.time + laserCooldown;
+                yield return StartCoroutine(LaserSkillRoutine());
+                break;
+
+            case BossSkillType.FireBullet:
+                nextFireBulletReadyTime = Time.time + fireBulletCooldown;
+                yield return StartCoroutine(FireBulletSkillRoutine());
+                break;
+
+            case BossSkillType.CircleBullet:
+                nextCircleBulletReadyTime = Time.time + circleBulletCooldown;
+                CircleBullet(); 
+                break;
+        }
+
+        isUsingSkill = false;
+    }
+
+    private IEnumerator LaserSkillRoutine()
+    {
+        audioManager.LaserBossSound();
+
         if (rbs != null) rbs.linearVelocity = Vector2.zero;
-
         if (movementScript != null) movementScript.enabled = false;
-
+        animationLaser.SetActive(true);
         yield return StartCoroutine(laser.Fire());
+        animationLaser.SetActive(false);
 
         if (movementScript != null) movementScript.enabled = true;
-
     }
 
-    private IEnumerator LaserLoop()
+    private IEnumerator FireBulletSkillRoutine()
     {
-        while (true)
-        {
-            yield return new WaitForSeconds(10f);
-            animationLaser.SetActive(true);
-            yield return StartCoroutine(FireLaser());
-            animationLaser.SetActive(false);
+        if (player == null) yield break;
 
-        }
+        lastRecordedPlayerPosition = player.transform.position;
+        yield return new WaitForSeconds(delayBeforeFire);
+
+        Vector3 direction = (lastRecordedPlayerPosition - firePoint.position).normalized;
+        float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+        firePoint.rotation = Quaternion.Euler(0f, 0f, angle);
+        FireBullet(direction);
     }
+
     private void FireBullet(Vector3 directionToTarget)
     {
         GameObject bullet = Instantiate(bulletRefabs, firePoint.position, Quaternion.identity);
@@ -90,14 +154,8 @@ public class BossEnemy : Enemy
             Vector3 bulletDirection = new Vector3(Mathf.Cos(angle * Mathf.Deg2Rad), Mathf.Sin(angle * Mathf.Deg2Rad), 0);
             GameObject bullet = Instantiate(bulletRefabs, firePoint.position, Quaternion.identity);
             EnemyBullet enemyBullet = bullet.AddComponent<EnemyBullet>();
-            enemyBullet.SetMovementDirection(bulletDirection * circleBulletSpeed);    
-
-
+            enemyBullet.SetMovementDirection(bulletDirection * circleBulletSpeed);
         }
-
     }
-
-
-    
 
 }
