@@ -8,9 +8,6 @@ public class MeteorExplosion : MonoBehaviour
     {
         transform.localScale = Vector3.one * scale;
         this.damage = damage;
-
-        Debug.Log($"Scale: {scale}");
-        Debug.Log($"Damage: {damage}");
     }
 
     private void Start()
@@ -20,24 +17,10 @@ public class MeteorExplosion : MonoBehaviour
 
     public void DealDamage()
     {
-        Debug.Log("BOOM");
-
         Collider2D[] enemies =
             Physics2D.OverlapCircleAll(
                 transform.position,
                 1f);
-
-        foreach (Collider2D enemy in enemies)
-        {
-            if (enemy.CompareTag("Enemy"))
-            {
-                Debug.Log(
-                    enemy.name +
-                    " nhận " +
-                    damage +
-                    " damage");
-            }
-        }
     }
 
     public void OnTriggerEnter2D(Collider2D collision)

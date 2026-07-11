@@ -21,7 +21,8 @@ public class RoomTriger : MonoBehaviour
     [SerializeField] private int totalWaves = 3;
     [SerializeField] private int minEnemyPerWave = 2;
     [SerializeField] private int maxEnemyPerWave = 6;
-
+    [SerializeField] private GameObject exitPortal;
+    [SerializeField] private bool isLastRoom;
     private int currentWave = 0;
     private bool roomCleared = false;
 
@@ -154,6 +155,12 @@ public class RoomTriger : MonoBehaviour
                 d.SetBool("isOpen", true);
                 StartCoroutine(DisableAfterAnim(d));
             }
+
+            if (isLastRoom && exitPortal != null)
+            {
+                exitPortal.SetActive(true);
+            }
+
         }
     }
     void RoomCleared()
