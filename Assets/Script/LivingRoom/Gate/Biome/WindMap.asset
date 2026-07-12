@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9c870ff4a0fe52146b9d8af734bc4082, type: 3}
   m_Name: WindMap
   m_EditorClassIdentifier: Assembly-CSharp::BiomeData
-  biomeName: 
+  biomeName: Wind
   stage1: MapWind 1-1
   stage2: MapWind 1-2
   bossScene: MapWind 1-3

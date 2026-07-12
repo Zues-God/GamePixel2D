@@ -108,6 +108,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PotionProjectile
   speed: 10
   lifeTime: 3
+  takeDamage: 3
 --- !u!50 &3408851133037948365
 Rigidbody2D:
   serializedVersion: 5

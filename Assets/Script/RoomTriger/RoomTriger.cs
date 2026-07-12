@@ -7,7 +7,7 @@ using UnityEngine;
 public class RoomTriger : MonoBehaviour
 {
     [SerializeField] private GameObject[] enemyPrefab;
-    public GameObject bossHPBar, introBoss, player;
+    public GameObject bossHPBar, introBoss, player, boss;
     private List<GameObject> enemy = new List<GameObject>();
     public AudioSource bossSound;
     public BoxCollider2D spawArena;
@@ -39,11 +39,14 @@ public class RoomTriger : MonoBehaviour
                 if (bossHPBar != null)
                     bossHPBar.SetActive(true);
 
-                if (introBoss != null)
-                    StartCoroutine(PlayIntro());
-
                 if (bossSound != null)
                     bossSound.Play();
+
+                if (boss != null)
+                {
+                    StartCoroutine(ActivateBossAfterIntro());
+                }
+
             }
 
             foreach (Animator d in door)
@@ -51,7 +54,10 @@ public class RoomTriger : MonoBehaviour
                 d.gameObject.SetActive(true);
             }
 
-            StartNextWave(); 
+            if (!isBossRoom)
+            {
+                StartNextWave();
+            }
         }
     }
 
@@ -60,6 +66,11 @@ public class RoomTriger : MonoBehaviour
     void Start()
     {
         enemy.Clear();
+
+        if (isBossRoom && boss != null)
+        {
+            boss.SetActive(false);
+        }
 
         foreach (Transform child in enemyParent)
         {
@@ -129,6 +140,41 @@ public class RoomTriger : MonoBehaviour
         GetComponent<Collider2D>().enabled = false;
     }
 
+    private IEnumerator ActivateBossAfterIntro()
+    {
+        yield return StartCoroutine(PlayIntro());
+
+        if (boss == null) yield break;
+
+        boss.SetActive(true);
+
+        Enemy e = boss.GetComponent<Enemy>();
+        if (e != null)
+        {
+            enemy.Add(boss);
+            e.ActivateEnemy();
+        }
+
+        Animator anim = boss.GetComponent<Animator>();
+        if (anim != null)
+        {
+            anim.SetBool("isRun", true);
+        }
+
+        StartCoroutine(MonitorBossObject());
+    }
+
+    private IEnumerator MonitorBossObject()
+    {
+        while (boss != null)
+        {
+            yield return null;
+        }
+
+        if (bossHPBar != null) bossHPBar.SetActive(false);
+        RoomCleared();
+    }
+
 
 
     void Update()
@@ -141,7 +187,10 @@ public class RoomTriger : MonoBehaviour
         {
             Debug.Log("Wave " + currentWave + " cleared!");
 
-            StartNextWave(); 
+            if (!isBossRoom)
+            {
+                StartNextWave();
+            }
         }
     }
     void OpenDoor()
@@ -167,7 +216,6 @@ public class RoomTriger : MonoBehaviour
     {
         roomCleared = true;
 
-        Debug.Log("ROOM CLEARED!");
 
         OpenDoor();
     }

@@ -1,11 +1,11 @@
-using UnityEngine;
+﻿using UnityEngine;
 
 public class GunLaser : Gun
 {
     [Header("Laser")]
-    public GameObject laserObject;
+    [SerializeField] private GameObject laserPrefab;   
     public float manaCostPerSecond;
-
+    private GameObject laserInstance;   
     private bool isFiring = false;
 
     protected override void Shoot()
@@ -24,9 +24,7 @@ public class GunLaser : Gun
             {
                 if (!isFiring)
                 {
-                    isFiring = true;
-                    laserObject.SetActive(true);
-                    audioManager.PlayShootSound();
+                    StartFiring();
                 }
             }
             else
@@ -40,12 +38,31 @@ public class GunLaser : Gun
         }
     }
 
+    private void StartFiring()
+    {
+        isFiring = true;
+
+        laserInstance = Instantiate(laserPrefab, firePos.position, firePos.rotation, firePos);
+
+        audioManager.PlayShootSound();
+    }
+
     private void StopFiring()
     {
         if (isFiring)
         {
             isFiring = false;
-            laserObject.SetActive(false);
+
+            if (laserInstance != null)
+            {
+                Destroy(laserInstance);
+                laserInstance = null;
+            }
         }
+    }
+
+    private void OnDisable()
+    {
+        StopFiring();
     }
 }

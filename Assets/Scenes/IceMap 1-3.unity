@@ -1207,6 +1207,135 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1231138604}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &206441297
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 206441299}
+  - component: {fileID: 206441298}
+  m_Layer: 0
+  m_Name: AudioSrouce
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!82 &206441298
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 206441297}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_Resource: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 0.15
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+--- !u!4 &206441299
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 206441297}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 971311903}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &215104103
 GameObject:
   m_ObjectHideFlags: 0
@@ -3739,7 +3868,7 @@ Camera:
     height: 1
   near clip plane: 0.3
   far clip plane: 1000
-  field of view: 7
+  field of view: 8
   orthographic: 1
   orthographic size: 7
   m_Depth: -1
@@ -3766,7 +3895,7 @@ Transform:
   m_GameObject: {fileID: 453135046}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -66.46, y: -99.23, z: -10}
+  m_LocalPosition: {x: -60.49662, y: -99.97103, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -5086,6 +5215,11 @@ MonoBehaviour:
   - {fileID: 2047357306}
   enemyParent: {fileID: 1830507389}
   isBossRoom: 0
+  totalWaves: 3
+  minEnemyPerWave: 2
+  maxEnemyPerWave: 6
+  exitPortal: {fileID: 0}
+  isLastRoom: 0
 --- !u!1 &611861640
 GameObject:
   m_ObjectHideFlags: 0
@@ -7948,6 +8082,58 @@ Transform:
   - {fileID: 1231138604}
   m_Father: {fileID: 1768309340132797967}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &971311901
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 971311903}
+  - component: {fileID: 971311902}
+  m_Layer: 0
+  m_Name: 'AudioManager '
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &971311902
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 971311901}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a115ed454fbad0a4f8ab6882acd13302, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: '::'
+  audioSource: {fileID: 206441298}
+  shootClip: {fileID: 8300000, guid: 6d399551a43803140add8899a0d8deaf, type: 3}
+  energyClip: {fileID: 8300000, guid: c5b9cd9dd95b6ec4eb059d447c616fb0, type: 3}
+  attackClip: {fileID: 8300000, guid: fbce7319fc5fdee4aac1490e9f6ea9cd, type: 3}
+  skillClip: {fileID: 8300000, guid: 8f4f47dcc3f9e314499366216e8b4634, type: 3}
+  changeWeaponClip: {fileID: 8300000, guid: 6810376c3fa98ad4ca5c74bbe2d4c857, type: 3}
+  takeWeaponClip: {fileID: 8300000, guid: 5f0a380d8db8a2e4892dbb58d80d9d33, type: 3}
+--- !u!4 &971311903
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 971311901}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 25.08108, y: 16.3281, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 206441299}
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &973217215
 GameObject:
   m_ObjectHideFlags: 0
@@ -9038,7 +9224,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1061061667
 Transform:
   m_ObjectHideFlags: 0
@@ -164164,13 +164350,18 @@ MonoBehaviour:
   hpBar: {fileID: 3980541965601876629}
   maxEnergy: 200
   energyBar: {fileID: 4726135810779471172}
-  hitBox: {fileID: 0}
+  hitCooldown: 0.3
+  weaponHolder: {fileID: 0}
+  backHolder: {fileID: 0}
+  weapon1: {fileID: 0}
+  weapon2: {fileID: 0}
+  weapon: {fileID: 413098387023678814}
   skillCost: 0
   skillCooldown: 0
   skillPlayer: {fileID: 0}
+  audioManager: {fileID: 0}
+  hitBox: {fileID: 0}
   animationWeapon: {fileID: 0}
-  weapon: {fileID: 413098387023678814}
-  hitCooldown: 0.3
 --- !u!4 &2580642414211292176
 Transform:
   m_ObjectHideFlags: 0
@@ -168690,7 +168881,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &5141724094691001367
 GameObject:
   m_ObjectHideFlags: 0
@@ -169311,6 +169502,11 @@ MonoBehaviour:
   - {fileID: 1419708332}
   enemyParent: {fileID: 1447079815}
   isBossRoom: 0
+  totalWaves: 3
+  minEnemyPerWave: 2
+  maxEnemyPerWave: 6
+  exitPortal: {fileID: 0}
+  isLastRoom: 0
 --- !u!1 &6078694801723846708
 GameObject:
   m_ObjectHideFlags: 0
@@ -181226,6 +181422,11 @@ MonoBehaviour:
   - {fileID: 1110921831}
   enemyParent: {fileID: 820690587}
   isBossRoom: 0
+  totalWaves: 3
+  minEnemyPerWave: 2
+  maxEnemyPerWave: 6
+  exitPortal: {fileID: 0}
+  isLastRoom: 0
 --- !u!1839735485 &7755595038315209594
 Tilemap:
   m_ObjectHideFlags: 0
@@ -181443,6 +181644,11 @@ MonoBehaviour:
   - {fileID: 1023915226}
   enemyParent: {fileID: 2010823513}
   isBossRoom: 0
+  totalWaves: 3
+  minEnemyPerWave: 2
+  maxEnemyPerWave: 6
+  exitPortal: {fileID: 0}
+  isLastRoom: 0
 --- !u!224 &8045488101108230863
 RectTransform:
   m_ObjectHideFlags: 0
@@ -223610,6 +223816,11 @@ MonoBehaviour:
   - {fileID: 1816232322}
   enemyParent: {fileID: 284947372}
   isBossRoom: 0
+  totalWaves: 3
+  minEnemyPerWave: 2
+  maxEnemyPerWave: 6
+  exitPortal: {fileID: 0}
+  isLastRoom: 0
 --- !u!1 &8354814731241917419
 GameObject:
   m_ObjectHideFlags: 0
@@ -228082,6 +228293,11 @@ MonoBehaviour:
   - {fileID: 789263763}
   enemyParent: {fileID: 397486542}
   isBossRoom: 0
+  totalWaves: 3
+  minEnemyPerWave: 2
+  maxEnemyPerWave: 6
+  exitPortal: {fileID: 0}
+  isLastRoom: 0
 --- !u!114 &8627597043376785491
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -228435,6 +228651,11 @@ MonoBehaviour:
   - {fileID: 1421783272}
   enemyParent: {fileID: 952046904}
   isBossRoom: 0
+  totalWaves: 3
+  minEnemyPerWave: 2
+  maxEnemyPerWave: 6
+  exitPortal: {fileID: 0}
+  isLastRoom: 0
 --- !u!1 &9140892112017457908
 GameObject:
   m_ObjectHideFlags: 0
@@ -228525,3 +228746,4 @@ SceneRoots:
   - {fileID: 6738836775962612795}
   - {fileID: 1061061667}
   - {fileID: 2010131103}
+  - {fileID: 971311903}

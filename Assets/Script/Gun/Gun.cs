@@ -7,11 +7,9 @@ public class Gun : MonoBehaviour
     [SerializeField] private GameObject bulletPrefabs;
     [SerializeField] private float shotDelay = 0.15f;
     private float nextShot;
-
     public string weaponName;
     public bool canUse = true;
     [SerializeField] private float manaCost = 5f;
-
     protected Player player;
     [SerializeField] protected Audio audioManager;
 

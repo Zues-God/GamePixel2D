@@ -486,15 +486,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::RangeAttack
   enemyMoveSpeed: 4
-  maxHP: 50
+  maxHP: 20
   hpBar: {fileID: 642152467191871100}
-  enterDamage: 1
-  stayDamage: 1
   attackRange: 7
   attackCooldown: 1
   wanderRadius: 7
   aggroRange: 5
   wanderCooldown: 2
+  laserRoot: {fileID: 0}
   knockBackForce: 5
   knockBackTime: 0.15
   animator: {fileID: 772083997017716652}
