@@ -21,6 +21,7 @@ public class Player : MonoBehaviour
     [SerializeField] private float skillCooldown = 3f;
     [SerializeField] private GameObject skillPlayer;
     [SerializeField] private Audio audioManager;
+    [SerializeField] public GameObject GameOverMenu;
     private Rigidbody2D rb;
     private SpriteRenderer rbSprite;
     private Animator animator;
@@ -31,6 +32,7 @@ public class Player : MonoBehaviour
     public GameObject animationWeapon;
     private float lastHitTime;
     private GameObject currentWeapon;
+
 
     private void Awake()
     {
@@ -261,7 +263,8 @@ public class Player : MonoBehaviour
 
 
     private void Die()
-    {
+    { 
+        GameOverMenu.SetActive(true);
         Destroy(gameObject);
     }
     public void EnableAnimationSword()
