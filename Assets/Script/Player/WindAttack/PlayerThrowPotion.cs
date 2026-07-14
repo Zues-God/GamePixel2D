@@ -1,10 +1,11 @@
 using UnityEngine;
 
-public class PlayerThrowPotion : MonoBehaviour
+public class PlayerThrowPotion : Player
 {
     [SerializeField] private GameObject potionPrefab;
     [SerializeField] private Transform throwPoint;
     [SerializeField] private float cooldown = 0.5f;
+    //[SerializeField] private Audio audioSource;
 
     private Animator animator;
     private float lastThrowTime = -999f;
@@ -15,22 +16,23 @@ public class PlayerThrowPotion : MonoBehaviour
         animator = GetComponent<Animator>();
     }
 
-    private void Update()
-    {
-        if (Input.GetMouseButtonDown(0) &&
-            !isThrowing &&
-            Time.time >= lastThrowTime + cooldown)
-        {
-            isThrowing = true;
-            lastThrowTime = Time.time;
+    //private void Update()
+    //{
+    //    if (Input.GetMouseButtonDown(0) &&
+    //        !isThrowing &&
+    //        Time.time >= lastThrowTime + cooldown)
+    //    {
+    //        isThrowing = true;
+    //        lastThrowTime = Time.time;
 
-            animator.SetTrigger("isAttack");
-        }
-    }
+    //        animator.SetTrigger("isAttack");
+    //    }
+    //}
 
     // GỌI HÀM NÀY TRONG ANIMATION EVENT
     public void ThrowPotionEvent()
     {
+        //audioSource.PlayShootSound();
         Vector3 mouseWorld = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         mouseWorld.z = 0f;
 
@@ -44,6 +46,8 @@ public class PlayerThrowPotion : MonoBehaviour
 
         potion.GetComponent<PotionProjectile>().SetDirection(direction);
     }
+
+   
 
     // GỌI Ở CUỐI ANIMATION EVENT
     public void EndThrowPotionEvent()

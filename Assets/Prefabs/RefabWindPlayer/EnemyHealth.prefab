@@ -205,7 +205,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::HealEnemy
   enemyMoveSpeed: 5
-  maxHP: 50
+  maxHP: 20
   hpBar: {fileID: 6448020401777714249}
   attackRange: 1.5
   attackCooldown: 1
