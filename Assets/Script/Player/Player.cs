@@ -1,7 +1,8 @@
-using System.Collections;
+﻿using System.Collections;
 using UnityEngine;
 using UnityEngine.Rendering;
 using UnityEngine.UI;
+
 
 
 public class Player : MonoBehaviour
@@ -21,7 +22,7 @@ public class Player : MonoBehaviour
     [SerializeField] private float skillCooldown = 3f;
     [SerializeField] private GameObject skillPlayer;
     [SerializeField] private Audio audioManager;
-    [SerializeField] public GameObject GameOverMenu;
+    [SerializeField] private GameObject GameOverMenu;
     private Rigidbody2D rb;
     private SpriteRenderer rbSprite;
     private Animator animator;
@@ -127,7 +128,6 @@ public class Player : MonoBehaviour
 
     protected virtual void Update()
     {
-
       
         ChangeWeapon();
         MovePlayer();
@@ -263,8 +263,7 @@ public class Player : MonoBehaviour
 
 
     private void Die()
-    { 
-        GameOverMenu.SetActive(true);
+    {
         Destroy(gameObject);
     }
     public void EnableAnimationSword()
@@ -278,9 +277,13 @@ public class Player : MonoBehaviour
     }
 
 
+
+
+
     public void TakeDamage(float damage)
     {
         if (Time.time < lastHitTime + hitCooldown) return;
+
         lastHitTime = Time.time;
         currentHpPlayer -= damage;
         currentHpPlayer = Mathf.Max(currentHpPlayer, 0);
@@ -288,8 +291,19 @@ public class Player : MonoBehaviour
 
         if (currentHpPlayer <= 0)
         {
-            Die();
+            animator.SetTrigger("isDie");
+            StartCoroutine(DieRoutine());
         }
+    }
+
+    IEnumerator DieRoutine()
+    {
+        yield return new WaitForSeconds(0.4f); 
+
+        GameOverMenu.SetActive(true);
+        Time.timeScale = 0f;
+
+        Destroy(gameObject);
     }
 
 

@@ -1928,21 +1928,32 @@ MonoBehaviour:
   m_GameObject: {fileID: 188253721}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5711bcbcfa04ca64b9e10f17aea5e15f, type: 3}
+  m_Script: {fileID: 11500000, guid: e1f38c93ac814aa4781205a2d6e207fa, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::RoomTrigger
-  enemyPrefab: []
+  m_EditorClassIdentifier: Assembly-CSharp::RoomTriger
+  enemyPrefab:
+  - {fileID: 5924679827832074453, guid: 000a49dfe0d3a0943a136edbd4125af2, type: 3}
+  - {fileID: 7046441772444037224, guid: 084bdf0c2ae0fe949b912094d9d04c8f, type: 3}
+  - {fileID: 5303001592074546479, guid: dd849d6c825c0bd4f9b9dfb552fd3262, type: 3}
+  - {fileID: 5186135561884473530, guid: 77ca822577ae4124d8c7f67557d80285, type: 3}
+  - {fileID: 5853615088336086378, guid: d4c3e18119af33442b753389ea559ca3, type: 3}
+  - {fileID: 1872983185681029030, guid: 4dd252fa8af7de543b1adb2a4ac9d887, type: 3}
   bossHPBar: {fileID: 0}
   introBoss: {fileID: 0}
   player: {fileID: 0}
+  boss: {fileID: 0}
   bossSound: {fileID: 0}
-  spawArena: {fileID: 0}
-  enemySpaw: 5
+  spawArena: {fileID: 188253724}
+  enemySpaw: 30
   introDuration: 2.5
-  door: []
-  enemyParent: {fileID: 0}
+  door:
+  - {fileID: 482518184}
+  enemyParent: {fileID: 389853058}
   isBossRoom: 0
-  exitPortal: {fileID: 0}
+  totalWaves: 5
+  minEnemyPerWave: 5
+  maxEnemyPerWave: 7
+  exitPortal: {fileID: 1956563045}
   isLastRoom: 1
 --- !u!1 &193847435
 GameObject:
@@ -3831,7 +3842,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &390750028
 Transform:
   m_ObjectHideFlags: 0
@@ -3846,18 +3857,18 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 149962524}
+  - {fileID: 1461760733}
   - {fileID: 1573103900}
   - {fileID: 996034346}
+  - {fileID: 632157602}
+  - {fileID: 315955147}
   - {fileID: 1075582227}
   - {fileID: 309916628}
   - {fileID: 673831516}
+  - {fileID: 1205748999}
   - {fileID: 1650666316}
   - {fileID: 1199913605}
   - {fileID: 482518181}
-  - {fileID: 1461760733}
-  - {fileID: 315955147}
-  - {fileID: 632157602}
-  - {fileID: 1205748999}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &413915805
@@ -11596,6 +11607,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1384110586}
+  - component: {fileID: 1384110587}
   m_Layer: 0
   m_Name: PlayerSpawmPoint
   m_TagString: Untagged
@@ -11618,6 +11630,19 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1384110587
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1384110585}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2406de6f553f4ba4bb801c0caf005bb5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerSpawner
+  spawnPoint: {fileID: 1384110586}
 --- !u!1 &1389388094
 GameObject:
   m_ObjectHideFlags: 0
@@ -14032,51 +14057,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1702816252}
   m_CullTransparentMesh: 1
---- !u!1 &1733104227
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1733104229}
-  - component: {fileID: 1733104228}
-  m_Layer: 0
-  m_Name: PlayerManager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1733104228
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1733104227}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2406de6f553f4ba4bb801c0caf005bb5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::PlayerSpawner
-  spawnPoint: {fileID: 1384110586}
---- !u!4 &1733104229
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1733104227}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.75, y: -0.34, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1746945445
 GameObject:
   m_ObjectHideFlags: 0
@@ -14728,7 +14708,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -21.08, y: 3.67, z: 0}
-  m_LocalScale: {x: 1, y: 2, z: 1}
+  m_LocalScale: {x: 2, y: 2, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1956563046}
@@ -16314,7 +16294,7 @@ Transform:
   m_GameObject: {fileID: 1956563045}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -62.98745, y: -103.00836, z: 0}
+  m_LocalPosition: {x: 149.59, y: -59.29, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -146574,20 +146554,31 @@ MonoBehaviour:
   m_GameObject: {fileID: 6034759554718286716}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5711bcbcfa04ca64b9e10f17aea5e15f, type: 3}
+  m_Script: {fileID: 11500000, guid: e1f38c93ac814aa4781205a2d6e207fa, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::RoomTrigger
-  enemyPrefab: []
+  m_EditorClassIdentifier: Assembly-CSharp::RoomTriger
+  enemyPrefab:
+  - {fileID: 5924679827832074453, guid: 000a49dfe0d3a0943a136edbd4125af2, type: 3}
+  - {fileID: 7046441772444037224, guid: 084bdf0c2ae0fe949b912094d9d04c8f, type: 3}
+  - {fileID: 5303001592074546479, guid: dd849d6c825c0bd4f9b9dfb552fd3262, type: 3}
+  - {fileID: 5186135561884473530, guid: 77ca822577ae4124d8c7f67557d80285, type: 3}
+  - {fileID: 1872983185681029030, guid: 4dd252fa8af7de543b1adb2a4ac9d887, type: 3}
+  - {fileID: 5853615088336086378, guid: d4c3e18119af33442b753389ea559ca3, type: 3}
   bossHPBar: {fileID: 0}
   introBoss: {fileID: 0}
   player: {fileID: 0}
+  boss: {fileID: 0}
   bossSound: {fileID: 0}
-  spawArena: {fileID: 0}
-  enemySpaw: 5
+  spawArena: {fileID: 1570230740541884178}
+  enemySpaw: 30
   introDuration: 2.5
-  door: []
-  enemyParent: {fileID: 0}
+  door:
+  - {fileID: 309916631}
+  enemyParent: {fileID: 565608617}
   isBossRoom: 0
+  totalWaves: 5
+  minEnemyPerWave: 5
+  maxEnemyPerWave: 7
   exitPortal: {fileID: 0}
   isLastRoom: 0
 --- !u!1839735485 &6277817017299164248
@@ -156479,20 +156470,32 @@ MonoBehaviour:
   m_GameObject: {fileID: 6754700538191901803}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5711bcbcfa04ca64b9e10f17aea5e15f, type: 3}
+  m_Script: {fileID: 11500000, guid: e1f38c93ac814aa4781205a2d6e207fa, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::RoomTrigger
-  enemyPrefab: []
+  m_EditorClassIdentifier: Assembly-CSharp::RoomTriger
+  enemyPrefab:
+  - {fileID: 7046441772444037224, guid: 084bdf0c2ae0fe949b912094d9d04c8f, type: 3}
+  - {fileID: 5303001592074546479, guid: dd849d6c825c0bd4f9b9dfb552fd3262, type: 3}
+  - {fileID: 5186135561884473530, guid: 77ca822577ae4124d8c7f67557d80285, type: 3}
+  - {fileID: 5924679827832074453, guid: 000a49dfe0d3a0943a136edbd4125af2, type: 3}
+  - {fileID: 1872983185681029030, guid: 4dd252fa8af7de543b1adb2a4ac9d887, type: 3}
+  - {fileID: 5853615088336086378, guid: d4c3e18119af33442b753389ea559ca3, type: 3}
   bossHPBar: {fileID: 0}
   introBoss: {fileID: 0}
   player: {fileID: 0}
+  boss: {fileID: 0}
   bossSound: {fileID: 0}
   spawArena: {fileID: 2140460045304554909}
-  enemySpaw: 5
+  enemySpaw: 30
   introDuration: 2.5
-  door: []
-  enemyParent: {fileID: 0}
+  door:
+  - {fileID: 149962527}
+  - {fileID: 1461760735}
+  enemyParent: {fileID: 449663480}
   isBossRoom: 0
+  totalWaves: 5
+  minEnemyPerWave: 5
+  maxEnemyPerWave: 7
   exitPortal: {fileID: 0}
   isLastRoom: 0
 --- !u!114 &7863261059762301172
@@ -156536,20 +156539,32 @@ MonoBehaviour:
   m_GameObject: {fileID: 7981877871361997061}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5711bcbcfa04ca64b9e10f17aea5e15f, type: 3}
+  m_Script: {fileID: 11500000, guid: e1f38c93ac814aa4781205a2d6e207fa, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::RoomTrigger
-  enemyPrefab: []
+  m_EditorClassIdentifier: Assembly-CSharp::RoomTriger
+  enemyPrefab:
+  - {fileID: 5924679827832074453, guid: 000a49dfe0d3a0943a136edbd4125af2, type: 3}
+  - {fileID: 7046441772444037224, guid: 084bdf0c2ae0fe949b912094d9d04c8f, type: 3}
+  - {fileID: 5303001592074546479, guid: dd849d6c825c0bd4f9b9dfb552fd3262, type: 3}
+  - {fileID: 5186135561884473530, guid: 77ca822577ae4124d8c7f67557d80285, type: 3}
+  - {fileID: 1872983185681029030, guid: 4dd252fa8af7de543b1adb2a4ac9d887, type: 3}
+  - {fileID: 5853615088336086378, guid: d4c3e18119af33442b753389ea559ca3, type: 3}
   bossHPBar: {fileID: 0}
   introBoss: {fileID: 0}
   player: {fileID: 0}
+  boss: {fileID: 0}
   bossSound: {fileID: 0}
-  spawArena: {fileID: 0}
-  enemySpaw: 5
+  spawArena: {fileID: 1463692266937144252}
+  enemySpaw: 30
   introDuration: 2.5
-  door: []
-  enemyParent: {fileID: 0}
+  door:
+  - {fileID: 1650666319}
+  - {fileID: 1199913608}
+  enemyParent: {fileID: 637157510}
   isBossRoom: 0
+  totalWaves: 5
+  minEnemyPerWave: 5
+  maxEnemyPerWave: 7
   exitPortal: {fileID: 0}
   isLastRoom: 0
 --- !u!4 &8142042803858978185
@@ -195162,20 +195177,31 @@ MonoBehaviour:
   m_GameObject: {fileID: 8349918986183626988}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5711bcbcfa04ca64b9e10f17aea5e15f, type: 3}
+  m_Script: {fileID: 11500000, guid: e1f38c93ac814aa4781205a2d6e207fa, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::RoomTrigger
-  enemyPrefab: []
+  m_EditorClassIdentifier: Assembly-CSharp::RoomTriger
+  enemyPrefab:
+  - {fileID: 7046441772444037224, guid: 084bdf0c2ae0fe949b912094d9d04c8f, type: 3}
+  - {fileID: 5303001592074546479, guid: dd849d6c825c0bd4f9b9dfb552fd3262, type: 3}
+  - {fileID: 5186135561884473530, guid: 77ca822577ae4124d8c7f67557d80285, type: 3}
+  - {fileID: 5924679827832074453, guid: 000a49dfe0d3a0943a136edbd4125af2, type: 3}
+  - {fileID: 1872983185681029030, guid: 4dd252fa8af7de543b1adb2a4ac9d887, type: 3}
+  - {fileID: 5853615088336086378, guid: d4c3e18119af33442b753389ea559ca3, type: 3}
   bossHPBar: {fileID: 0}
   introBoss: {fileID: 0}
   player: {fileID: 0}
+  boss: {fileID: 0}
   bossSound: {fileID: 0}
-  spawArena: {fileID: 0}
-  enemySpaw: 5
+  spawArena: {fileID: 6027670061765354154}
+  enemySpaw: 30
   introDuration: 2.5
-  door: []
-  enemyParent: {fileID: 0}
+  door:
+  - {fileID: 1075582230}
+  enemyParent: {fileID: 1746945446}
   isBossRoom: 0
+  totalWaves: 5
+  minEnemyPerWave: 5
+  maxEnemyPerWave: 7
   exitPortal: {fileID: 0}
   isLastRoom: 0
 --- !u!1 &8549338438031176186
@@ -195224,20 +195250,34 @@ MonoBehaviour:
   m_GameObject: {fileID: 8591247707978715603}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5711bcbcfa04ca64b9e10f17aea5e15f, type: 3}
+  m_Script: {fileID: 11500000, guid: e1f38c93ac814aa4781205a2d6e207fa, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::RoomTrigger
-  enemyPrefab: []
+  m_EditorClassIdentifier: Assembly-CSharp::RoomTriger
+  enemyPrefab:
+  - {fileID: 7046441772444037224, guid: 084bdf0c2ae0fe949b912094d9d04c8f, type: 3}
+  - {fileID: 5303001592074546479, guid: dd849d6c825c0bd4f9b9dfb552fd3262, type: 3}
+  - {fileID: 5186135561884473530, guid: 77ca822577ae4124d8c7f67557d80285, type: 3}
+  - {fileID: 1872983185681029030, guid: 4dd252fa8af7de543b1adb2a4ac9d887, type: 3}
+  - {fileID: 5924679827832074453, guid: 000a49dfe0d3a0943a136edbd4125af2, type: 3}
+  - {fileID: 5853615088336086378, guid: d4c3e18119af33442b753389ea559ca3, type: 3}
   bossHPBar: {fileID: 0}
   introBoss: {fileID: 0}
   player: {fileID: 0}
+  boss: {fileID: 0}
   bossSound: {fileID: 0}
-  spawArena: {fileID: 0}
-  enemySpaw: 5
+  spawArena: {fileID: 695888607904756177}
+  enemySpaw: 30
   introDuration: 2.5
-  door: []
-  enemyParent: {fileID: 0}
+  door:
+  - {fileID: 1573103903}
+  - {fileID: 996034349}
+  - {fileID: 632157604}
+  - {fileID: 315955149}
+  enemyParent: {fileID: 2139997243}
   isBossRoom: 0
+  totalWaves: 5
+  minEnemyPerWave: 5
+  maxEnemyPerWave: 7
   exitPortal: {fileID: 0}
   isLastRoom: 0
 --- !u!1 &8729477827668813634
@@ -195445,20 +195485,32 @@ MonoBehaviour:
   m_GameObject: {fileID: 5141724094704645213}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5711bcbcfa04ca64b9e10f17aea5e15f, type: 3}
+  m_Script: {fileID: 11500000, guid: e1f38c93ac814aa4781205a2d6e207fa, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::RoomTrigger
-  enemyPrefab: []
+  m_EditorClassIdentifier: Assembly-CSharp::RoomTriger
+  enemyPrefab:
+  - {fileID: 5924679827832074453, guid: 000a49dfe0d3a0943a136edbd4125af2, type: 3}
+  - {fileID: 7046441772444037224, guid: 084bdf0c2ae0fe949b912094d9d04c8f, type: 3}
+  - {fileID: 5303001592074546479, guid: dd849d6c825c0bd4f9b9dfb552fd3262, type: 3}
+  - {fileID: 5186135561884473530, guid: 77ca822577ae4124d8c7f67557d80285, type: 3}
+  - {fileID: 1872983185681029030, guid: 4dd252fa8af7de543b1adb2a4ac9d887, type: 3}
+  - {fileID: 5853615088336086378, guid: d4c3e18119af33442b753389ea559ca3, type: 3}
   bossHPBar: {fileID: 0}
   introBoss: {fileID: 0}
   player: {fileID: 0}
+  boss: {fileID: 0}
   bossSound: {fileID: 0}
-  spawArena: {fileID: 0}
-  enemySpaw: 5
+  spawArena: {fileID: 9120813883121824778}
+  enemySpaw: 30
   introDuration: 2.5
-  door: []
-  enemyParent: {fileID: 0}
+  door:
+  - {fileID: 1205749001}
+  - {fileID: 673831519}
+  enemyParent: {fileID: 787129551}
   isBossRoom: 0
+  totalWaves: 5
+  minEnemyPerWave: 5
+  maxEnemyPerWave: 7
   exitPortal: {fileID: 0}
   isLastRoom: 0
 --- !u!483693784 &9201413953235180938
@@ -195523,7 +195575,6 @@ SceneRoots:
   m_Roots:
   - {fileID: 453135049}
   - {fileID: 3887186546607622527}
-  - {fileID: 1733104229}
   - {fileID: 1384110586}
   - {fileID: 390750028}
   - {fileID: 859869688}

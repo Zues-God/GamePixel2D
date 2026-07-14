@@ -1,4 +1,4 @@
-using System.Collections;
+﻿using System.Collections;
 using UnityEngine;
 
 public class BasicBoss : Enemy
@@ -27,6 +27,16 @@ public class BasicBoss : Enemy
     protected override void Start()
     {
         base.Start();
+
+        if (player == null)
+        {
+            GameObject p = GameObject.FindGameObjectWithTag("Player");
+            if (p != null)
+                player = p.transform;
+            else
+                Debug.LogWarning("Không tìm thấy Player!");
+        }
+
         StartCoroutine(HealLoop());
     }
 
@@ -34,7 +44,20 @@ public class BasicBoss : Enemy
     {
         base.Update();
 
-        if (player == null) return;
+        if (player == null)
+        {
+            GameObject p = GameObject.FindGameObjectWithTag("Player");
+            if (p != null)
+                player = p.transform;
+            else
+                return;
+        }
+
+        if (bulletPrefab == null || firePoint == null)
+        {
+            Debug.LogError("Thiếu bulletPrefab hoặc firePoint!");
+            return;
+        }
 
         if (Time.time >= nextFireTime)
         {
@@ -55,7 +78,12 @@ public class BasicBoss : Enemy
 
         GameObject bullet = Instantiate(bulletPrefab, firePoint.position, Quaternion.identity);
 
-        EnemyBullet eb = bullet.AddComponent<EnemyBullet>();
+        EnemyBullet eb = bullet.GetComponent<EnemyBullet>();
+        if (eb == null)
+        {
+            eb = bullet.AddComponent<EnemyBullet>(); 
+        }
+
         eb.SetMovementDirection(direction * bulletSpeed);
     }
 
@@ -75,7 +103,12 @@ public class BasicBoss : Enemy
 
             GameObject bullet = Instantiate(bulletPrefab, firePoint.position, Quaternion.identity);
 
-            EnemyBullet eb = bullet.AddComponent<EnemyBullet>();
+            EnemyBullet eb = bullet.GetComponent<EnemyBullet>();
+            if (eb == null)
+            {
+                eb = bullet.AddComponent<EnemyBullet>();
+            }
+
             eb.SetMovementDirection(dir * circleBulletSpeed);
         }
     }

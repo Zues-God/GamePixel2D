@@ -8,9 +8,6 @@ public class CharacterData : ScriptableObject
     [Header("Info")]
     public string characterName;
 
-    [TextArea]
-    public string description;
-
     [Header("Stats")]
     public int hp;
 
