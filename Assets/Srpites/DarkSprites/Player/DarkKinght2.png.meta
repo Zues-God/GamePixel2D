@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 3f00b320de8506e48afc7d513a5d1ed5
+guid: a26ff874cc604bf4cb4ff511e9019990
 TextureImporter:
   internalIDToNameTable:
   - first:
@@ -96,7 +96,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 40
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -158,353 +158,353 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: 16x16 knight 3 v3 (2)_0
+      name: DarkKinght2_0
       rect:
         serializedVersion: 2
-        x: 99
-        y: 851
-        width: 58
-        height: 90
+        x: 0
+        y: 768
+        width: 256
+        height: 256
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: be63a63ac4bb4e7b0800000000000000
-      internalID: -5195822132245154069
+      spriteID: 8ccf9ba2e865ba142a975392cd4a8867
+      internalID: -1556419456
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: 16x16 knight 3 v3 (2)_1
+      name: DarkKinght2_1
       rect:
         serializedVersion: 2
-        x: 355
-        y: 855
-        width: 58
-        height: 86
+        x: 256
+        y: 768
+        width: 256
+        height: 256
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: c32d3bc48aafb4ff0800000000000000
-      internalID: -50671370036325828
+      spriteID: cae3260a3048ab946a1ce78a96128e7e
+      internalID: -1317883528
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: 16x16 knight 3 v3 (2)_2
+      name: DarkKinght2_2
       rect:
         serializedVersion: 2
-        x: 611
-        y: 855
-        width: 58
-        height: 82
+        x: 512
+        y: 768
+        width: 256
+        height: 256
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: fc6f4383697a93c10800000000000000
-      internalID: 2033840970364417743
+      spriteID: 496056fdf7a672240b5df7a975e37441
+      internalID: 868945556
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: 16x16 knight 3 v3 (2)_3
+      name: DarkKinght2_3
       rect:
         serializedVersion: 2
-        x: 867
-        y: 855
-        width: 58
-        height: 86
+        x: 768
+        y: 768
+        width: 256
+        height: 256
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: cd97668a4be59c240800000000000000
-      internalID: 4812481806834498012
+      spriteID: 7162b04b5a0de99439787257fa6d5bff
+      internalID: 1748929742
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: 16x16 knight 3 v3 (2)_4
+      name: DarkKinght2_4
       rect:
         serializedVersion: 2
-        x: 99
-        y: 595
-        width: 58
-        height: 90
+        x: 0
+        y: 512
+        width: 256
+        height: 256
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: f41e2cf3a8d37ad70800000000000000
-      internalID: 9054273239836189007
+      spriteID: e4ea4422ca67d3c42b5f78e2f5de0ebd
+      internalID: 15803135
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: 16x16 knight 3 v3 (2)_5
+      name: DarkKinght2_5
       rect:
         serializedVersion: 2
-        x: 367
-        y: 603
-        width: 34
-        height: 78
+        x: 256
+        y: 512
+        width: 256
+        height: 256
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 6843dc095798c30b0800000000000000
-      internalID: -5747567886398049146
+      spriteID: d5189e15b53f0824b86bb7db14a1a509
+      internalID: -1407314820
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: 16x16 knight 3 v3 (2)_6
+      name: DarkKinght2_6
       rect:
         serializedVersion: 2
-        x: 623
-        y: 623
-        width: 30
-        height: 34
+        x: 512
+        y: 512
+        width: 256
+        height: 256
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 5481c4bd7bb31fdd0800000000000000
-      internalID: -2454114661095958459
+      spriteID: bb6e21d5cbc850d4aaea574cd3291840
+      internalID: 909067604
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: 16x16 knight 3 v3 (2)_7
+      name: DarkKinght2_7
       rect:
         serializedVersion: 2
-        x: 871
-        y: 595
-        width: 58
-        height: 90
+        x: 768
+        y: 512
+        width: 256
+        height: 256
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 5bf3b8820071809f0800000000000000
-      internalID: -502126069004157003
+      spriteID: 6e2e0de78412bf046b614e8a9dbb9443
+      internalID: 1514588641
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: 16x16 knight 3 v3 (2)_8
+      name: DarkKinght2_8
       rect:
         serializedVersion: 2
-        x: 103
-        y: 339
-        width: 58
-        height: 94
+        x: 0
+        y: 256
+        width: 256
+        height: 256
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: c992224c042272ec0800000000000000
-      internalID: -3591864516240856676
+      spriteID: dc45dfc8380d2a440a86a2e693830196
+      internalID: -1046021661
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: 16x16 knight 3 v3 (2)_9
+      name: DarkKinght2_9
       rect:
         serializedVersion: 2
-        x: 355
-        y: 339
-        width: 58
-        height: 94
+        x: 256
+        y: 256
+        width: 256
+        height: 256
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 8471e8f97e59e94a0800000000000000
-      internalID: -6584660783122213048
+      spriteID: 86be436405addf240a260303994e5355
+      internalID: 435963937
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: 16x16 knight 3 v3 (2)_10
+      name: DarkKinght2_10
       rect:
         serializedVersion: 2
-        x: 611
-        y: 339
-        width: 58
-        height: 90
+        x: 512
+        y: 256
+        width: 256
+        height: 256
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: efceb29d7e39dbf90800000000000000
-      internalID: -6936225227090432770
+      spriteID: 43cacf1f5425ef94dbda1f9137ebc871
+      internalID: 384794979
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: 16x16 knight 3 v3 (2)_11
+      name: DarkKinght2_11
       rect:
         serializedVersion: 2
-        x: 867
-        y: 343
-        width: 58
-        height: 86
+        x: 768
+        y: 256
+        width: 256
+        height: 256
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: fef24dd91906311f0800000000000000
-      internalID: -1075409707476963345
+      spriteID: d5face1bf307f4649baefada34eb3137
+      internalID: -22007992
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: 16x16 knight 3 v3 (2)_12
+      name: DarkKinght2_12
       rect:
         serializedVersion: 2
-        x: 103
-        y: 83
-        width: 58
-        height: 90
+        x: 0
+        y: 0
+        width: 256
+        height: 256
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 0859068eff119a610800000000000000
-      internalID: 1632856130711491968
+      spriteID: 3f0dd2c23c3e7df49b82ae3783aeb117
+      internalID: 1671264545
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: 16x16 knight 3 v3 (2)_13
+      name: DarkKinght2_13
       rect:
         serializedVersion: 2
-        x: 359
-        y: 83
-        width: 58
-        height: 94
+        x: 256
+        y: 0
+        width: 256
+        height: 256
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 81ba892e923f67320800000000000000
-      internalID: 2555497199800199960
+      spriteID: 58dfe74ec9a9e1041a4fa4b6df539034
+      internalID: -888360507
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: 16x16 knight 3 v3 (2)_14
+      name: DarkKinght2_14
       rect:
         serializedVersion: 2
-        x: 611
-        y: 83
-        width: 58
-        height: 90
+        x: 512
+        y: 0
+        width: 256
+        height: 256
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 6dcd37ff167907840800000000000000
-      internalID: 5219838415275810006
+      spriteID: b0990095b3ff84449bcadeaa72e1a2d3
+      internalID: -158072866
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: 16x16 knight 3 v3 (2)_15
+      name: DarkKinght2_15
       rect:
         serializedVersion: 2
-        x: 867
-        y: 83
-        width: 58
-        height: 90
+        x: 768
+        y: 0
+        width: 256
+        height: 256
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: b207d05fe4c3d1da0800000000000000
-      internalID: -5972551221006995413
+      spriteID: 298abd983c531e54583054f8ec29c0f7
+      internalID: -737090658
       vertices: []
       indices: 
       edges: []
@@ -513,7 +513,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: e706ab25ca8a54344977e1c2f168e2a3
     internalID: 0
     vertices: []
     indices: 
@@ -521,24 +521,26 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     spriteCustomMetadata:
-      entries: []
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":4.0,"y":4.0},"gridSpriteSize":{"x":256.0,"y":256.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":1,"keepEmptyRects":false,"isAlternate":false}'
     nameFileIdTable:
-      16x16 knight 3 v3 (2)_0: -5195822132245154069
-      16x16 knight 3 v3 (2)_1: -50671370036325828
-      16x16 knight 3 v3 (2)_10: -6936225227090432770
-      16x16 knight 3 v3 (2)_11: -1075409707476963345
-      16x16 knight 3 v3 (2)_12: 1632856130711491968
-      16x16 knight 3 v3 (2)_13: 2555497199800199960
-      16x16 knight 3 v3 (2)_14: 5219838415275810006
-      16x16 knight 3 v3 (2)_15: -5972551221006995413
-      16x16 knight 3 v3 (2)_2: 2033840970364417743
-      16x16 knight 3 v3 (2)_3: 4812481806834498012
-      16x16 knight 3 v3 (2)_4: 9054273239836189007
-      16x16 knight 3 v3 (2)_5: -5747567886398049146
-      16x16 knight 3 v3 (2)_6: -2454114661095958459
-      16x16 knight 3 v3 (2)_7: -502126069004157003
-      16x16 knight 3 v3 (2)_8: -3591864516240856676
-      16x16 knight 3 v3 (2)_9: -6584660783122213048
+      DarkKinght2_0: -1556419456
+      DarkKinght2_1: -1317883528
+      DarkKinght2_10: 384794979
+      DarkKinght2_11: -22007992
+      DarkKinght2_12: 1671264545
+      DarkKinght2_13: -888360507
+      DarkKinght2_14: -158072866
+      DarkKinght2_15: -737090658
+      DarkKinght2_2: 868945556
+      DarkKinght2_3: 1748929742
+      DarkKinght2_4: 15803135
+      DarkKinght2_5: -1407314820
+      DarkKinght2_6: 909067604
+      DarkKinght2_7: 1514588641
+      DarkKinght2_8: -1046021661
+      DarkKinght2_9: 435963937
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
