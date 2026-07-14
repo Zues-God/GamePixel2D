@@ -6,55 +6,40 @@ using UnityEditor;
 
 public class PauseGame : MonoBehaviour
 {
-    [SerializeField] private GameObject pausePanel;
-    [SerializeField] private Button continueButton;
-    [SerializeField] private Button quitButton;
+    [SerializeField] private GameObject pauseGame;
 
     private bool isPaused = false;
 
-    void Start()
+    private void Start()
     {
-        if (pausePanel != null) pausePanel.SetActive(false);
-
-        if (continueButton != null) continueButton.onClick.AddListener(ResumeGame);
-        if (quitButton != null) quitButton.onClick.AddListener(QuitGame);
+        pauseGame.SetActive(false); // đảm bảo lúc đầu tắt
     }
 
-    void OnDestroy()
-    {
-        if (continueButton != null) continueButton.onClick.RemoveListener(ResumeGame);
-        if (quitButton != null) quitButton.onClick.RemoveListener(QuitGame);
-    }
-
-    void Update()
+    private void Update()
     {
         if (Input.GetKeyDown(KeyCode.Escape))
+
         {
-            TogglePause();
+
+            Pause();
+            Debug.LogWarning("Pause");
+
         }
     }
 
-    private void TogglePause()
+    public void Pause()
     {
-        if (isPaused) ResumeGame(); else Pause();
-    }
-
-    private void Pause()
-    {
+        Debug.LogWarning("Pause");
+        pauseGame.SetActive(true);
+        Time.timeScale = 0f; 
         isPaused = true;
-        if (pausePanel != null) pausePanel.SetActive(true);
-        Time.timeScale = 0f;
-        Cursor.visible = true;
-        Cursor.lockState = CursorLockMode.None;
     }
 
     public void ResumeGame()
     {
+        pauseGame.SetActive(false);
+        Time.timeScale = 1f; 
         isPaused = false;
-        if (pausePanel != null) pausePanel.SetActive(false);
-        Time.timeScale = 1f;
-        Cursor.visible = false;
-        Cursor.lockState = CursorLockMode.Locked;
     }
 
     public void QuitGame()

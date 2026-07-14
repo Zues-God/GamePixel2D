@@ -46,6 +46,14 @@ public class BossEnemy : Enemy
     {
         base.Start();
 
+        GameObject playerObj = GameObject.FindGameObjectWithTag("Player");
+        if (playerObj != null)
+        {
+            players = playerObj.transform;
+            player = playerObj.GetComponent<Player>(); 
+        }
+      
+
         laser.SetTarget(players);
 
         nextLaserReadyTime = Time.time + firstSkillDelay;
