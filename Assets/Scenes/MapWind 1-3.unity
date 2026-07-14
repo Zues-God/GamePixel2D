@@ -29053,6 +29053,17 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &1495903780 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2225387145042757204, guid: 880fc9ac4f7d3284792d1b25bd9c8fdc, type: 3}
+  m_PrefabInstance: {fileID: 3585014856911058376}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a115ed454fbad0a4f8ab6882acd13302, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: '::'
 --- !u!1001 &1498241617
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -105032,7 +105043,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!61 &1640707774345638140
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -105275,10 +105286,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1558880900814146620}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 569060f9ef5139f458531279bfcb616b, type: 3}
+  m_Script: {fileID: 11500000, guid: ddd44d4adbf30bf43aa93218679bcf8b, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::BasicBoss
-  enemyMoveSpeed: 7
+  m_EditorClassIdentifier: Assembly-CSharp::BossEnemy
+  enemyMoveSpeed: 5
   maxHP: 5000
   hpBar: {fileID: 1136880973}
   attackRange: 1
@@ -105287,23 +105298,38 @@ MonoBehaviour:
   aggroRange: 5
   wanderCooldown: 2
   laserRoot: {fileID: 0}
-  knockBackForce: 0
-  knockBackTime: 0
+  knockBackForce: 5
+  knockBackTime: 0.15
   animator: {fileID: 2427253642972644256}
   hitBox: {fileID: 1920312775}
-  player: {fileID: 0}
+  laser: {fileID: 0}
+  players: {fileID: 6624203797935041422}
   firePoint: {fileID: 1128273845}
-  bulletPrefab: {fileID: 8251428901970093619, guid: 78b78b193c29b82499addc9aeb585cc7, type: 3}
-  bulletSpeed: 10
-  fireCooldown: 2
+  rbs: {fileID: 4328378009862449838}
+  movementScript: {fileID: 6400180469558598687}
+  animationLaser: {fileID: 0}
+  bulletRefabs: {fileID: 8755658405415661725, guid: 6c1d72d53c6ef7d4bbc9d2726d80a22e, type: 3}
+  bulletSpeed: 20
+  delayBeforeFire: 0
   bulletCount: 12
-  circleBulletSpeed: 5
-  circleCooldown: 4
+  circleBulletSpeed: 10
+  laserCooldown: 0
+  fireBulletCooldown: 0
+  circleBulletCooldown: 0
+  skillCheckInterval: 0.5
+  firstSkillDelay: 0
+  audioManager: {fileID: 1495903780}
+  enableAutoHeal: 0
   healAmount: 100
   healInterval: 10
 --- !u!1 &6624203797935041416 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7726451696498734453, guid: 880fc9ac4f7d3284792d1b25bd9c8fdc, type: 3}
+  m_PrefabInstance: {fileID: 3585014856911058376}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &6624203797935041422 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 2103261126231293570, guid: 880fc9ac4f7d3284792d1b25bd9c8fdc, type: 3}
   m_PrefabInstance: {fileID: 3585014856911058376}
   m_PrefabAsset: {fileID: 0}
 --- !u!1660057539 &9223372036854775807
