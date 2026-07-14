@@ -135,7 +135,7 @@ Transform:
   m_GameObject: {fileID: 1872983185681029030}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 6.28, y: 8.07, z: 0}
+  m_LocalPosition: {x: -9.84, y: 7.18, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -322,7 +322,7 @@ MonoBehaviour:
   knockBackTime: 0.25
   animator: {fileID: 2483829703092194545}
   hitBox: {fileID: 8286978302283830392}
-  energyDrop: {fileID: 0}
+  energyDrop: {fileID: 8521429307405008800, guid: 0b853d1384559ef44a018ff1a4f6a35c, type: 3}
 --- !u!1839735485 &1455437730469673662
 Tilemap:
   m_ObjectHideFlags: 0

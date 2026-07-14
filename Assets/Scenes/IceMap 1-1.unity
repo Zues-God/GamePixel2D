@@ -399,7 +399,7 @@ Transform:
   m_GameObject: {fileID: 453135046}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 665.94336, y: 523.9787, z: -10}
+  m_LocalPosition: {x: 116.42, y: -5.72, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -500,6 +500,7 @@ MonoBehaviour:
   bossHPBar: {fileID: 0}
   introBoss: {fileID: 0}
   player: {fileID: 3944071373402951964}
+  boss: {fileID: 0}
   bossSound: {fileID: 0}
   spawArena: {fileID: 6467701771579065921}
   enemySpaw: 5
@@ -4996,6 +4997,7 @@ MonoBehaviour:
   bossHPBar: {fileID: 0}
   introBoss: {fileID: 0}
   player: {fileID: 3944071373402951964}
+  boss: {fileID: 0}
   bossSound: {fileID: 0}
   spawArena: {fileID: 5017920329182359682}
   enemySpaw: 5
@@ -5028,6 +5030,7 @@ MonoBehaviour:
   bossHPBar: {fileID: 0}
   introBoss: {fileID: 0}
   player: {fileID: 3944071373402951964}
+  boss: {fileID: 0}
   bossSound: {fileID: 0}
   spawArena: {fileID: 5610885266698834445}
   enemySpaw: 0
@@ -5725,6 +5728,7 @@ MonoBehaviour:
   bossHPBar: {fileID: 0}
   introBoss: {fileID: 0}
   player: {fileID: 3944071373402951964}
+  boss: {fileID: 0}
   bossSound: {fileID: 0}
   spawArena: {fileID: 3385031921202922394}
   enemySpaw: 5
@@ -5919,6 +5923,7 @@ MonoBehaviour:
   bossHPBar: {fileID: 0}
   introBoss: {fileID: 0}
   player: {fileID: 3944071373402951964}
+  boss: {fileID: 0}
   bossSound: {fileID: 0}
   spawArena: {fileID: 274502433311429946}
   enemySpaw: 5
@@ -147660,7 +147665,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &3959721905022216800
 RectTransform:
   m_ObjectHideFlags: 0
@@ -150985,7 +150990,7 @@ Transform:
   m_GameObject: {fileID: 3944071373402951964}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 119.2, y: -5.1, z: 0}
+  m_LocalPosition: {x: 116.5, y: -5.6, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:

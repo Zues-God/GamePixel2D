@@ -125,6 +125,7 @@
     <Compile Include="Assets\Script\RoomTriger\RoomTriger.cs" />
     <Compile Include="Assets\Script\Player\Player.cs" />
     <Compile Include="Assets\Script\LivingRoom\Gate\PlayerSpawner.cs" />
+    <Compile Include="Assets\Script\Enemy\BossEnemy\BasicBoss.cs" />
     <Compile Include="Assets\Script\LivingRoom\Gate\RoomTrigger.cs" />
     <Compile Include="Assets\Script\Enemy\BossEnemy\BossSand\BossEnemy.cs" />
     <Compile Include="Assets\Script\Minimap\RoomController.cs" />

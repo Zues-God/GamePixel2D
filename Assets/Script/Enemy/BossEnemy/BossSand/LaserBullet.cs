@@ -18,15 +18,4 @@ public class LaserBullet : MonoBehaviour
         transform.Translate(direction * speed * Time.deltaTime, Space.World);
     }
 
-    private void OnTriggerEnter2D(Collider2D col)
-    {
-        if (col.CompareTag("Player"))
-        {
-            Player p = col.GetComponent<Player>();
-            if (p != null)
-            {
-                p.TakeDamage(10f);
-            }
-        }
-    }
 }
