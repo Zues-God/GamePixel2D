@@ -13,7 +13,9 @@ public class DameLaser : MonoBehaviour
             if (player != null)
             {
                 player.TakeDamage(damageLaser);
+                Debug.LogWarning("Player took damage from laser: " + damageLaser);
             }
         }
     }
+
 }

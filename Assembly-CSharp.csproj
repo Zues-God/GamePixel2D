@@ -43,7 +43,7 @@
     <UnityVersion>6000.4.6f1</UnityVersion>
   </PropertyGroup>
   <ItemGroup>
-    <Analyzer Include="C:\Program Files\Microsoft Visual Studio\18\Insiders\Common7\IDE\Extensions\Microsoft\Visual Studio Tools for Unity\Analyzers\Microsoft.Unity.Analyzers.dll" />
+    <Analyzer Include="C:\Program Files\Microsoft Visual Studio\18\Community\Common7\IDE\Extensions\Microsoft\Visual Studio Tools for Unity\Analyzers\Microsoft.Unity.Analyzers.dll" />
     <Analyzer Include="C:\Program Files\Unity\Hub\Editor\6000.4.6f1\Editor\Data\Tools\BuildPipeline\Unity.SourceGenerators\Unity.SourceGenerators.dll" />
     <Analyzer Include="C:\Program Files\Unity\Hub\Editor\6000.4.6f1\Editor\Data\Tools\BuildPipeline\Unity.SourceGenerators\Unity.Properties.SourceGenerator.dll" />
     <Analyzer Include="C:\Program Files\Unity\Hub\Editor\6000.4.6f1\Editor\Data\Tools\BuildPipeline\Unity.SourceGenerators\Unity.UIToolkit.SourceGenerator.dll" />
@@ -75,6 +75,7 @@
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMPro_InstructionOverlay.cs" />
     <Compile Include="Assets\Script\LivingRoom\Gate\Gate.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\VertexShakeB.cs" />
+    <Compile Include="Assets\Script\MainMenu\PauseGame.cs" />
     <Compile Include="Assets\Script\Player\Knight\ShieldRicochet.cs" />
     <Compile Include="Assets\Script\LivingRoom\RoomScript\CameraController.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\VertexJitter.cs" />
@@ -126,6 +127,7 @@
     <Compile Include="Assets\Script\RoomTriger\RoomTriger.cs" />
     <Compile Include="Assets\Script\Player\Player.cs" />
     <Compile Include="Assets\Script\LivingRoom\Gate\PlayerSpawner.cs" />
+    <Compile Include="Assets\Script\Enemy\BossEnemy\BasicBoss.cs" />
     <Compile Include="Assets\Script\LivingRoom\Gate\RoomTrigger.cs" />
     <Compile Include="Assets\Script\Enemy\BossEnemy\BossSand\BossEnemy.cs" />
     <Compile Include="Assets\Script\Minimap\RoomController.cs" />
@@ -149,6 +151,7 @@
     <Compile Include="Assets\Script\Player\Wizar\Skill\MeteorExplosion.cs" />
     <Compile Include="Assets\Script\Player\Wizar\Weapon\Staff.cs" />
     <Compile Include="Assets\Script\Enemy\BossEnemy\BossSand\DameLaser.cs" />
+    <Compile Include="Assets\Script\MainMenu\GameOver.cs" />
     <Compile Include="Assets\Script\HitBox\Player\Knight\HitBoxPlayer.cs" />
     <Compile Include="Assets\Script\Player\Archer\Player\PlayerBowAttack.cs" />
   </ItemGroup>

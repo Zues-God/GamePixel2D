@@ -79,8 +79,8 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_GlobalIlluminationMeshLod: 0
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 1927461935
+  m_SortingLayer: 3
   m_SortingOrder: 0
   m_MaskInteraction: 0
   m_Sprite: {fileID: 4024285036151010387, guid: 4d9b995c2c2665243af59706e969ac65, type: 3}
@@ -107,7 +107,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Bullet
   moveBulletSpeed: 30
   timeDestroy: 0.5
-  damage: 5
+  damage: 15
   bloodPrefab: {fileID: 4302885414566592363, guid: 36df76d1a26f9f64fb033b630ae0f1f2, type: 3}
 --- !u!61 &92653680806413146
 BoxCollider2D:
