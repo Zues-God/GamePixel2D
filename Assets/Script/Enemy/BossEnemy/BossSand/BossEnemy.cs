@@ -15,19 +15,14 @@ public class BossEnemy : Enemy
     [SerializeField] private float delayBeforeFire = 1f;
     [SerializeField] private int bulletCount = 12;
     [SerializeField] private float circleBulletSpeed = 5f;
-
     [Header("Skill Cooldowns")]
     [SerializeField] private float laserCooldown = 10f;
     [SerializeField] private float fireBulletCooldown = 4f;
     [SerializeField] private float circleBulletCooldown = 6f;
-
     [Header("Skill Loop Settings")]
     [SerializeField] private float skillCheckInterval = 0.5f; 
     [SerializeField] private float firstSkillDelay = 2f;
-
     [SerializeField] private Audio audioManager;
-
-    [SerializeField] private float hpValue = 100f;
     [Header("Healing")]
     [SerializeField] private bool enableAutoHeal = false;
     [SerializeField] private float healAmount = 100f;

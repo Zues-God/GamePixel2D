@@ -93,22 +93,31 @@ public class ChargeSkill : MonoBehaviour
 
         targetPosition.z = 0;
 
-        float manaCost =
-    finalChargeTime *
-    manaPerSecond;
-
-        if (!player.UseMana(manaCost))
+        if (finalChargeTime < 1)
         {
-            return;
+            float manaCost = (finalChargeTime * manaPerSecond) + manaPerSecond;
+            float currentCooldown = (baseCooldown * finalChargeTime) + baseCooldown;
+
+            if (!player.UseMana(manaCost))
+            {
+                return;
+            }
+
+            SpawnSkill();
+            nextUseTime = Time.time + currentCooldown;
         }
+        else
+        {
+            float manaCost = finalChargeTime * manaPerSecond;
+            float currentCooldown = baseCooldown * finalChargeTime;
+            if (!player.UseMana(manaCost))
+            {
+                return;
+            }
+            SpawnSkill();
+            nextUseTime = Time.time + currentCooldown;
 
-        SpawnSkill();
-
-        float currentCooldown =
-    baseCooldown * finalChargeTime;
-
-        nextUseTime =
-            Time.time + currentCooldown;
+        }
     }
 
     private void SpawnSkill()
