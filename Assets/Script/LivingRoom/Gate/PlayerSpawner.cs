@@ -10,8 +10,6 @@ public class PlayerSpawner : MonoBehaviour
 
         Debug.Log(CharacterManager.Instance);
 
-        // Ensure a CharacterManager exists at runtime. Some scenes may not have it
-        // in the hierarchy, so create one so it can load the saved character.
         if (CharacterManager.Instance == null)
         {
             Debug.Log("CharacterManager not found - creating runtime instance");
@@ -33,5 +31,5 @@ public class PlayerSpawner : MonoBehaviour
             character.playerPrefab,
             spawnPoint.position,
             Quaternion.identity);
-    }
+    }   
 }

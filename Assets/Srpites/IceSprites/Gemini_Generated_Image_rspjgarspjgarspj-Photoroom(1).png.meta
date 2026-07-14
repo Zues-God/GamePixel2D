@@ -1,10 +1,19 @@
 fileFormatVersion: 2
-guid: e5a2351d6b1785946ae70a0b3b350578
+guid: 8461b71183ebae24a910e0c631b84ad5
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -745064150176489060
-    second: Gemini_Generated_Image_1kx3q91kx3q91kx3(1)-Photoroom(1)_0
+      213: -5225495009536568094
+    second: Gemini_Generated_Image_rspjgarspjgarspj-Photoroom(1)_0
+  - first:
+      213: 6173759919378617632
+    second: Gemini_Generated_Image_rspjgarspjgarspj-Photoroom(1)_1
+  - first:
+      213: -2393193757199694925
+    second: Gemini_Generated_Image_rspjgarspjgarspj-Photoroom(1)_2
+  - first:
+      213: -251837722700817380
+    second: Gemini_Generated_Image_rspjgarspjgarspj-Photoroom(1)_3
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -37,7 +46,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -100,13 +109,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Gemini_Generated_Image_1kx3q91kx3q91kx3(1)-Photoroom(1)_0
+      name: Gemini_Generated_Image_rspjgarspjgarspj-Photoroom(1)_0
       rect:
         serializedVersion: 2
-        x: 249
-        y: 159
-        width: 913
-        height: 552
+        x: 57
+        y: 532
+        width: 374
+        height: 87
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +124,74 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: c912ad95a1009a5f0800000000000000
-      internalID: -745064150176489060
+      spriteID: 2e41ff489ff4b77b0800000000000000
+      internalID: -5225495009536568094
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Gemini_Generated_Image_rspjgarspjgarspj-Photoroom(1)_1
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 372
+        width: 380
+        height: 87
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0255b1bcfe99da550800000000000000
+      internalID: 6173759919378617632
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Gemini_Generated_Image_rspjgarspjgarspj-Photoroom(1)_2
+      rect:
+        serializedVersion: 2
+        x: 45
+        y: 212
+        width: 374
+        height: 87
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3b30e6f15faa9ced0800000000000000
+      internalID: -2393193757199694925
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Gemini_Generated_Image_rspjgarspjgarspj-Photoroom(1)_3
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 35
+        width: 380
+        height: 86
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c1cdf5decea418cf0800000000000000
+      internalID: -251837722700817380
       vertices: []
       indices: 
       edges: []
@@ -135,7 +210,10 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Gemini_Generated_Image_1kx3q91kx3q91kx3(1)-Photoroom(1)_0: -745064150176489060
+      Gemini_Generated_Image_rspjgarspjgarspj-Photoroom(1)_0: -5225495009536568094
+      Gemini_Generated_Image_rspjgarspjgarspj-Photoroom(1)_1: 6173759919378617632
+      Gemini_Generated_Image_rspjgarspjgarspj-Photoroom(1)_2: -2393193757199694925
+      Gemini_Generated_Image_rspjgarspjgarspj-Photoroom(1)_3: -251837722700817380
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
