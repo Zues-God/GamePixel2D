@@ -292,6 +292,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Wizar
       objectReference: {fileID: 0}
+    - target: {fileID: 1483386465765989341, guid: a239275b69fae164db4841a3fce096b3, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8062163955920987288, guid: a239275b69fae164db4841a3fce096b3, type: 3}
       propertyPath: m_LocalPosition.x
       value: -68.62319
@@ -525,8 +529,8 @@ MonoBehaviour:
   - {fileID: 7046441772444037224, guid: 084bdf0c2ae0fe949b912094d9d04c8f, type: 3}
   bossHPBar: {fileID: 0}
   introBoss: {fileID: 0}
-  player: {fileID: 0}
   boss: {fileID: 0}
+  player: {fileID: 0}
   bossSound: {fileID: 0}
   spawArena: {fileID: 6467701771579065921}
   enemySpaw: 20
@@ -5022,8 +5026,8 @@ MonoBehaviour:
   - {fileID: 7046441772444037224, guid: 084bdf0c2ae0fe949b912094d9d04c8f, type: 3}
   bossHPBar: {fileID: 0}
   introBoss: {fileID: 0}
-  player: {fileID: 0}
   boss: {fileID: 0}
+  player: {fileID: 0}
   bossSound: {fileID: 0}
   spawArena: {fileID: 5017920329182359682}
   enemySpaw: 20
@@ -5055,8 +5059,8 @@ MonoBehaviour:
   - {fileID: 7046441772444037224, guid: 084bdf0c2ae0fe949b912094d9d04c8f, type: 3}
   bossHPBar: {fileID: 0}
   introBoss: {fileID: 0}
-  player: {fileID: 0}
   boss: {fileID: 0}
+  player: {fileID: 0}
   bossSound: {fileID: 0}
   spawArena: {fileID: 5610885266698834445}
   enemySpaw: 50
@@ -5722,8 +5726,8 @@ MonoBehaviour:
   - {fileID: 7046441772444037224, guid: 084bdf0c2ae0fe949b912094d9d04c8f, type: 3}
   bossHPBar: {fileID: 0}
   introBoss: {fileID: 0}
-  player: {fileID: 0}
   boss: {fileID: 0}
+  player: {fileID: 0}
   bossSound: {fileID: 0}
   spawArena: {fileID: 3385031921202922394}
   enemySpaw: 20
@@ -5917,8 +5921,8 @@ MonoBehaviour:
   - {fileID: 7046441772444037224, guid: 084bdf0c2ae0fe949b912094d9d04c8f, type: 3}
   bossHPBar: {fileID: 0}
   introBoss: {fileID: 0}
-  player: {fileID: 0}
   boss: {fileID: 0}
+  player: {fileID: 0}
   bossSound: {fileID: 0}
   spawArena: {fileID: 274502433311429946}
   enemySpaw: 20
