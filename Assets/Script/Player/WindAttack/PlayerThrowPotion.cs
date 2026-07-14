@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class PlayerThrowPotion : Player
+public class PlayerThrowPotion : Player 
 {
     [SerializeField] private GameObject potionPrefab;
     [SerializeField] private Transform throwPoint;
@@ -11,9 +11,10 @@ public class PlayerThrowPotion : Player
     private float lastThrowTime = -999f;
     private bool isThrowing = false;
 
-    private void Awake()
+
+    protected override void Update()
     {
-        animator = GetComponent<Animator>();
+        base.Update();
     }
 
     //private void Update()
