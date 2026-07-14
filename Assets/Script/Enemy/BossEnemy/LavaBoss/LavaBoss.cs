@@ -1,135 +1,96 @@
 using UnityEngine;
+using UnityEngine.UI;
 
 public class LavaBoss : MonoBehaviour
 {
     [Header("Stats")]
-    public float maxHP = 500f;
-    public float damage = 30f;
-    public float moveSpeed = 2f;
-    public float attackRange = 2f;
+    [SerializeField] private float maxHP = 1000f;
+    [SerializeField] private float moveSpeed = 2f;
 
+    [Header("Attack")]
+    [SerializeField] private float attackRange = 2f;
+    [SerializeField] private float attackCooldown = 2f;
 
-    [Header("Reference")]
-    public Transform player; 
-    public GameObject hitBox;
+    [Header("Skill")]
+    [SerializeField] private float skillCooldown = 8f;
+
+    [Header("UI")]
+    [SerializeField] private Image hpBar;
+
+    [Header("References")]
+    [SerializeField] private Animator animator;
+    [SerializeField] private Rigidbody2D rb;
+    [SerializeField] private GameObject hitBox;
+
+    private Player player;
+
     private float currentHP;
+    private float lastAttackTime;
+    private float lastSkillTime;
 
-    private Animator animator;
-    private Rigidbody2D rb;
-    private SpriteRenderer sprite;
+    private bool isDead;
 
-
-    private bool attacking;
-    private bool dead;
-
-
-
-    void Awake()
+    private void Start()
     {
-        animator = GetComponent<Animator>();
-        rb = GetComponent<Rigidbody2D>();
-        sprite = GetComponent<SpriteRenderer>();
-    }
+        player = FindAnyObjectByType<Player>();
 
-
-
-    void Start()
-    {
         currentHP = maxHP;
 
-        hitBox.SetActive(false);
+        UpdateHP();
     }
 
-
-
-    void Update()
+    private void Update()
     {
-        if (dead)
-            return;
+        if (isDead) return;
 
+        if (player == null) return;
 
-        float distance = Vector2.Distance(
-            transform.position,
-            player.position
-        );
+        float distance = Vector2.Distance(transform.position, player.transform.position);
 
-
-        if (distance <= attackRange)
+        if (distance > attackRange)
+        {
+            MoveToPlayer();
+        }
+        else
         {
             Attack();
         }
-        else
-        {
-            Move();
-        }
+
+        Flip();
     }
 
-
-
-    void Move()
+    private void MoveToPlayer()
     {
-        Vector2 direction =
-            (player.position - transform.position).normalized;
+        Vector2 dir = (player.transform.position - transform.position).normalized;
 
+        rb.linearVelocity = dir * moveSpeed;
 
-        rb.linearVelocity = direction * moveSpeed;
-
-
-        animator.SetBool("isMoving", true);
-
-
-        if (direction.x < 0)
-            sprite.flipX = true;
-        else
-            sprite.flipX = false;
+        animator.SetBool("isRun", true);
     }
 
-
-
-    void Attack()
+    private void Attack()
     {
         rb.linearVelocity = Vector2.zero;
 
+        animator.SetBool("isRun", false);
 
-        animator.SetBool("isMoving", false);
-
-
-        if (!attacking)
+        if (Time.time - lastAttackTime >= attackCooldown)
         {
-            attacking = true;
+            lastAttackTime = Time.time;
 
-            animator.SetTrigger("Attack");
+            animator.SetTrigger("isAttack");
         }
     }
 
-
-
-    // Animation Event gọi hàm này
-    public void EnableHitBox()
-    {
-        hitBox.SetActive(true);
-    }
-
-
-
-    // Animation Event gọi hàm này
-    public void DisableHitBox()
-    {
-        hitBox.SetActive(false);
-
-        attacking = false;
-    }
-
-
-
     public void TakeDamage(float damage)
     {
-        if (dead)
-            return;
-
+        if (isDead) return;
 
         currentHP -= damage;
 
+        UpdateHP();
+
+        animator.SetTrigger("isHurt");
 
         if (currentHP <= 0)
         {
@@ -137,20 +98,60 @@ public class LavaBoss : MonoBehaviour
         }
     }
 
-
-
-    void Die()
+    private void Die()
     {
-        dead = true;
+        isDead = true;
 
         rb.linearVelocity = Vector2.zero;
 
-        animator.SetTrigger("Die");
+        GetComponent<Collider2D>().enabled = false;
 
+        animator.SetTrigger("isDie");
+    }
 
+    private void UpdateHP()
+    {
+        if (hpBar != null)
+        {
+            hpBar.fillAmount = currentHP / maxHP;
+        }
+    }
+
+    private void Flip()
+    {
+        if (player == null) return;
+
+        if (player.transform.position.x < transform.position.x)
+        {
+            transform.localScale = new Vector3(-1, 1, 1);
+        }
+        else
+        {
+            transform.localScale = new Vector3(1, 1, 1);
+        }
+    }
+
+    // Animation Event
+    public void EnableHitBox()
+    {
+        hitBox.SetActive(true);
+    }
+
+    // Animation Event
+    public void DisableHitBox()
+    {
         hitBox.SetActive(false);
+    }
 
+    // Animation Event
+    public void CastSkill()
+    {
+        Debug.Log("Boss Cast Lava Skill");
+    }
 
-        Destroy(gameObject, 2f);
+    // Animation Event
+    public void DestroyBoss()
+    {
+        Destroy(gameObject);
     }
 }

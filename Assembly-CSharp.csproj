@@ -83,6 +83,7 @@
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_UiFrameRateCounter.cs" />
     <Compile Include="Assets\Script\Player\Archer\Arrow.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\VertexZoom.cs" />
+    <Compile Include="Assets\Script\Player\Archer\LavaSkill.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_TextSelector_B.cs" />
     <Compile Include="Assets\Script\MainMenu\MainMenu.cs" />
     <Compile Include="Assets\Script\Player\Knight\PlayerKnight.cs" />
@@ -138,6 +139,7 @@
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TeleType.cs" />
     <Compile Include="Assets\Script\Player\WindAttack\PlayerThrowPotion.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_TextEventCheck.cs" />
+    <Compile Include="Assets\Script\Player\Archer\StopSkill.cs" />
     <Compile Include="Assets\Script\Player\Knight\PlayerShield.cs" />
     <Compile Include="Assets\Script\Player\Wizar\Weapon\PlayerWeaponController.cs" />
     <Compile Include="Assets\Script\Enemy\BossEnemy\BossSand\LaserBullet.cs" />
