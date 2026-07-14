@@ -415,18 +415,20 @@ MonoBehaviour:
   enemyPrefab: []
   bossHPBar: {fileID: 0}
   introBoss: {fileID: 0}
-  player: {fileID: 0}
   boss: {fileID: 0}
+  player: {fileID: 0}
   bossSound: {fileID: 0}
   spawArena: {fileID: 143169113}
   enemySpaw: 0
   introDuration: 0
-  door: []
-  enemyParent: {fileID: 0}
+  door:
+  - {fileID: 1956283986}
+  - {fileID: 1610037746}
+  enemyParent: {fileID: 723853779}
   isBossRoom: 0
-  totalWaves: 3
-  minEnemyPerWave: 2
-  maxEnemyPerWave: 6
+  totalWaves: 1
+  minEnemyPerWave: 0
+  maxEnemyPerWave: 0
   exitPortal: {fileID: 0}
   isLastRoom: 0
 --- !u!61 &143169113
@@ -1247,7 +1249,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &361260797
 Transform:
   m_ObjectHideFlags: 0
@@ -1722,7 +1724,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &399999549
 Transform:
   m_ObjectHideFlags: 0
@@ -4247,18 +4249,20 @@ MonoBehaviour:
   enemyPrefab: []
   bossHPBar: {fileID: 0}
   introBoss: {fileID: 0}
-  player: {fileID: 0}
   boss: {fileID: 0}
+  player: {fileID: 0}
   bossSound: {fileID: 0}
   spawArena: {fileID: 854472101}
   enemySpaw: 0
   introDuration: 0
-  door: []
-  enemyParent: {fileID: 0}
+  door:
+  - {fileID: 2071698806}
+  - {fileID: 1534314660}
+  enemyParent: {fileID: 2020007148}
   isBossRoom: 0
-  totalWaves: 3
-  minEnemyPerWave: 2
-  maxEnemyPerWave: 6
+  totalWaves: 1
+  minEnemyPerWave: 0
+  maxEnemyPerWave: 0
   exitPortal: {fileID: 0}
   isLastRoom: 0
 --- !u!61 &854472101
@@ -4798,7 +4802,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &874846628
 Transform:
   m_ObjectHideFlags: 0
@@ -6358,18 +6362,19 @@ MonoBehaviour:
   enemyPrefab: []
   bossHPBar: {fileID: 0}
   introBoss: {fileID: 0}
-  player: {fileID: 0}
   boss: {fileID: 0}
+  player: {fileID: 0}
   bossSound: {fileID: 0}
   spawArena: {fileID: 960631024}
   enemySpaw: 0
   introDuration: 0
-  door: []
-  enemyParent: {fileID: 0}
+  door:
+  - {fileID: 1125224924}
+  enemyParent: {fileID: 1009364612}
   isBossRoom: 0
-  totalWaves: 3
-  minEnemyPerWave: 2
-  maxEnemyPerWave: 6
+  totalWaves: 1
+  minEnemyPerWave: 0
+  maxEnemyPerWave: 0
   exitPortal: {fileID: 0}
   isLastRoom: 0
 --- !u!61 &960631024
@@ -6760,7 +6765,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1026408097
 Transform:
   m_ObjectHideFlags: 0
@@ -7426,18 +7431,20 @@ MonoBehaviour:
   enemyPrefab: []
   bossHPBar: {fileID: 0}
   introBoss: {fileID: 0}
-  player: {fileID: 0}
   boss: {fileID: 0}
+  player: {fileID: 0}
   bossSound: {fileID: 0}
   spawArena: {fileID: 1122337898}
   enemySpaw: 0
   introDuration: 0
-  door: []
-  enemyParent: {fileID: 0}
+  door:
+  - {fileID: 1689090363}
+  - {fileID: 874846629}
+  enemyParent: {fileID: 2060463651}
   isBossRoom: 0
-  totalWaves: 3
-  minEnemyPerWave: 2
-  maxEnemyPerWave: 6
+  totalWaves: 1
+  minEnemyPerWave: 0
+  maxEnemyPerWave: 0
   exitPortal: {fileID: 0}
   isLastRoom: 0
 --- !u!61 &1122337898
@@ -7504,7 +7511,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1125224923
 Transform:
   m_ObjectHideFlags: 0
@@ -7788,18 +7795,20 @@ MonoBehaviour:
   enemyPrefab: []
   bossHPBar: {fileID: 0}
   introBoss: {fileID: 0}
-  player: {fileID: 0}
   boss: {fileID: 0}
+  player: {fileID: 0}
   bossSound: {fileID: 0}
   spawArena: {fileID: 1142847783}
   enemySpaw: 0
   introDuration: 0
-  door: []
-  enemyParent: {fileID: 0}
+  door:
+  - {fileID: 1026408098}
+  - {fileID: 1799658166}
+  enemyParent: {fileID: 231495159}
   isBossRoom: 0
-  totalWaves: 3
-  minEnemyPerWave: 2
-  maxEnemyPerWave: 6
+  totalWaves: 1
+  minEnemyPerWave: 0
+  maxEnemyPerWave: 0
   exitPortal: {fileID: 0}
   isLastRoom: 0
 --- !u!61 &1142847783
@@ -9470,7 +9479,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1463001308
 Transform:
   m_ObjectHideFlags: 0
@@ -11589,7 +11598,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1524151101
 Transform:
   m_ObjectHideFlags: 0
@@ -11750,7 +11759,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1534314659
 Transform:
   m_ObjectHideFlags: 0
@@ -12013,7 +12022,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1610037743
 Transform:
   m_ObjectHideFlags: 0
@@ -12791,7 +12800,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1689090362
 Transform:
   m_ObjectHideFlags: 0
@@ -13703,7 +13712,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1799658163
 Transform:
   m_ObjectHideFlags: 0
@@ -439933,18 +439942,20 @@ MonoBehaviour:
   enemyPrefab: []
   bossHPBar: {fileID: 0}
   introBoss: {fileID: 0}
-  player: {fileID: 0}
   boss: {fileID: 0}
+  player: {fileID: 0}
   bossSound: {fileID: 0}
   spawArena: {fileID: 1923777734}
   enemySpaw: 0
   introDuration: 0
-  door: []
-  enemyParent: {fileID: 0}
+  door:
+  - {fileID: 399999550}
+  - {fileID: 1463001309}
+  enemyParent: {fileID: 398720170}
   isBossRoom: 0
-  totalWaves: 3
-  minEnemyPerWave: 2
-  maxEnemyPerWave: 6
+  totalWaves: 1
+  minEnemyPerWave: 0
+  maxEnemyPerWave: 0
   exitPortal: {fileID: 0}
   isLastRoom: 0
 --- !u!61 &1923777734
@@ -440289,18 +440300,20 @@ MonoBehaviour:
   enemyPrefab: []
   bossHPBar: {fileID: 0}
   introBoss: {fileID: 0}
-  player: {fileID: 0}
   boss: {fileID: 0}
+  player: {fileID: 0}
   bossSound: {fileID: 0}
   spawArena: {fileID: 1943827459}
   enemySpaw: 0
   introDuration: 0
-  door: []
-  enemyParent: {fileID: 0}
+  door:
+  - {fileID: 361260800}
+  - {fileID: 1524151102}
+  enemyParent: {fileID: 365989520}
   isBossRoom: 0
-  totalWaves: 3
-  minEnemyPerWave: 2
-  maxEnemyPerWave: 6
+  totalWaves: 1
+  minEnemyPerWave: 0
+  maxEnemyPerWave: 0
   exitPortal: {fileID: 0}
   isLastRoom: 0
 --- !u!61 &1943827459
@@ -440367,7 +440380,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1956283983
 Transform:
   m_ObjectHideFlags: 0
@@ -441872,7 +441885,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &2071698805
 Transform:
   m_ObjectHideFlags: 0

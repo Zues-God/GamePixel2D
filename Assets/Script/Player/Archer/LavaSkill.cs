@@ -1,8 +1,9 @@
+using System.Collections;
 using UnityEngine;
 
 public class LavaSkill : MonoBehaviour
 {
-    [Header("Skill")]
+    [Header("Skill Effect")]
     [SerializeField] private GameObject skillObject;
 
     [Header("Mana")]
@@ -11,9 +12,12 @@ public class LavaSkill : MonoBehaviour
     [Header("Cooldown")]
     [SerializeField] private float cooldown = 3f;
 
-    private float nextUseTime;
+    [Header("Time Mark")]
+    [SerializeField] private float markDuration = 4f;
 
+    private float nextUseTime;
     private Player player;
+    private Vector3 markedPosition;
 
     private void Start()
     {
@@ -41,9 +45,26 @@ public class LavaSkill : MonoBehaviour
 
         nextUseTime = Time.time + cooldown;
 
+        markedPosition = player.transform.position;
+
+        StartCoroutine(TimeMarkRoutine());
+    }
+
+    private IEnumerator TimeMarkRoutine()
+    {
         if (skillObject != null)
         {
+            skillObject.transform.position = markedPosition;
             skillObject.SetActive(true);
+        }
+
+        yield return new WaitForSeconds(markDuration);
+
+        player.transform.position = markedPosition;
+
+        if (skillObject != null)
+        {
+            skillObject.SetActive(false);
         }
     }
 }

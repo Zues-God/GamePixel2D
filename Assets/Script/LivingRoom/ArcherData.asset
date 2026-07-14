@@ -13,17 +13,14 @@ MonoBehaviour:
   m_Name: ArcherData
   m_EditorClassIdentifier: Assembly-CSharp::CharacterData
   characterName: Red Hat
-  description: 
   hp: 80
   mana: 250
   attack: 5
-  skillName: Frozen Eternity
-  skillDescription: "Red Hat b\u1EBB cong d\xF2ng ch\u1EA3y c\u1EE7a th\u1EDDi gian,
-    bu\u1ED9c to\xE0n b\u1ED9 chi\u1EBFn tr\u01B0\u1EDDng r\u01A1i v\xE0o tr\u1EA1ng
-    th\xE1i t\u0129nh l\u1EB7ng tuy\u1EC7t \u0111\u1ED1i trong 3 gi\xE2y. M\u1ECDi
-    sinh v\u1EADt, m\u1ECDi chuy\u1EC3n \u0111\u1ED9ng v\xE0 m\u1ECDi \u0111\xF2n
-    t\u1EA5n c\xF4ng \u0111\u1EC1u b\u1ECB phong \u1EA5n gi\u1EEFa kho\u1EA3nh kh\u1EAFc
-    b\u1EA5t t\u1EADn, ch\u1EC9 duy nh\u1EA5t Red Hat v\u1EABn t\u1EF1 do b\u01B0\u1EDBc
-    \u0111i v\xE0 th\u1ED1ng tr\u1ECB d\xF2ng th\u1EDDi gian."
+  skillName: Time Mark
+  skillDescription: "ed Hat kh\u1EAFc l\xEAn m\u1EB7t \u0111\u1EA5t m\u1ED9t c\u1ED5
+    ng\u1EEF th\u1EDDi gian, l\u01B0u gi\u1EEF kho\u1EA3nh kh\u1EAFc hi\u1EC7n t\u1EA1i.
+    Khi d\u1EA5u \u1EA5n h\u1EBFt hi\u1EC7u l\u1EF1c, d\xF2ng ch\u1EA3y th\u1EDDi
+    gian s\u1EBD tua ng\u01B0\u1EE3c, \u0111\u01B0a Red Hat tr\u1EDF l\u1EA1i \u0111i\u1EC3m
+    kh\u1EDFi \u0111\u1EA7u."
   portrait: {fileID: 4723107735738678597, guid: 8315eb4f949f46d4faa236083842e497, type: 3}
   playerPrefab: {fileID: 0}
