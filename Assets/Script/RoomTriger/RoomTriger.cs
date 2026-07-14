@@ -7,7 +7,8 @@ using UnityEngine;
 public class RoomTriger : MonoBehaviour
 {
     [SerializeField] private GameObject[] enemyPrefab;
-    public GameObject bossHPBar, introBoss, player, boss;
+    public GameObject bossHPBar, introBoss, boss;
+    public GameObject player;
     private List<GameObject> enemy = new List<GameObject>();
     public AudioSource bossSound;
     public BoxCollider2D spawArena;
@@ -83,6 +84,18 @@ public class RoomTriger : MonoBehaviour
         }
     }
 
+    private void FindPlayer()
+    {
+
+        if (player == null)
+        {
+            player = FindAnyObjectByType<Player>().gameObject;
+
+        }
+
+
+    }
+
 
     void StartNextWave()
     {
@@ -121,7 +134,8 @@ public class RoomTriger : MonoBehaviour
     }
     IEnumerator PlayIntro()
     {
-        
+        FindPlayer();
+         
         Time.timeScale = 0f;
 
         player.GetComponent<Player>().enabled = false;

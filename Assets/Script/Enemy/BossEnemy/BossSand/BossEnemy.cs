@@ -15,17 +15,18 @@ public class BossEnemy : Enemy
     [SerializeField] private float delayBeforeFire = 1f;
     [SerializeField] private int bulletCount = 12;
     [SerializeField] private float circleBulletSpeed = 5f;
-
     [Header("Skill Cooldowns")]
     [SerializeField] private float laserCooldown = 10f;
     [SerializeField] private float fireBulletCooldown = 4f;
     [SerializeField] private float circleBulletCooldown = 6f;
-
     [Header("Skill Loop Settings")]
     [SerializeField] private float skillCheckInterval = 0.5f; 
     [SerializeField] private float firstSkillDelay = 2f;
-
     [SerializeField] private Audio audioManager;
+    [Header("Healing")]
+    [SerializeField] private bool enableAutoHeal = false;
+    [SerializeField] private float healAmount = 100f;
+    [SerializeField] private float healInterval = 10f;
     private enum BossSkillType
     {
         Laser,
@@ -39,6 +40,7 @@ public class BossEnemy : Enemy
     private float nextLaserReadyTime;
     private float nextFireBulletReadyTime;
     private float nextCircleBulletReadyTime;
+    private Coroutine healCoroutine;
 
     protected override void Start()
     {
@@ -51,6 +53,11 @@ public class BossEnemy : Enemy
         nextCircleBulletReadyTime = Time.time + firstSkillDelay;
 
         StartCoroutine(SkillLoop());
+
+        if (enableAutoHeal && healAmount > 0f && healInterval > 0f)
+        {
+            healCoroutine = StartCoroutine(HealLoop());
+        }
     }
 
     protected override void Update()
@@ -69,6 +76,33 @@ public class BossEnemy : Enemy
 
             yield return new WaitForSeconds(skillCheckInterval);
         }
+    }
+
+    private IEnumerator HealLoop()
+    {
+        while (true)
+        {
+            yield return new WaitForSeconds(healInterval);
+
+            if (currenHP <= 0f) yield break; 
+
+            if (currenHP < maxHP)
+            {
+                HealEnemy(healAmount);
+                if (audioManager != null)
+                {
+                    var mi = audioManager.GetType().GetMethod("PlayHealSound");
+                    if (mi != null) mi.Invoke(audioManager, null);
+                }
+            }
+        }
+    }
+
+    public void TriggerHealOnce()
+    {
+        if (healAmount <= 0f) return;
+
+        HealEnemy(healAmount);
     }
 
     public void UseSkill()
@@ -156,6 +190,15 @@ public class BossEnemy : Enemy
             EnemyBullet enemyBullet = bullet.AddComponent<EnemyBullet>();
             enemyBullet.SetMovementDirection(bulletDirection * circleBulletSpeed);
         }
+    }
+
+
+    private void HealEnemy(float hpAmount)
+    {
+
+        currenHP = Math.Min(currenHP + hpAmount, maxHP);
+        UpdateHP();
+
     }
 
 }

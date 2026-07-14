@@ -18,6 +18,10 @@ MonoBehaviour:
   mana: 200
   attack: 4
   skillName: Wyrmfire Thermobaric Nova
-  skillDescription: "hello m\u1EA5y con g\xE0"
+  skillDescription: "Nh\u1EA5n 'R' s\u1EBD ph\xF3ng k\u0129 n\u0103ng t\u1EA1i v\u1ECB
+    tr\u1ECB c\u1EE7a chu\u1ED9t g\xE2y s\xE1t th\u01B0\u01A1ng trong ph\u1EA1m vi
+    nh\u1ECF. Nh\u1EA5n gi\u1EEF 'R' s\u1EBD v\xE0o tr\u1EA1ng th\xE1i t\u1EE5 l\u1EF1c,
+    t\u0103ng s\xE1t th\u01B0\u01A1ng v\xE0 ph\u1EA1m vi theo th\u1EDDi gian, t\u1ED1i
+    \u0111a 5 gi\xE2y"
   portrait: {fileID: 7219151656723393863, guid: b6c204a4bce1f05499e45e98aab4c107, type: 3}
   playerPrefab: {fileID: 1483386465765989341, guid: a239275b69fae164db4841a3fce096b3, type: 3}
