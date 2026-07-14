@@ -1,55 +1,55 @@
 fileFormatVersion: 2
-guid: a26ff874cc604bf4cb4ff511e9019990
+guid: b356259004a512146b7399e5995ae1bc
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -5195822132245154069
-    second: 16x16 knight 3 v3 (2)_0
+      213: -8044899008144921780
+    second: DarkKinght2 1_0
   - first:
-      213: -50671370036325828
-    second: 16x16 knight 3 v3 (2)_1
+      213: -6137362473553710542
+    second: DarkKinght2 1_1
   - first:
-      213: 2033840970364417743
-    second: 16x16 knight 3 v3 (2)_2
+      213: -1026455540546274754
+    second: DarkKinght2 1_2
   - first:
-      213: 4812481806834498012
-    second: 16x16 knight 3 v3 (2)_3
+      213: 373208279590926944
+    second: DarkKinght2 1_3
   - first:
-      213: 9054273239836189007
-    second: 16x16 knight 3 v3 (2)_4
+      213: 8626186049186344397
+    second: DarkKinght2 1_4
   - first:
-      213: -5747567886398049146
-    second: 16x16 knight 3 v3 (2)_5
+      213: -2300310087330888610
+    second: DarkKinght2 1_5
   - first:
-      213: -2454114661095958459
-    second: 16x16 knight 3 v3 (2)_6
+      213: 7874922605654015977
+    second: DarkKinght2 1_6
   - first:
-      213: -502126069004157003
-    second: 16x16 knight 3 v3 (2)_7
+      213: 2430343077025017134
+    second: DarkKinght2 1_7
   - first:
-      213: -3591864516240856676
-    second: 16x16 knight 3 v3 (2)_8
+      213: -7886806663901816097
+    second: DarkKinght2 1_8
   - first:
-      213: -6584660783122213048
-    second: 16x16 knight 3 v3 (2)_9
+      213: -5952520378462648398
+    second: DarkKinght2 1_9
   - first:
-      213: -6936225227090432770
-    second: 16x16 knight 3 v3 (2)_10
+      213: 3223159616278773661
+    second: DarkKinght2 1_10
   - first:
-      213: -1075409707476963345
-    second: 16x16 knight 3 v3 (2)_11
+      213: 8771144898374383101
+    second: DarkKinght2 1_11
   - first:
-      213: 1632856130711491968
-    second: 16x16 knight 3 v3 (2)_12
+      213: -5954170815986987435
+    second: DarkKinght2 1_12
   - first:
-      213: 2555497199800199960
-    second: 16x16 knight 3 v3 (2)_13
+      213: 4866831651376587364
+    second: DarkKinght2 1_13
   - first:
-      213: 5219838415275810006
-    second: 16x16 knight 3 v3 (2)_14
+      213: 3675713245647712173
+    second: DarkKinght2 1_14
   - first:
-      213: -5972551221006995413
-    second: 16x16 knight 3 v3 (2)_15
+      213: 4199432267256653914
+    second: DarkKinght2 1_15
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -82,7 +82,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -96,7 +96,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 40
+  spritePixelsToUnits: 45
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -158,7 +158,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: DarkKinght2_0
+      name: DarkKinght2 1_0
       rect:
         serializedVersion: 2
         x: 0
@@ -171,16 +171,16 @@ TextureImporter:
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: 8ccf9ba2e865ba142a975392cd4a8867
-      internalID: -1556419456
+      spriteID: c4b21adc9f6ca5090800000000000000
+      internalID: -8044899008144921780
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: DarkKinght2_1
+      name: DarkKinght2 1_1
       rect:
         serializedVersion: 2
         x: 256
@@ -193,16 +193,16 @@ TextureImporter:
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: cae3260a3048ab946a1ce78a96128e7e
-      internalID: -1317883528
+      spriteID: 232b402f855b3daa0800000000000000
+      internalID: -6137362473553710542
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: DarkKinght2_2
+      name: DarkKinght2 1_2
       rect:
         serializedVersion: 2
         x: 512
@@ -215,16 +215,16 @@ TextureImporter:
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: 496056fdf7a672240b5df7a975e37441
-      internalID: 868945556
+      spriteID: e3af100df1c41c1f0800000000000000
+      internalID: -1026455540546274754
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: DarkKinght2_3
+      name: DarkKinght2 1_3
       rect:
         serializedVersion: 2
         x: 768
@@ -237,16 +237,16 @@ TextureImporter:
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: 7162b04b5a0de99439787257fa6d5bff
-      internalID: 1748929742
+      spriteID: 06a7044f3f6ed2500800000000000000
+      internalID: 373208279590926944
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: DarkKinght2_4
+      name: DarkKinght2 1_4
       rect:
         serializedVersion: 2
         x: 0
@@ -259,38 +259,38 @@ TextureImporter:
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: e4ea4422ca67d3c42b5f78e2f5de0ebd
-      internalID: 15803135
+      spriteID: dcdae2c128e56b770800000000000000
+      internalID: 8626186049186344397
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: DarkKinght2_5
+      name: DarkKinght2 1_5
       rect:
         serializedVersion: 2
         x: 256
         y: 512
         width: 256
         height: 256
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 9
+      pivot: {x: 0.49967206, y: 0.38487673}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: d5189e15b53f0824b86bb7db14a1a509
-      internalID: -1407314820
+      spriteID: e540563c928a310e0800000000000000
+      internalID: -2300310087330888610
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: DarkKinght2_6
+      name: DarkKinght2 1_6
       rect:
         serializedVersion: 2
         x: 512
@@ -303,16 +303,16 @@ TextureImporter:
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: bb6e21d5cbc850d4aaea574cd3291840
-      internalID: 909067604
+      spriteID: 9ef73bff268594d60800000000000000
+      internalID: 7874922605654015977
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: DarkKinght2_7
+      name: DarkKinght2 1_7
       rect:
         serializedVersion: 2
         x: 768
@@ -325,16 +325,16 @@ TextureImporter:
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: 6e2e0de78412bf046b614e8a9dbb9443
-      internalID: 1514588641
+      spriteID: e2de76ce6205ab120800000000000000
+      internalID: 2430343077025017134
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: DarkKinght2_8
+      name: DarkKinght2 1_8
       rect:
         serializedVersion: 2
         x: 0
@@ -347,16 +347,16 @@ TextureImporter:
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: dc45dfc8380d2a440a86a2e693830196
-      internalID: -1046021661
+      spriteID: fdad2f1102f6c8290800000000000000
+      internalID: -7886806663901816097
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: DarkKinght2_9
+      name: DarkKinght2 1_9
       rect:
         serializedVersion: 2
         x: 256
@@ -369,16 +369,16 @@ TextureImporter:
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: 86be436405addf240a260303994e5355
-      internalID: 435963937
+      spriteID: 2b7c57be046646da0800000000000000
+      internalID: -5952520378462648398
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: DarkKinght2_10
+      name: DarkKinght2 1_10
       rect:
         serializedVersion: 2
         x: 512
@@ -391,16 +391,16 @@ TextureImporter:
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: 43cacf1f5425ef94dbda1f9137ebc871
-      internalID: 384794979
+      spriteID: d9f3eae0896fabc20800000000000000
+      internalID: 3223159616278773661
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: DarkKinght2_11
+      name: DarkKinght2 1_11
       rect:
         serializedVersion: 2
         x: 768
@@ -413,16 +413,16 @@ TextureImporter:
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: d5face1bf307f4649baefada34eb3137
-      internalID: -22007992
+      spriteID: df5b51540dd59b970800000000000000
+      internalID: 8771144898374383101
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: DarkKinght2_12
+      name: DarkKinght2 1_12
       rect:
         serializedVersion: 2
         x: 0
@@ -435,16 +435,16 @@ TextureImporter:
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: 3f0dd2c23c3e7df49b82ae3783aeb117
-      internalID: 1671264545
+      spriteID: 55e091d70398e5da0800000000000000
+      internalID: -5954170815986987435
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: DarkKinght2_13
+      name: DarkKinght2 1_13
       rect:
         serializedVersion: 2
         x: 256
@@ -457,16 +457,16 @@ TextureImporter:
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: 58dfe74ec9a9e1041a4fa4b6df539034
-      internalID: -888360507
+      spriteID: 462ede1f9957a8340800000000000000
+      internalID: 4866831651376587364
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: DarkKinght2_14
+      name: DarkKinght2 1_14
       rect:
         serializedVersion: 2
         x: 512
@@ -479,16 +479,16 @@ TextureImporter:
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: b0990095b3ff84449bcadeaa72e1a2d3
-      internalID: -158072866
+      spriteID: dafa70fd8b1c20330800000000000000
+      internalID: 3675713245647712173
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: DarkKinght2_15
+      name: DarkKinght2 1_15
       rect:
         serializedVersion: 2
         x: 768
@@ -501,10 +501,10 @@ TextureImporter:
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: 298abd983c531e54583054f8ec29c0f7
-      internalID: -737090658
+      spriteID: a586524c561674a30800000000000000
+      internalID: 4199432267256653914
       vertices: []
       indices: 
       edges: []
@@ -513,7 +513,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: e706ab25ca8a54344977e1c2f168e2a3
+    spriteID: 38a8bd8df5476c14d87350e3896f73d7
     internalID: 0
     vertices: []
     indices: 
@@ -523,24 +523,24 @@ TextureImporter:
     spriteCustomMetadata:
       entries:
       - key: SpriteEditor.SliceSettings
-        value: '{"sliceOnImport":false,"gridCellCount":{"x":4.0,"y":4.0},"gridSpriteSize":{"x":256.0,"y":256.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":1,"keepEmptyRects":false,"isAlternate":false}'
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":256.0,"y":256.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":1,"keepEmptyRects":false,"isAlternate":false}'
     nameFileIdTable:
-      DarkKinght2_0: -1556419456
-      DarkKinght2_1: -1317883528
-      DarkKinght2_10: 384794979
-      DarkKinght2_11: -22007992
-      DarkKinght2_12: 1671264545
-      DarkKinght2_13: -888360507
-      DarkKinght2_14: -158072866
-      DarkKinght2_15: -737090658
-      DarkKinght2_2: 868945556
-      DarkKinght2_3: 1748929742
-      DarkKinght2_4: 15803135
-      DarkKinght2_5: -1407314820
-      DarkKinght2_6: 909067604
-      DarkKinght2_7: 1514588641
-      DarkKinght2_8: -1046021661
-      DarkKinght2_9: 435963937
+      DarkKinght2 1_0: -8044899008144921780
+      DarkKinght2 1_1: -6137362473553710542
+      DarkKinght2 1_10: 3223159616278773661
+      DarkKinght2 1_11: 8771144898374383101
+      DarkKinght2 1_12: -5954170815986987435
+      DarkKinght2 1_13: 4866831651376587364
+      DarkKinght2 1_14: 3675713245647712173
+      DarkKinght2 1_15: 4199432267256653914
+      DarkKinght2 1_2: -1026455540546274754
+      DarkKinght2 1_3: 373208279590926944
+      DarkKinght2 1_4: 8626186049186344397
+      DarkKinght2 1_5: -2300310087330888610
+      DarkKinght2 1_6: 7874922605654015977
+      DarkKinght2 1_7: 2430343077025017134
+      DarkKinght2 1_8: -7886806663901816097
+      DarkKinght2 1_9: -5952520378462648398
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
