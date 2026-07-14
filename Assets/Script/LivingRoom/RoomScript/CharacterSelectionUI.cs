@@ -31,16 +31,15 @@ public class CharacterSelectionUI : MonoBehaviour
             data.characterName;
 
         statsText.text =
-            $"HP: {data.hp}\n" +
-            $"Mana: {data.mana}\n" +
-            $"Attack: {data.attack}\n";
+            $"{data.hp}\n" +
+            $"{data.mana}\n" +
+            $"{data.attack}\n";
 
         skillText.text =
-            $"{data.skillName}\n\n" +
-            data.skillDescription;
+            $"{data.skillName}\n\n";
 
         descriptionText.text =
-            data.description;
+            data.skillDescription;
     }
 
     public void PlayCharacter()
