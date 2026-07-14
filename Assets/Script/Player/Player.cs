@@ -31,6 +31,7 @@ public class Player : MonoBehaviour
     public GameObject animationWeapon;
     private float lastHitTime;
     private GameObject currentWeapon;
+    private bool isDead = false;
 
     private void Awake()
     {
@@ -125,8 +126,9 @@ public class Player : MonoBehaviour
 
     protected virtual void Update()
     {
+        if (isDead)
+            return;
 
-      
         ChangeWeapon();
         MovePlayer();
         HandleFacingDirection();
@@ -260,7 +262,7 @@ public class Player : MonoBehaviour
     }
 
 
-    private void Die()
+    public void Die()
     {
         Destroy(gameObject);
     }
@@ -285,7 +287,7 @@ public class Player : MonoBehaviour
 
         if (currentHpPlayer <= 0)
         {
-            Die();
+            AnimationDie();
         }
     }
 
@@ -318,6 +320,15 @@ public class Player : MonoBehaviour
         {
             energyBar.fillAmount = currentEnergy / maxEnergy;
         }
+    }
+    private void AnimationDie()
+    {
+        if (isDead)
+            return;
+
+        isDead = true;
+
+        animator.SetTrigger("isDie");
     }
 
 }
