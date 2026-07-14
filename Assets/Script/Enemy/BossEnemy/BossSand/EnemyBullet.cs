@@ -4,6 +4,9 @@ public class EnemyBullet : MonoBehaviour
 {
     private Vector3 movementDirection;
 
+    public float dameBullet = 10f;
+    
+
     void Start()
     {
         Destroy(gameObject, 5f);
@@ -28,7 +31,7 @@ public class EnemyBullet : MonoBehaviour
             Player player = collision.GetComponent<Player>();
             if (player != null)
             {
-                player.TakeDamage(10);
+                player.TakeDamage(dameBullet);
                 Destroy(gameObject);
             }
         }
