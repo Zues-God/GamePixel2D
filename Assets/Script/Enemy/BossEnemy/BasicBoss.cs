@@ -4,7 +4,7 @@ using UnityEngine;
 public class BasicBoss : Enemy
 {
     [Header("References")]
-    [SerializeField] private Transform player;
+    [SerializeField] private Transform players;
     [SerializeField] private Transform firePoint;
     [SerializeField] private GameObject bulletPrefab;
 
@@ -28,11 +28,11 @@ public class BasicBoss : Enemy
     {
         base.Start();
 
-        if (player == null)
+        if (players == null)
         {
             GameObject p = GameObject.FindGameObjectWithTag("Player");
             if (p != null)
-                player = p.transform;
+                players = p.transform;
             else
                 Debug.LogWarning("Không tìm thấy Player!");
         }
@@ -44,11 +44,11 @@ public class BasicBoss : Enemy
     {
         base.Update();
 
-        if (player == null)
+        if (players == null)
         {
             GameObject p = GameObject.FindGameObjectWithTag("Player");
             if (p != null)
-                player = p.transform;
+                players = p.transform;
             else
                 return;
         }
@@ -74,7 +74,7 @@ public class BasicBoss : Enemy
 
     void FireBullet()
     {
-        Vector3 direction = (player.position - firePoint.position).normalized;
+        Vector3 direction = (players.position - firePoint.position).normalized;
 
         GameObject bullet = Instantiate(bulletPrefab, firePoint.position, Quaternion.identity);
 

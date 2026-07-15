@@ -7,6 +7,8 @@ TagManager:
   - Enemy
   - Wall
   - EnemBullet
+  - Ground
+  - GameOver
   layers:
   - Default
   - TransparentFX
