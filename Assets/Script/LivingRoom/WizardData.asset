@@ -13,10 +13,9 @@ MonoBehaviour:
   m_Name: WizardData
   m_EditorClassIdentifier: Assembly-CSharp::CharacterData
   characterName: Yui
-  description: 
   hp: 80
-  mana: 200
-  attack: 4
+  mana: 300
+  attack: 10
   skillName: Wyrmfire Thermobaric Nova
   skillDescription: "Nh\u1EA5n 'R' s\u1EBD ph\xF3ng k\u0129 n\u0103ng t\u1EA1i v\u1ECB
     tr\u1ECB c\u1EE7a chu\u1ED9t g\xE2y s\xE1t th\u01B0\u01A1ng trong ph\u1EA1m vi
