@@ -12,11 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 67dacb0f3711f274db0e13cb80114900, type: 3}
   m_Name: Wind
   m_EditorClassIdentifier: Assembly-CSharp::CharacterData
-  characterName: 
-  hp: 0
-  mana: 0
-  attack: 0
+  characterName: Babyboo
+  hp: 100
+  mana: 200
+  attack: 10
   skillName: 
   skillDescription: 
   portrait: {fileID: 0}
-  playerPrefab: {fileID: 0}
+  playerPrefab: {fileID: 8896981680794751495, guid: 880fc9ac4f7d3284792d1b25bd9c8fdc, type: 3}

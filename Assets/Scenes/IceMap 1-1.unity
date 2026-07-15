@@ -5143,7 +5143,7 @@ MonoBehaviour:
   player: {fileID: 0}
   bossSound: {fileID: 0}
   spawArena: {fileID: 5610885266698834445}
-  enemySpaw: 50
+  enemySpaw: 20
   introDuration: 0
   door:
   - {fileID: 590511814}
@@ -5152,7 +5152,7 @@ MonoBehaviour:
   isBossRoom: 0
   totalWaves: 3
   minEnemyPerWave: 5
-  maxEnemyPerWave: 6
+  maxEnemyPerWave: 7
   exitPortal: {fileID: 0}
   isLastRoom: 0
 --- !u!1 &1490883199

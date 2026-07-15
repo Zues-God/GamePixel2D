@@ -23,4 +23,4 @@ MonoBehaviour:
     gian s\u1EBD tua ng\u01B0\u1EE3c, \u0111\u01B0a Red Hat tr\u1EDF l\u1EA1i \u0111i\u1EC3m
     kh\u1EDFi \u0111\u1EA7u."
   portrait: {fileID: 4723107735738678597, guid: 8315eb4f949f46d4faa236083842e497, type: 3}
-  playerPrefab: {fileID: 0}
+  playerPrefab: {fileID: 7576472784636024857, guid: 64f18f50f78ccc442939a9df7083ce02, type: 3}

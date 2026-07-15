@@ -22,4 +22,4 @@ MonoBehaviour:
     g\xE2y dame cho Enemy (hi\u1EC7u \u1EE9ng h\u1EA5t v\u0103ng ch\u1EC9 t\xE1c
     d\u1EE5ng v\u1EDBi Enemy th\u01B0\u1EDDng)"
   portrait: {fileID: 0}
-  playerPrefab: {fileID: 0}
+  playerPrefab: {fileID: 5025214227127855940, guid: 4a03cec1a67d15449ada94927ddb1532, type: 3}
