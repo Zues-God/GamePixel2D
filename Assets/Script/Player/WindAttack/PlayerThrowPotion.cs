@@ -4,12 +4,12 @@ public class PlayerThrowPotion : Player
 {
     [SerializeField] private GameObject potionPrefab;
     [SerializeField] private Transform throwPoint;
-    [SerializeField] private float cooldown = 0.5f;
+    [SerializeField] public float cooldown = 0.5f;
     //[SerializeField] private Audio audioSource;
 
-    private Animator animator;
-    private float lastThrowTime = -999f;
-    private bool isThrowing = false;
+    public  Animator animator;
+    public  float lastThrowTime = -999f;
+    public bool isThrowing = false;
 
 
     protected override void Update()
@@ -30,10 +30,8 @@ public class PlayerThrowPotion : Player
     //    }
     //}
 
-    // GỌI HÀM NÀY TRONG ANIMATION EVENT
     public void ThrowPotionEvent()
     {
-        //audioSource.PlayShootSound();
         Vector3 mouseWorld = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         mouseWorld.z = 0f;
 
@@ -50,7 +48,6 @@ public class PlayerThrowPotion : Player
 
    
 
-    // GỌI Ở CUỐI ANIMATION EVENT
     public void EndThrowPotionEvent()
     {
         isThrowing = false;

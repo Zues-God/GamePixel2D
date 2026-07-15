@@ -23,6 +23,8 @@ public class Player : MonoBehaviour
     [SerializeField] private GameObject skillPlayer;
     [SerializeField] private Audio audioManager;
     [SerializeField] private GameObject GameOverMenu;
+    [SerializeField] private GameObject pauseGame;
+    public bool isPaused = false;
     private Rigidbody2D rb;
     private SpriteRenderer rbSprite;
     private Animator animator;
@@ -49,6 +51,8 @@ public class Player : MonoBehaviour
         weapon1.transform.SetParent(weaponHolder);
         currentHpPlayer = maxHpPlayer;
         currentEnergy = maxEnergy;
+
+        FindGameOverUI(); 
     }
     public void PickupGun(GameObject gunObj)
     {
@@ -128,13 +132,25 @@ public class Player : MonoBehaviour
 
     protected virtual void Update()
     {
-      
+
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            Pause();
+        }
+
         ChangeWeapon();
         MovePlayer();
         HandleFacingDirection();
         PlayerSkill();
         PlayerAttack();
        
+    }
+
+    public void Pause()
+    {
+        pauseGame.SetActive(true);
+        Time.timeScale = 0f;
+        isPaused = true;
     }
 
 
@@ -262,10 +278,7 @@ public class Player : MonoBehaviour
     }
 
 
-    private void Die()
-    {
-        Destroy(gameObject);
-    }
+  
     public void EnableAnimationSword()
     {
         animationWeapon.SetActive(true);
@@ -298,12 +311,36 @@ public class Player : MonoBehaviour
 
     IEnumerator DieRoutine()
     {
-        yield return new WaitForSeconds(0.4f); 
+        yield return new WaitForSeconds(0.4f);
 
-        GameOverMenu.SetActive(true);
-        Time.timeScale = 0f;
+        GameOver();
 
         Destroy(gameObject);
+    }
+    public void GameOver()
+    {
+        FindGameOverUI(); 
+
+        if (GameOverMenu != null)
+        {
+            GameOverMenu.SetActive(true);
+        }
+
+        Time.timeScale = 0f;
+        isPaused = true;
+    }
+    private void FindGameOverUI()
+    {
+        if (GameOverMenu != null) return;
+
+        GameOver ui = FindObjectOfType<GameOver>(true);
+
+        if (ui != null)
+        {
+            GameOverMenu = ui.gameObject;
+        
+        }
+     
     }
 
 
