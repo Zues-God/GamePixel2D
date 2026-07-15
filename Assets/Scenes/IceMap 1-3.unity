@@ -2790,7 +2790,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Boss
   enemyMoveSpeed: 5
-  maxHP: 100
+  maxHP: 5000
   hpBar: {fileID: 1869865225}
   attackRange: 10
   attackCooldown: 0.1
