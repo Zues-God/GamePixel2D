@@ -171,4 +171,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::FileBall
   speed: 15
   lifeTime: 3
-  takeDamage: 4
+  takeDamage: 10
