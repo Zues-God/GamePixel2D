@@ -37,7 +37,8 @@ public class RoomTriger : MonoBehaviour
 
             if (isBossRoom)
             {
-
+                if (bossHPBar != null)
+                    bossHPBar.SetActive(true);
 
                 if (bossSound != null)
                     bossSound.Play();
@@ -149,8 +150,6 @@ public class RoomTriger : MonoBehaviour
         if (introBoss != null) introBoss.SetActive(false);
 
         Time.timeScale = 1f;
-        if (bossHPBar != null)
-            bossHPBar.SetActive(true);
 
         GetComponent<Collider2D>().enabled = false;
     }

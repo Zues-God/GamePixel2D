@@ -16,7 +16,7 @@ MonoBehaviour:
   hp: 100
   mana: 200
   attack: 10
-  skillName: binh thuoc may man
-  skillDescription: choi ra chai thuoc mau do
+  skillName: 
+  skillDescription: 
   portrait: {fileID: 0}
   playerPrefab: {fileID: 8896981680794751495, guid: 880fc9ac4f7d3284792d1b25bd9c8fdc, type: 3}

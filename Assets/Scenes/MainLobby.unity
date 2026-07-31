@@ -12180,10 +12180,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::RunManager
   allBiomes:
   - {fileID: 11400000, guid: 643331b31acf1614aa7c2fb4ff6fd717, type: 2}
-  - {fileID: 11400000, guid: efeacb5e840201f40a6e808cb9b241dc, type: 2}
-  - {fileID: 11400000, guid: f0acd57ae2383654e89212cd927159b9, type: 2}
-  - {fileID: 11400000, guid: 1e0e0037c78c20841a80cf3896741618, type: 2}
-  - {fileID: 11400000, guid: 271039eb737371344b44089be08fdc69, type: 2}
 --- !u!1 &1943881368
 GameObject:
   m_ObjectHideFlags: 0
